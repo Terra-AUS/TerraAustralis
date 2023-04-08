@@ -58,10 +58,10 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
 /**
  * Main network on which people trade goods and services.
  */
-class CMainParams : public CChainParams {
+class CTestNetParams : public CChainParams {
 public:
-    CMainParams() {
-        strNetworkID = CBaseChainParams::MAIN;
+    CTestNetParams() {
+        strNetworkID = CBaseChainParams::TESTNET;
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
         consensus.nSubsidyHalvingInterval = 840000;
@@ -227,10 +227,10 @@ public:
 /**
  * Testnet (v3): public test network which is reset from time to time.
  */
-class CTestNetParams : public CChainParams {
+class CMainNetParams : public CChainParams {
 public:
-    CTestNetParams() {
-        strNetworkID = CBaseChainParams::TESTNET;
+    CMainNetParams() {
+        strNetworkID = CBaseChainParams::MAIN;
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
         consensus.nSubsidyHalvingInterval = 84000;
@@ -330,6 +330,7 @@ public:
         checkpointData = {
             {
                 {     0, genesis.GetHash()                                                             },
+                {    15, uint256S("0x5d44b1fb8a25ea7dc813c4f21902ef7df2e49e3aaec1d5e6d651d2771a5fe77e")},
             }
         };
 
