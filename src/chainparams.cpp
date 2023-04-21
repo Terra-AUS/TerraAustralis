@@ -291,8 +291,8 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = 1628640000; // August 11th, 2021
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 750;
 
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
-        consensus.defaultAssumeValid = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000009789f5930");
+        consensus.defaultAssumeValid = uint256S("0x1414ed3fad72dd1f8379aa6aae945a58f3b48db3c0ce3ecd587090b4869c00bd");
 
         pchMessageStart[0] = 0xab;
         pchMessageStart[1] = 0xd2;
@@ -308,8 +308,7 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x32fbb5ecde32b9506eec7e75efd9d390f7e9d3dc06aa7a9a430f0a131307be7e"));
         assert(genesis.hashMerkleRoot == uint256S("0x273a20070d7cb57e4c77354d8bd5e01c1cf7d96ad32d91a7b7d183e30da12ef5"));
 
-        vFixedSeeds.clear();
-        vSeeds.clear();
+        vSeeds.emplace_back("67.219.100.165");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25); // 'B' prefix
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -331,6 +330,7 @@ public:
             {
                 {     0, genesis.GetHash()                                                             },
                 {    15, uint256S("0x5d44b1fb8a25ea7dc813c4f21902ef7df2e49e3aaec1d5e6d651d2771a5fe77e")},
+                {  2901, uint256S("0x9b16bc12af5b0abea8cebe43914490c75d4a7e9818f5055a3c7cd58c931e6dc7")},
             }
         };
 
@@ -339,9 +339,9 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 4096 0000000000000004877fa2d36316398528de4f347df2f8a96f76613a298ce060
-            .nTime    = 1661705221,
-            .nTxCount = 63531852,
+            // Data from RPC: getchaintxstats 2901
+            .nTime    = 1682041498,
+            .nTxCount = 3500,
             .dTxRate  = 0.1079119341520164,
         };
     }
