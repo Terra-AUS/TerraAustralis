@@ -16,7 +16,7 @@ macOS comes with a built-in Terminal located in:
 ### 1. Xcode Command Line Tools
 
 The Xcode Command Line Tools are a collection of build tools for macOS.
-These tools must be installed in order to build AustraliaCash Core from source.
+These tools must be installed in order to build TerraAustralis Core from source.
 
 To install, run the following command from your terminal:
 
@@ -51,10 +51,10 @@ To install, run the following from your terminal:
 brew install automake libtool boost pkg-config libevent
 ```
 
-### 4. Clone AustraliaCash repository
+### 4. Clone TerraAustralis repository
 
 `git` should already be installed by default on your system.
-Now that all the required dependencies are installed, let's clone the AustraliaCash Core repository to a directory.
+Now that all the required dependencies are installed, let's clone the TerraAustralis Core repository to a directory.
 All build scripts and commands will run from this directory.
 
 ``` bash
@@ -88,7 +88,7 @@ brew install berkeley-db@4
 
 ###### Qt
 
-AustraliaCash Core includes a GUI built with the cross-platform Qt Framework.
+TerraAustralis Core includes a GUI built with the cross-platform Qt Framework.
 To compile the GUI, we need to install `qt@5`.
 Skip if you don't intend to use the GUI.
 
@@ -163,7 +163,7 @@ brew install python
 
 #### Deploy Dependencies
 
-You can deploy a `.dmg` containing the AustraliaCash Core application using `make deploy`.
+You can deploy a `.dmg` containing the TerraAustralis Core application using `make deploy`.
 This command depends on a couple of python packages, so it is required that you have `python` installed.
 
 Ensuring that `python` is installed, you can install the deploy dependencies by running the following commands in your terminal:
@@ -172,11 +172,11 @@ Ensuring that `python` is installed, you can install the deploy dependencies by 
 pip3 install ds_store mac_alias
 ```
 
-## Building AustraliaCash Core
+## Building TerraAustralis Core
 
 ### 1. Configuration
 
-There are many ways to configure AustraliaCash Core, here are a few common examples:
+There are many ways to configure TerraAustralis Core, here are a few common examples:
 
 ##### Wallet (BDB + SQlite) Support, No GUI:
 
@@ -221,7 +221,7 @@ Examine the output of the following command for a full list of configuration opt
 ### 2. Compile
 
 After configuration, you are ready to compile.
-Run the following in your terminal to compile AustraliaCash Core:
+Run the following in your terminal to compile TerraAustralis Core:
 
 ``` bash
 make        # use "-j N" here for N parallel jobs
@@ -236,9 +236,9 @@ You can also create a  `.dmg` containing the `.app` bundle by running the follow
 make deploy
 ```
 
-## Running AustraliaCash Core
+## Running TerraAustralis Core
 
-AustraliaCash Core should now be available at `./src/bitcoind`.
+TerraAustralis Core should now be available at `./src/bitcoind`.
 If you compiled support for the GUI, it should be available at `./src/qt/bitcoin-qt`.
 
 The first time you run `bitcoind` or `bitcoin-qt`, it will start downloading the blockchain.
@@ -247,23 +247,23 @@ This process could take many hours, or even days on slower than average systems.
 By default, blockchain and wallet data files will be stored in:
 
 ``` bash
-/Users/${USER}/Library/Application Support/AustraliaCash/
+/Users/${USER}/Library/Application Support/TerraAustralis/
 ```
 
 Before running, you may create an empty configuration file:
 
 ```shell
-mkdir -p "/Users/${USER}/Library/Application Support/AustraliaCash"
+mkdir -p "/Users/${USER}/Library/Application Support/TerraAustralis"
 
-touch "/Users/${USER}/Library/Application Support/AustraliaCash/bitcoin.conf"
+touch "/Users/${USER}/Library/Application Support/TerraAustralis/bitcoin.conf"
 
-chmod 600 "/Users/${USER}/Library/Application Support/AustraliaCash/bitcoin.conf"
+chmod 600 "/Users/${USER}/Library/Application Support/TerraAustralis/bitcoin.conf"
 ```
 
 You can monitor the download process by looking at the debug.log file:
 
 ```shell
-tail -f $HOME/Library/Application\ Support/AustraliaCash/debug.log
+tail -f $HOME/Library/Application\ Support/TerraAustralis/debug.log
 ```
 
 ## Other commands:

@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The AustraliaCash Core developers
+# Copyright (c) 2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Stress tests related to node initialization."""
 import os
 from pathlib import Path
 
-from test_framework.test_framework import AustraliaCashTestFramework, SkipTest
+from test_framework.test_framework import TerraAustralisTestFramework, SkipTest
 from test_framework.test_node import ErrorMatch
 from test_framework.util import assert_equal
 
 
-class InitStressTest(AustraliaCashTestFramework):
+class InitStressTest(TerraAustralisTestFramework):
     """
     Ensure that initialization can be interrupted at a number of points and not impair
     subsequent starts.

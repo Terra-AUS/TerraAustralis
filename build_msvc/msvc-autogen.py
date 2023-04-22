@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2016-2021 The AustraliaCash Core developers
+# Copyright (c) 2016-2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -70,7 +70,7 @@ def parse_config_into_btc_config():
     config_dict = dict(item.split(", ") for item in config_info)
     config_dict["PACKAGE_VERSION"] = f"\"{config_dict['CLIENT_VERSION_MAJOR']}.{config_dict['CLIENT_VERSION_MINOR']}.{config_dict['CLIENT_VERSION_BUILD']}\""
     version = config_dict["PACKAGE_VERSION"].strip('"')
-    config_dict["PACKAGE_STRING"] = f"\"AustraliaCash Core {version}\""
+    config_dict["PACKAGE_STRING"] = f"\"TerraAustralis Core {version}\""
 
     with open(os.path.join(SOURCE_DIR,'../build_msvc/bitcoin_config.h.in'), "r", encoding="utf8") as template_file:
         template = template_file.readlines()
@@ -91,7 +91,7 @@ def set_properties(vcxproj_filename, placeholder, content):
             vcxproj_file.write(vcxproj_in_file.read().replace(placeholder, content))
 
 def main():
-    parser = argparse.ArgumentParser(description='AustraliaCash-core msbuild configuration initialiser.')
+    parser = argparse.ArgumentParser(description='TerraAustralis-core msbuild configuration initialiser.')
     parser.add_argument('-toolset', nargs='?', default=DEFAULT_PLATFORM_TOOLSET,
         help='Optionally sets the msbuild platform toolset, e.g. v143 for Visual Studio 2022.'
          ' default is %s.'%DEFAULT_PLATFORM_TOOLSET)

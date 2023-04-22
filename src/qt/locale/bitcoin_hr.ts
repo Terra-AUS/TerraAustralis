@@ -220,7 +220,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>P&amp;otpišite poruku...</translation>
@@ -303,7 +303,7 @@
     </message>
     <message>
         <source>Send coins to a Australiacash address</source>
-        <translation>Slanje novca na australiacash adresu</translation>
+        <translation>Slanje novca na terraaustralis adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -355,11 +355,11 @@
     </message>
     <message>
         <source>Sign messages with your Australiacash addresses to prove you own them</source>
-        <translation>Poruku potpišemo s australiacash adresom, kako bi dokazali vlasništvo nad tom adresom</translation>
+        <translation>Poruku potpišemo s terraaustralis adresom, kako bi dokazali vlasništvo nad tom adresom</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Australiacash addresses</source>
-        <translation>Provjeravanje poruke, kao dokaz, da je potpisana navedenom australiacash adresom</translation>
+        <translation>Provjeravanje poruke, kao dokaz, da je potpisana navedenom terraaustralis adresom</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -378,8 +378,8 @@
         <translation>Traka kartica</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and australiacash: URIs)</source>
-        <translation>Zatraži uplatu (stvara QR kod i australiacash: URI adresu)</translation>
+        <source>Request payments (generates QR codes and terraaustralis: URIs)</source>
+        <translation>Zatraži uplatu (stvara QR kod i terraaustralis: URI adresu)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -390,8 +390,8 @@
         <translation>Prikaži popis korištenih adresa i oznaka za primanje novca</translation>
     </message>
     <message>
-        <source>Open a australiacash: URI or payment request</source>
-        <translation>Otvori australiacash: URI adresu ili zahtjev za uplatu</translation>
+        <source>Open a terraaustralis: URI or payment request</source>
+        <translation>Otvori terraaustralis: URI adresu ili zahtjev za uplatu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -591,7 +591,7 @@
     </message>
     <message>
         <source>The label associated with this address list entry</source>
-        <translation>Oznaka australiacash adrese</translation>
+        <translation>Oznaka terraaustralis adrese</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -619,7 +619,7 @@
     </message>
     <message>
         <source>The entered address "%1" is not a valid Australiacash address.</source>
-        <translation>Upisana adresa "%1" nije valjana australiacash adresa.</translation>
+        <translation>Upisana adresa "%1" nije valjana terraaustralis adresa.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -825,7 +825,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Izaberite željeni najmanji dio australiacasha koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
+        <translation>Izaberite željeni najmanji dio terraaustralisa koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
     </message>
     <message>
         <source>&amp;OK</source>

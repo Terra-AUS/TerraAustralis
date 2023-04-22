@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2015-2021 The AustraliaCash Core developers
+# Copyright (c) 2015-2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test p2p permission message.
@@ -18,14 +18,14 @@ from test_framework.script import (
     OP_TRUE,
 )
 from test_framework.test_node import ErrorMatch
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 from test_framework.util import (
     assert_equal,
     p2p_port,
 )
 
 
-class P2PPermissionsTests(AustraliaCashTestFramework):
+class P2PPermissionsTests(TerraAustralisTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.setup_clean_chain = True

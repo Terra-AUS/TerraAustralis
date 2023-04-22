@@ -126,7 +126,7 @@
     </message>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>Wallet:</source>
         <translation type="unfinished">Aningaasivik:</translation>
@@ -143,7 +143,7 @@
         <translation type="unfinished">Ammaruk aningaasivik</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to AustraliaCash network.</source>
+        <source>%n active connection(s) to TerraAustralis network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -153,7 +153,7 @@
     <message>
         <source>Amount: %1
 </source>
-        <translation type="unfinished">AustraliaCash amerlassusaa: %1
+        <translation type="unfinished">TerraAustralis amerlassusaa: %1
 </translation>
     </message>
     </context>

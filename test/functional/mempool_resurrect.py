@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2021 The AustraliaCash Core developers
+# Copyright (c) 2014-2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test resurrection of mined transactions when the blockchain is re-organized."""
 
 from test_framework.blocktools import COINBASE_MATURITY
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 from test_framework.util import assert_equal
 from test_framework.wallet import MiniWallet
 
 
-class MempoolCoinbaseTest(AustraliaCashTestFramework):
+class MempoolCoinbaseTest(TerraAustralisTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

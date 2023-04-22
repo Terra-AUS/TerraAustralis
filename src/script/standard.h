@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2021 The AustraliaCash Core developers
+// Copyright (c) 2009-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -179,7 +179,7 @@ TxoutType Solver(const CScript& scriptPubKey, std::vector<std::vector<unsigned c
 bool ExtractDestination(const CScript& scriptPubKey, CTxDestination& addressRet);
 
 /**
- * Generate a AustraliaCash scriptPubKey for the given CTxDestination. Returns a P2PKH
+ * Generate a TerraAustralis scriptPubKey for the given CTxDestination. Returns a P2PKH
  * script for a CKeyID destination, a P2SH script for a CScriptID, and an empty
  * script for CNoDestination.
  */

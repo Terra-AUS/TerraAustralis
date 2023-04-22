@@ -1,13 +1,13 @@
-# I2P support in AustraliaCash Core
+# I2P support in TerraAustralis Core
 
-It is possible to run AustraliaCash Core as an
+It is possible to run TerraAustralis Core as an
 [I2P (Invisible Internet Project)](https://en.wikipedia.org/wiki/I2P)
 service and connect to such services.
 
 This [glossary](https://geti2p.net/en/about/glossary) may be useful to get
 started with I2P terminology.
 
-## Run AustraliaCash Core with an I2P router (proxy)
+## Run TerraAustralis Core with an I2P router (proxy)
 
 A running I2P router (proxy) with [SAM](https://geti2p.net/en/docs/api/samv3)
 enabled is required. Options include:
@@ -24,7 +24,7 @@ enabled is required. Options include:
 Note the IP address and port the SAM proxy is listening to; usually, it is
 `127.0.0.1:7656`.
 
-Once an I2P router with SAM enabled is up and running, use the following AustraliaCash
+Once an I2P router with SAM enabled is up and running, use the following TerraAustralis
 Core configuration options:
 
 ```
@@ -47,10 +47,10 @@ In a typical situation, this suffices:
 bitcoind -i2psam=127.0.0.1:7656
 ```
 
-The first time AustraliaCash Core connects to the I2P router, if
+The first time TerraAustralis Core connects to the I2P router, if
 `-i2pacceptincoming=1`, then it will automatically generate a persistent I2P
 address and its corresponding private key. The private key will be saved in a
-file named `i2p_private_key` in the AustraliaCash Core data directory. The persistent
+file named `i2p_private_key` in the TerraAustralis Core data directory. The persistent
 I2P address is used for accepting incoming connections and for making outgoing
 connections if `-i2pacceptincoming=1`. If `-i2pacceptincoming=0` then only
 outbound I2P connections are made and a different transient I2P address is used
@@ -63,7 +63,7 @@ connection initiator. This is unlike the Tor network where the recipient does
 not know who is connecting to them and can't tell if two connections are from
 the same peer or not.
 
-If an I2P node is not accepting incoming connections, then AustraliaCash Core uses
+If an I2P node is not accepting incoming connections, then TerraAustralis Core uses
 random, one-time, transient I2P addresses for itself for outbound connections
 to make it harder to discriminate, fingerprint or analyze it based on its I2P
 address.
@@ -86,7 +86,7 @@ Make automatic outbound connections only to I2P addresses. Inbound and manual
 connections are not affected by this option. It can be specified multiple times
 to allow multiple networks, e.g. onlynet=onion, onlynet=i2p.
 
-I2P support was added to AustraliaCash Core in version 22.0 and there may be fewer I2P
+I2P support was added to TerraAustralis Core in version 22.0 and there may be fewer I2P
 peers than Tor or IP ones. Therefore, using I2P alone without other networks may
 make a node more susceptible to [Sybil
 attacks](https://en.bitcoin.it/wiki/Weaknesses#Sybil_attack). You can use
@@ -100,9 +100,9 @@ In general, a node can be run with both onion and I2P hidden services (or
 any/all of IPv4/IPv6/onion/I2P/CJDNS), which can provide a potential fallback if
 one of the networks has issues.
 
-## I2P-related information in AustraliaCash Core
+## I2P-related information in TerraAustralis Core
 
-There are several ways to see your I2P address in AustraliaCash Core if accepting
+There are several ways to see your I2P address in TerraAustralis Core if accepting
 incoming I2P connections (`-i2pacceptincoming`):
 - in the "Local addresses" output of CLI `-netinfo`
 - in the "localaddresses" output of RPC `getnetworkinfo`
@@ -116,20 +116,20 @@ RPC.
 
 ## Compatibility
 
-AustraliaCash Core uses the [SAM v3.1](https://geti2p.net/en/docs/api/samv3) protocol
+TerraAustralis Core uses the [SAM v3.1](https://geti2p.net/en/docs/api/samv3) protocol
 to connect to the I2P network. Any I2P router that supports it can be used.
 
-## Ports in I2P and AustraliaCash Core
+## Ports in I2P and TerraAustralis Core
 
-AustraliaCash Core uses the [SAM v3.1](https://geti2p.net/en/docs/api/samv3)
+TerraAustralis Core uses the [SAM v3.1](https://geti2p.net/en/docs/api/samv3)
 protocol. One particularity of SAM v3.1 is that it does not support ports,
 unlike newer versions of SAM (v3.2 and up) that do support them and default the
 port numbers to 0. From the point of view of peers that use newer versions of
 SAM or other protocols that support ports, a SAM v3.1 peer is connecting to them
 on port 0, from source port 0.
 
-To allow future upgrades to newer versions of SAM, AustraliaCash Core sets its
+To allow future upgrades to newer versions of SAM, TerraAustralis Core sets its
 listening port to 0 when listening for incoming I2P connections and advertises
 its own I2P address with port 0. Furthermore, it will not attempt to connect to
 I2P addresses with a non-zero port number because with SAM v3.1 the destination
-port (`TO_PORT`) is always set to 0 and is not in the control of AustraliaCash Core.
+port (`TO_PORT`) is always set to 0 and is not in the control of TerraAustralis Core.

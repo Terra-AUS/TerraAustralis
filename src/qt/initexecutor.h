@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2021 The AustraliaCash Core developers
+// Copyright (c) 2014-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,7 +16,7 @@ QT_BEGIN_NAMESPACE
 class QString;
 QT_END_NAMESPACE
 
-/** Class encapsulating AustraliaCash Core startup and shutdown.
+/** Class encapsulating TerraAustralis Core startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
 class InitExecutor : public QObject

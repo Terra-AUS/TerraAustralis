@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2016-2021 The AustraliaCash Core developers
+# Copyright (c) 2016-2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test label RPCs.
@@ -12,12 +12,12 @@ RPCs tested are:
 from collections import defaultdict
 
 from test_framework.blocktools import COINBASE_MATURITY
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error
 from test_framework.wallet_util import test_address
 
 
-class WalletLabelsTest(AustraliaCashTestFramework):
+class WalletLabelsTest(TerraAustralisTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -37,7 +37,7 @@ class WalletLabelsTest(AustraliaCashTestFramework):
         assert_equal(node.getbalance(), 100)
 
         # there should be 2 address groups
-        # each with 1 address with a balance of 50 AustraliaCashs
+        # each with 1 address with a balance of 50 TerraAustraliss
         address_groups = node.listaddressgroupings()
         assert_equal(len(address_groups), 2)
         # the addresses aren't linked now, but will be after we send to the
@@ -159,7 +159,7 @@ class WalletLabelsTest(AustraliaCashTestFramework):
                 ad = BECH32_INVALID[l]
                 assert_raises_rpc_error(
                     -5,
-                    "Address is not valid" if self.options.descriptors else "Invalid AustraliaCash address or script",
+                    "Address is not valid" if self.options.descriptors else "Invalid TerraAustralis address or script",
                     lambda: wallet_watch_only.importaddress(label=l, rescan=False, address=ad),
                 )
 

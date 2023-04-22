@@ -1,4 +1,4 @@
-// Copyright (c) 2021 The AustraliaCash Core developers
+// Copyright (c) 2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,10 +15,10 @@
 
 namespace init {
 namespace {
-class AustraliaCashQtInit : public interfaces::Init
+class TerraAustralisQtInit : public interfaces::Init
 {
 public:
-    AustraliaCashQtInit()
+    TerraAustralisQtInit()
     {
         m_node.args = &gArgs;
         m_node.init = this;
@@ -38,6 +38,6 @@ public:
 namespace interfaces {
 std::unique_ptr<Init> MakeGuiInit(int argc, char* argv[])
 {
-    return std::make_unique<init::AustraliaCashQtInit>();
+    return std::make_unique<init::TerraAustralisQtInit>();
 }
 } // namespace interfaces

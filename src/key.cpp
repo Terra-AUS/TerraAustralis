@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2021 The AustraliaCash Core developers
+// Copyright (c) 2009-2021 The TerraAustralis Core developers
 // Copyright (c) 2017 The Zcash developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -243,7 +243,7 @@ bool CKey::VerifyPubKey(const CPubKey& pubkey) const {
         return false;
     }
     unsigned char rnd[8];
-    std::string str = "AustraliaCash key verification\n";
+    std::string str = "TerraAustralis key verification\n";
     GetRandBytes(rnd);
     uint256 hash;
     CHash256().Write(MakeUCharSpan(str)).Write(rnd).Finalize(hash);

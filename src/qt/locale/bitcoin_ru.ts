@@ -188,7 +188,7 @@
     </message>
 </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Подписать &amp;сообщение...</translation>

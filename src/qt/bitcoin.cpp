@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -97,9 +97,9 @@ static void RegisterMetaTypes()
     qRegisterMetaType<interfaces::BlockAndHeaderTipInfo>("interfaces::BlockAndHeaderTipInfo");
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-    qRegisterMetaTypeStreamOperators<AustraliaCashUnit>("AustraliaCashUnit");
+    qRegisterMetaTypeStreamOperators<TerraAustralisUnit>("TerraAustralisUnit");
 #else
-    qRegisterMetaType<AustraliaCashUnit>("AustraliaCashUnit");
+    qRegisterMetaType<TerraAustralisUnit>("TerraAustralisUnit");
 #endif
 }
 
@@ -228,7 +228,7 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
 static int qt_argc = 1;
 static const char* qt_argv = "bitcoin-qt";
 
-AustraliaCashApplication::AustraliaCashApplication():
+TerraAustralisApplication::TerraAustralisApplication():
     QApplication(qt_argc, const_cast<char **>(&qt_argv)),
     optionsModel(nullptr),
     clientModel(nullptr),
@@ -242,20 +242,20 @@ AustraliaCashApplication::AustraliaCashApplication():
     setQuitOnLastWindowClosed(false);
 }
 
-void AustraliaCashApplication::setupPlatformStyle()
+void TerraAustralisApplication::setupPlatformStyle()
 {
     // UI per-platform customization
-    // This must be done inside the AustraliaCashApplication constructor, or after it, because
+    // This must be done inside the TerraAustralisApplication constructor, or after it, because
     // PlatformStyle::instantiate requires a QApplication
     std::string platformName;
-    platformName = gArgs.GetArg("-uiplatform", AustraliaCashGUI::DEFAULT_UIPLATFORM);
+    platformName = gArgs.GetArg("-uiplatform", TerraAustralisGUI::DEFAULT_UIPLATFORM);
     platformStyle = PlatformStyle::instantiate(QString::fromStdString(platformName));
     if (!platformStyle) // Fall back to "other" if specified name not found
         platformStyle = PlatformStyle::instantiate("other");
     assert(platformStyle);
 }
 
-AustraliaCashApplication::~AustraliaCashApplication()
+TerraAustralisApplication::~TerraAustralisApplication()
 {
     m_executor.reset();
 
@@ -266,13 +266,13 @@ AustraliaCashApplication::~AustraliaCashApplication()
 }
 
 #ifdef ENABLE_WALLET
-void AustraliaCashApplication::createPaymentServer()
+void TerraAustralisApplication::createPaymentServer()
 {
     paymentServer = new PaymentServer(this);
 }
 #endif
 
-bool AustraliaCashApplication::createOptionsModel(bool resetSettings)
+bool TerraAustralisApplication::createOptionsModel(bool resetSettings)
 {
     optionsModel = new OptionsModel(node(), this);
     if (resetSettings) {
@@ -294,10 +294,10 @@ bool AustraliaCashApplication::createOptionsModel(bool resetSettings)
     return true;
 }
 
-void AustraliaCashApplication::createWindow(const NetworkStyle *networkStyle)
+void TerraAustralisApplication::createWindow(const NetworkStyle *networkStyle)
 {
-    window = new AustraliaCashGUI(node(), platformStyle, networkStyle, nullptr);
-    connect(window, &AustraliaCashGUI::quitRequested, this, &AustraliaCashApplication::requestShutdown);
+    window = new TerraAustralisGUI(node(), platformStyle, networkStyle, nullptr);
+    connect(window, &TerraAustralisGUI::quitRequested, this, &TerraAustralisApplication::requestShutdown);
 
     pollShutdownTimer = new QTimer(window);
     connect(pollShutdownTimer, &QTimer::timeout, [this]{
@@ -307,45 +307,45 @@ void AustraliaCashApplication::createWindow(const NetworkStyle *networkStyle)
     });
 }
 
-void AustraliaCashApplication::createSplashScreen(const NetworkStyle *networkStyle)
+void TerraAustralisApplication::createSplashScreen(const NetworkStyle *networkStyle)
 {
     assert(!m_splash);
     m_splash = new SplashScreen(networkStyle);
     // We don't hold a direct pointer to the splash screen after creation, but the splash
     // screen will take care of deleting itself when finish() happens.
     m_splash->show();
-    connect(this, &AustraliaCashApplication::splashFinished, m_splash, &SplashScreen::finish);
-    connect(this, &AustraliaCashApplication::requestedShutdown, m_splash, &QWidget::close);
+    connect(this, &TerraAustralisApplication::splashFinished, m_splash, &SplashScreen::finish);
+    connect(this, &TerraAustralisApplication::requestedShutdown, m_splash, &QWidget::close);
 }
 
-void AustraliaCashApplication::createNode(interfaces::Init& init)
+void TerraAustralisApplication::createNode(interfaces::Init& init)
 {
     assert(!m_node);
     m_node = init.makeNode();
     if (m_splash) m_splash->setNode(*m_node);
 }
 
-bool AustraliaCashApplication::baseInitialize()
+bool TerraAustralisApplication::baseInitialize()
 {
     return node().baseInitialize();
 }
 
-void AustraliaCashApplication::startThread()
+void TerraAustralisApplication::startThread()
 {
     assert(!m_executor);
     m_executor.emplace(node());
 
     /*  communication to and from thread */
-    connect(&m_executor.value(), &InitExecutor::initializeResult, this, &AustraliaCashApplication::initializeResult);
+    connect(&m_executor.value(), &InitExecutor::initializeResult, this, &TerraAustralisApplication::initializeResult);
     connect(&m_executor.value(), &InitExecutor::shutdownResult, this, [] {
         QCoreApplication::exit(0);
     });
-    connect(&m_executor.value(), &InitExecutor::runawayException, this, &AustraliaCashApplication::handleRunawayException);
-    connect(this, &AustraliaCashApplication::requestedInitialize, &m_executor.value(), &InitExecutor::initialize);
-    connect(this, &AustraliaCashApplication::requestedShutdown, &m_executor.value(), &InitExecutor::shutdown);
+    connect(&m_executor.value(), &InitExecutor::runawayException, this, &TerraAustralisApplication::handleRunawayException);
+    connect(this, &TerraAustralisApplication::requestedInitialize, &m_executor.value(), &InitExecutor::initialize);
+    connect(this, &TerraAustralisApplication::requestedShutdown, &m_executor.value(), &InitExecutor::shutdown);
 }
 
-void AustraliaCashApplication::parameterSetup()
+void TerraAustralisApplication::parameterSetup()
 {
     // Default printtoconsole to false for the GUI. GUI programs should not
     // print to the console unnecessarily.
@@ -355,19 +355,19 @@ void AustraliaCashApplication::parameterSetup()
     InitParameterInteraction(gArgs);
 }
 
-void AustraliaCashApplication::InitPruneSetting(int64_t prune_MiB)
+void TerraAustralisApplication::InitPruneSetting(int64_t prune_MiB)
 {
     optionsModel->SetPruneTargetGB(PruneMiBtoGB(prune_MiB));
 }
 
-void AustraliaCashApplication::requestInitialize()
+void TerraAustralisApplication::requestInitialize()
 {
     qDebug() << __func__ << ": Requesting initialize";
     startThread();
     Q_EMIT requestedInitialize();
 }
 
-void AustraliaCashApplication::requestShutdown()
+void TerraAustralisApplication::requestShutdown()
 {
     for (const auto w : QGuiApplication::topLevelWindows()) {
         w->hide();
@@ -409,7 +409,7 @@ void AustraliaCashApplication::requestShutdown()
     Q_EMIT requestedShutdown();
 }
 
-void AustraliaCashApplication::initializeResult(bool success, interfaces::BlockAndHeaderTipInfo tip_info)
+void TerraAustralisApplication::initializeResult(bool success, interfaces::BlockAndHeaderTipInfo tip_info)
 {
     qDebug() << __func__ << ": Initialization result: " << success;
     // Set exit result.
@@ -445,8 +445,8 @@ void AustraliaCashApplication::initializeResult(bool success, interfaces::BlockA
         // Now that initialization/startup is done, process any command-line
         // bitcoin: URIs or payment requests:
         if (paymentServer) {
-            connect(paymentServer, &PaymentServer::receivedPaymentRequest, window, &AustraliaCashGUI::handlePaymentRequest);
-            connect(window, &AustraliaCashGUI::receivedURI, paymentServer, &PaymentServer::handleURIOrFile);
+            connect(paymentServer, &PaymentServer::receivedPaymentRequest, window, &TerraAustralisGUI::handlePaymentRequest);
+            connect(window, &TerraAustralisGUI::receivedURI, paymentServer, &PaymentServer::handleURIOrFile);
             connect(paymentServer, &PaymentServer::message, [this](const QString& title, const QString& message, unsigned int style) {
                 window->message(title, message, style);
             });
@@ -460,7 +460,7 @@ void AustraliaCashApplication::initializeResult(bool success, interfaces::BlockA
     }
 }
 
-void AustraliaCashApplication::handleRunawayException(const QString &message)
+void TerraAustralisApplication::handleRunawayException(const QString &message)
 {
     QMessageBox::critical(
         nullptr, tr("Runaway exception"),
@@ -469,7 +469,7 @@ void AustraliaCashApplication::handleRunawayException(const QString &message)
     ::exit(EXIT_FAILURE);
 }
 
-void AustraliaCashApplication::handleNonFatalException(const QString& message)
+void TerraAustralisApplication::handleNonFatalException(const QString& message)
 {
     assert(QThread::currentThread() == thread());
     QMessageBox::warning(
@@ -479,7 +479,7 @@ void AustraliaCashApplication::handleNonFatalException(const QString& message)
         QLatin1String("<br><br>") + GUIUtil::MakeHtmlLink(message, PACKAGE_BUGREPORT));
 }
 
-WId AustraliaCashApplication::getMainWinId() const
+WId TerraAustralisApplication::getMainWinId() const
 {
     if (!window)
         return 0;
@@ -487,7 +487,7 @@ WId AustraliaCashApplication::getMainWinId() const
     return window->winId();
 }
 
-bool AustraliaCashApplication::event(QEvent* e)
+bool TerraAustralisApplication::event(QEvent* e)
 {
     if (e->type() == QEvent::Quit) {
         requestShutdown();
@@ -504,7 +504,7 @@ static void SetupUIArgs(ArgsManager& argsman)
     argsman.AddArg("-min", "Start minimized", ArgsManager::ALLOW_ANY, OptionsCategory::GUI);
     argsman.AddArg("-resetguisettings", "Reset all settings changed in the GUI", ArgsManager::ALLOW_ANY, OptionsCategory::GUI);
     argsman.AddArg("-splash", strprintf("Show splash screen on startup (default: %u)", DEFAULT_SPLASHSCREEN), ArgsManager::ALLOW_ANY, OptionsCategory::GUI);
-    argsman.AddArg("-uiplatform", strprintf("Select platform to customize UI for (one of windows, macosx, other; default: %s)", AustraliaCashGUI::DEFAULT_UIPLATFORM), ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::GUI);
+    argsman.AddArg("-uiplatform", strprintf("Select platform to customize UI for (one of windows, macosx, other; default: %s)", TerraAustralisGUI::DEFAULT_UIPLATFORM), ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::GUI);
 }
 
 int GuiMain(int argc, char* argv[])
@@ -542,7 +542,7 @@ int GuiMain(int argc, char* argv[])
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
 #endif
 
-    AustraliaCashApplication app;
+    TerraAustralisApplication app;
     GUIUtil::LoadFont(QStringLiteral(":/fonts/monospace"));
 
     /// 2. Parse command-line options. We do this after qt in order to show an error if there are problems parsing these

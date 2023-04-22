@@ -196,7 +196,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>ხელ&amp;მოწერა</translation>
@@ -362,8 +362,8 @@
         <translation>ბარათების პანელი</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and australiacash: URIs)</source>
-        <translation>გადახდის მოთხოვნა (შეიქმნება QR-კოდები და australiacash: ბმულები)</translation>
+        <source>Request payments (generates QR codes and terraaustralis: URIs)</source>
+        <translation>გადახდის მოთხოვნა (შეიქმნება QR-კოდები და terraaustralis: ბმულები)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -374,8 +374,8 @@
         <translation>გამოყენებული მიღების მისამართებისა და ნიშნულების სიის ჩვენება</translation>
     </message>
     <message>
-        <source>Open a australiacash: URI or payment request</source>
-        <translation>australiacash: URI-ის ან გადახდის მოთხოვნის გახსნა</translation>
+        <source>Open a terraaustralis: URI or payment request</source>
+        <translation>terraaustralis: URI-ის ან გადახდის მოთხოვნის გახსნა</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1308,7 +1308,7 @@
         <translation>შეიყვანეთ ამ მისამართის ნიშნული გამოყენებული მისამართების სიაში დასამატებლად</translation>
     </message>
     <message>
-        <source>A message that was attached to the australiacash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Australiacash network.</source>
+        <source>A message that was attached to the terraaustralis: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Australiacash network.</source>
         <translation>მესიჯი, რომელიც თან ერთვის მონეტებს:  URI, რომელიც შეინახება ტრანსაქციასთან ერთად თქვენთვის. შენიშვნა: მესიჯი არ გაყვება გადახდას ბითქოინის ქსელში.</translation>
     </message>
     <message>

@@ -1,4 +1,4 @@
-// Copyright (c) 2018-2021 The AustraliaCash Core developers
+// Copyright (c) 2018-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -21,7 +21,7 @@ private:
     //! The command which handles interaction with the external signer.
     std::string m_command;
 
-    //! AustraliaCash mainnet, testnet, etc
+    //! TerraAustralis mainnet, testnet, etc
     std::string m_chain;
 
     const std::string NetworkArg() const;

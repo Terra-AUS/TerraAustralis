@@ -6,8 +6,8 @@ define(_CLIENT_VERSION_RC, 3)
 define(_CLIENT_VERSION_IS_RELEASE, false)
 define(_COPYRIGHT_YEAR, 2023)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[AustraliaCash Core]])
-AC_INIT([AustraliaCash Core],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_BUILD)m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/AustraliaCash/AustraliaCash-Core/issues],[australiacash],[https://australiacash.org/])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[TerraAustralis Core]])
+AC_INIT([TerraAustralis Core],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_BUILD)m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/TerraAustralis/TerraAustralis-Core/issues],[terraaustralis],[https://terraaustralis.org/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
@@ -29,17 +29,17 @@ if test -n "$PKG_CONFIG_LIBDIR"; then
   PKG_CONFIG="env PKG_CONFIG_LIBDIR=$PKG_CONFIG_LIBDIR $PKG_CONFIG"
 fi
 
-BITCOIN_DAEMON_NAME=australiacashd
-BITCOIN_GUI_NAME=australiacash-qt
-BITCOIN_TEST_NAME=test_australiacash
-BITCOIN_CLI_NAME=australiacash-cli
-BITCOIN_TX_NAME=australiacash-tx
-BITCOIN_UTIL_NAME=australiacash-util
-BITCOIN_CHAINSTATE_NAME=australiacash-chainstate
-BITCOIN_WALLET_TOOL_NAME=australiacash-wallet
+BITCOIN_DAEMON_NAME=terraaustralisd
+BITCOIN_GUI_NAME=terraaustralis-qt
+BITCOIN_TEST_NAME=test_terraaustralis
+BITCOIN_CLI_NAME=terraaustralis-cli
+BITCOIN_TX_NAME=terraaustralis-tx
+BITCOIN_UTIL_NAME=terraaustralis-util
+BITCOIN_CHAINSTATE_NAME=terraaustralis-chainstate
+BITCOIN_WALLET_TOOL_NAME=terraaustralis-wallet
 dnl Multi Process
-BITCOIN_MP_NODE_NAME=australiacash-node
-BITCOIN_MP_GUI_NAME=australiacash-gui
+BITCOIN_MP_NODE_NAME=terraaustralis-node
+BITCOIN_MP_GUI_NAME=terraaustralis-gui
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 dnl This is also the default as-of libtool 2.4.7
@@ -239,7 +239,7 @@ AC_ARG_ENABLE([ccache],
 
 dnl Suppress warnings from external headers (e.g. Boost, Qt).
 dnl May be useful if warnings from external headers clutter the build output
-dnl too much, so that it becomes difficult to spot AustraliaCash Core warnings
+dnl too much, so that it becomes difficult to spot TerraAustralis Core warnings
 dnl or if they cause a build failure with --enable-werror.
 AC_ARG_ENABLE([suppress-external-warnings],
   [AS_HELP_STRING([--enable-suppress-external-warnings],
@@ -634,37 +634,37 @@ CORE_CPPFLAGS="$CORE_CPPFLAGS -DHAVE_BUILD_INFO"
 
 AC_ARG_WITH([utils],
   [AS_HELP_STRING([--with-utils],
-  [build australiacash-cli australiacash-tx australiacash-util australiacash-wallet (default=yes)])],
+  [build terraaustralis-cli terraaustralis-tx terraaustralis-util terraaustralis-wallet (default=yes)])],
   [build_bitcoin_utils=$withval],
   [build_bitcoin_utils=yes])
 
 AC_ARG_ENABLE([util-cli],
   [AS_HELP_STRING([--enable-util-cli],
-  [build australiacash-cli])],
+  [build terraaustralis-cli])],
   [build_bitcoin_cli=$enableval],
   [build_bitcoin_cli=$build_bitcoin_utils])
 
 AC_ARG_ENABLE([util-tx],
   [AS_HELP_STRING([--enable-util-tx],
-  [build australiacash-tx])],
+  [build terraaustralis-tx])],
   [build_bitcoin_tx=$enableval],
   [build_bitcoin_tx=$build_bitcoin_utils])
 
 AC_ARG_ENABLE([util-wallet],
   [AS_HELP_STRING([--enable-util-wallet],
-  [build australiacash-wallet])],
+  [build terraaustralis-wallet])],
   [build_bitcoin_wallet=$enableval],
   [build_bitcoin_wallet=$build_bitcoin_utils])
 
 AC_ARG_ENABLE([util-util],
   [AS_HELP_STRING([--enable-util-util],
-  [build australiacash-util])],
+  [build terraaustralis-util])],
   [build_bitcoin_util=$enableval],
   [build_bitcoin_util=$build_bitcoin_utils])
 
 AC_ARG_ENABLE([experimental-util-chainstate],
   [AS_HELP_STRING([--enable-experimental-util-chainstate],
-  [build experimental australiacash-chainstate executable (default=no)])],
+  [build experimental terraaustralis-chainstate executable (default=no)])],
   [build_bitcoin_chainstate=$enableval],
   [build_bitcoin_chainstate=no])
 
@@ -676,13 +676,13 @@ AC_ARG_WITH([libs],
 
 AC_ARG_WITH([experimental-kernel-lib],
   [AS_HELP_STRING([--with-experimental-kernel-lib],
-  [build experimental australiacashkernel library (default is to build if we're building libraries and the experimental build-chainstate executable)])],
+  [build experimental terraaustraliskernel library (default is to build if we're building libraries and the experimental build-chainstate executable)])],
   [build_experimental_kernel_lib=$withval],
   [build_experimental_kernel_lib=auto])
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
-  [build australiacashd daemon (default=yes)])],
+  [build terraaustralisd daemon (default=yes)])],
   [build_bitcoind=$withval],
   [build_bitcoind=yes])
 

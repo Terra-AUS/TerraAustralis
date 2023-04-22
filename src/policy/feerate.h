@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2021 The AustraliaCash Core developers
+// Copyright (c) 2009-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,7 +14,7 @@
 #include <string>
 #include <type_traits>
 
-const std::string CURRENCY_UNIT = "AUS"; // One formatted unit
+const std::string CURRENCY_UNIT = "TAUS"; // One formatted unit
 const std::string CURRENCY_ATOM = "ace"; // One indivisible minimum value unit
 
 /* Used to determine type of fee estimation requested */

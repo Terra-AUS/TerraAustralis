@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-# Copyright (c) 2015-2020 The AustraliaCash Core developers
+# Copyright (c) 2015-2020 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test multiple RPC users."""
 
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 from test_framework.util import (
     assert_equal,
     get_datadir_path,
@@ -33,7 +33,7 @@ def call_with_auth(node, user, password):
     return resp
 
 
-class HTTPBasicsTest(AustraliaCashTestFramework):
+class HTTPBasicsTest(TerraAustralisTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.supports_cli = False

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2017-2021 The AustraliaCash Core developers
+# Copyright (c) 2017-2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test external signer.
@@ -10,14 +10,14 @@ See also rpc_signer.py for tests without wallet context.
 import os
 import platform
 
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
 
 
-class WalletSignerTest(AustraliaCashTestFramework):
+class WalletSignerTest(TerraAustralisTestFramework):
     def mock_signer_path(self):
         path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'mocks', 'signer.py')
         if platform.system() == "Windows":

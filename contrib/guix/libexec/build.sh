@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright (c) 2019-2021 The AustraliaCash Core developers
+# Copyright (c) 2019-2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 export LC_ALL=C
@@ -274,7 +274,7 @@ mkdir -p "$DISTSRC"
 
     sed -i.old 's/-lstdc++ //g' config.status libtool
 
-    # Build AustraliaCash Core
+    # Build TerraAustralis Core
     make --jobs="$JOBS" ${V:+V=1}
 
     # Check that symbol/security checks tools are sane.
@@ -293,12 +293,12 @@ mkdir -p "$DISTSRC"
             ;;
     esac
 
-    # Setup the directory where our AustraliaCash Core build for HOST will be
+    # Setup the directory where our TerraAustralis Core build for HOST will be
     # installed. This directory will also later serve as the input for our
     # binary tarballs.
     INSTALLPATH="${PWD}/installed/${DISTNAME}"
     mkdir -p "${INSTALLPATH}"
-    # Install built AustraliaCash Core to $INSTALLPATH
+    # Install built TerraAustralis Core to $INSTALLPATH
     case "$HOST" in
         *darwin*)
             make install-strip DESTDIR="${INSTALLPATH}" ${V:+V=1}

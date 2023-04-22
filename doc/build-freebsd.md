@@ -16,8 +16,8 @@ pkg install autoconf automake boost-libs git gmake libevent libtool pkgconf
 
 See [dependencies.md](dependencies.md) for a complete overview.
 
-### 2. Clone AustraliaCash Repo
-Now that `git` and all the required dependencies are installed, let's clone the AustraliaCash Core repository to a directory. All build scripts and commands will run from this directory.
+### 2. Clone TerraAustralis Repo
+Now that `git` and all the required dependencies are installed, let's clone the TerraAustralis Core repository to a directory. All build scripts and commands will run from this directory.
 ``` bash
 git clone https://github.com/bitcoin/bitcoin.git
 ```
@@ -47,7 +47,7 @@ pkg install db5
 #### GUI Dependencies
 ###### Qt5
 
-AustraliaCash Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install `qt5`. Skip if you don't intend to use the GUI.
+TerraAustralis Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install `qt5`. Skip if you don't intend to use the GUI.
 ```bash
 pkg install qt5
 ```
@@ -62,7 +62,7 @@ pkg install libqrencode
 #### Notifications
 ###### ZeroMQ
 
-AustraliaCash Core can provide notifications via ZeroMQ. If the package is installed, support will be compiled in.
+TerraAustralis Core can provide notifications via ZeroMQ. If the package is installed, support will be compiled in.
 ```bash
 pkg install libzmq4
 ```
@@ -76,11 +76,11 @@ pkg install python3
 ```
 ---
 
-## Building AustraliaCash Core
+## Building TerraAustralis Core
 
 ### 1. Configuration
 
-There are many ways to configure AustraliaCash Core, here are a few common examples:
+There are many ways to configure TerraAustralis Core, here are a few common examples:
 
 ##### Descriptor Wallet and GUI:
 This explicitly enables the GUI and disables legacy wallet support, assuming `sqlite` and `qt` are installed.

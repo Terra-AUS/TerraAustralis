@@ -91,7 +91,7 @@
     </message>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
         <translation type="unfinished">
@@ -119,7 +119,7 @@
         <translation type="unfinished">Ainm Wallet</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to AustraliaCash network.</source>
+        <source>%n active connection(s) to TerraAustralis network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />

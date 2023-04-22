@@ -1,5 +1,5 @@
 # Linearize
-Construct a linear, no-fork, best version of the AustraliaCash blockchain.
+Construct a linear, no-fork, best version of the TerraAustralis blockchain.
 
 ## Step 1: Download hash list
 

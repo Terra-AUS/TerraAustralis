@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2021 The AustraliaCash Core developers
+// Copyright (c) 2012-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,7 +16,7 @@
  * for both bitcoind and bitcoin-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("AustraliaCashCoinCore");
+const std::string CLIENT_NAME("TerraAustralisCore");
 
 
 #ifdef HAVE_BUILD_INFO
@@ -83,9 +83,9 @@ std::string CopyrightHolders(const std::string& strPrefix)
     const auto copyright_devs = strprintf(_(COPYRIGHT_HOLDERS).translated, COPYRIGHT_HOLDERS_SUBSTITUTION);
     std::string strCopyrightHolders = strPrefix + copyright_devs;
 
-    // Make sure AustraliaCash Core copyright is not removed by accident
-    if (copyright_devs.find("AustraliaCash Core") == std::string::npos) {
-        strCopyrightHolders += "\n" + strPrefix + "The AustraliaCash Core developers";
+    // Make sure TerraAustralis Core copyright is not removed by accident
+    if (copyright_devs.find("TerraAustralis Core") == std::string::npos) {
+        strCopyrightHolders += "\n" + strPrefix + "The TerraAustralis Core developers";
     }
     return strCopyrightHolders;
 }

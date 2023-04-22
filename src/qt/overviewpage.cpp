@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -93,7 +93,7 @@ public:
             foreground = option.palette.color(QPalette::Text);
         }
         painter->setPen(foreground);
-        QString amountText = AustraliaCashUnits::formatWithUnit(unit, amount, true, AustraliaCashUnits::SeparatorStyle::ALWAYS);
+        QString amountText = TerraAustralisUnits::formatWithUnit(unit, amount, true, TerraAustralisUnits::SeparatorStyle::ALWAYS);
         if(!confirmed)
         {
             amountText = QString("[") + amountText + QString("]");
@@ -124,7 +124,7 @@ public:
         return {DECORATION_SIZE + 8 + minimum_text_width, DECORATION_SIZE};
     }
 
-    AustraliaCashUnit unit{AustraliaCashUnit::BTC};
+    TerraAustralisUnit unit{TerraAustralisUnit::BTC};
 
 Q_SIGNALS:
     //! An intermediate signal for emitting from the `paint() const` member function.
@@ -195,28 +195,28 @@ OverviewPage::~OverviewPage()
 
 void OverviewPage::setBalance(const interfaces::WalletBalances& balances)
 {
-    AustraliaCashUnit unit = walletModel->getOptionsModel()->getDisplayUnit();
+    TerraAustralisUnit unit = walletModel->getOptionsModel()->getDisplayUnit();
     if (walletModel->wallet().isLegacy()) {
         if (walletModel->wallet().privateKeysDisabled()) {
-            ui->labelBalance->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.watch_only_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelUnconfirmed->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.unconfirmed_watch_only_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelImmature->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.immature_watch_only_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelTotal->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.watch_only_balance + balances.unconfirmed_watch_only_balance + balances.immature_watch_only_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelBalance->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.watch_only_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelUnconfirmed->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.unconfirmed_watch_only_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelImmature->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.immature_watch_only_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelTotal->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.watch_only_balance + balances.unconfirmed_watch_only_balance + balances.immature_watch_only_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
         } else {
-            ui->labelBalance->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelUnconfirmed->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.unconfirmed_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelImmature->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.immature_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelTotal->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.balance + balances.unconfirmed_balance + balances.immature_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelWatchAvailable->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.watch_only_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelWatchPending->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.unconfirmed_watch_only_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelWatchImmature->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.immature_watch_only_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-            ui->labelWatchTotal->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.watch_only_balance + balances.unconfirmed_watch_only_balance + balances.immature_watch_only_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelBalance->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelUnconfirmed->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.unconfirmed_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelImmature->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.immature_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelTotal->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.balance + balances.unconfirmed_balance + balances.immature_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelWatchAvailable->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.watch_only_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelWatchPending->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.unconfirmed_watch_only_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelWatchImmature->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.immature_watch_only_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+            ui->labelWatchTotal->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.watch_only_balance + balances.unconfirmed_watch_only_balance + balances.immature_watch_only_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
         }
     } else {
-        ui->labelBalance->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-        ui->labelUnconfirmed->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.unconfirmed_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-        ui->labelImmature->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.immature_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
-        ui->labelTotal->setText(AustraliaCashUnits::formatWithPrivacy(unit, balances.balance + balances.unconfirmed_balance + balances.immature_balance, AustraliaCashUnits::SeparatorStyle::ALWAYS, m_privacy));
+        ui->labelBalance->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+        ui->labelUnconfirmed->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.unconfirmed_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+        ui->labelImmature->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.immature_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
+        ui->labelTotal->setText(TerraAustralisUnits::formatWithPrivacy(unit, balances.balance + balances.unconfirmed_balance + balances.immature_balance, TerraAustralisUnits::SeparatorStyle::ALWAYS, m_privacy));
     }
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
     // for the non-mining users

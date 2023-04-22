@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2016-2021 The AustraliaCash Core developers
+# Copyright (c) 2016-2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test compact blocks (BIP 152)."""
@@ -55,7 +55,7 @@ from test_framework.script import (
     OP_DROP,
     OP_TRUE,
 )
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 from test_framework.util import (
     assert_equal,
     softfork_active,
@@ -137,7 +137,7 @@ class TestP2PConn(P2PInterface):
         self.send_message(message)
         self.wait_for_disconnect(timeout)
 
-class CompactBlocksTest(AustraliaCashTestFramework):
+class CompactBlocksTest(TerraAustralisTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

@@ -1,4 +1,4 @@
-// Copyright (c) 2015-2021 The AustraliaCash Core developers
+// Copyright (c) 2015-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -74,7 +74,7 @@ uint256 SendCoins(CWallet& wallet, SendCoinsDialog& sendCoinsDialog, const CTxDe
     QVBoxLayout* entries = sendCoinsDialog.findChild<QVBoxLayout*>("entries");
     SendCoinsEntry* entry = qobject_cast<SendCoinsEntry*>(entries->itemAt(0)->widget());
     entry->findChild<QValidatedLineEdit*>("payTo")->setText(QString::fromStdString(EncodeDestination(address)));
-    entry->findChild<AustraliaCashAmountField*>("payAmount")->setValue(amount);
+    entry->findChild<TerraAustralisAmountField*>("payAmount")->setValue(amount);
     sendCoinsDialog.findChild<QFrame*>("frameFee")
         ->findChild<QFrame*>("frameFeeSelection")
         ->findChild<QCheckBox*>("optInRBF")
@@ -131,8 +131,8 @@ void BumpFee(TransactionView& view, const uint256& txid, bool expectDisabled, st
 
 void CompareBalance(WalletModel& walletModel, CAmount expected_balance, QLabel* balance_label_to_check)
 {
-    AustraliaCashUnit unit = walletModel.getOptionsModel()->getDisplayUnit();
-    QString balanceComparison = AustraliaCashUnits::formatWithUnit(unit, expected_balance, false, AustraliaCashUnits::SeparatorStyle::ALWAYS);
+    TerraAustralisUnit unit = walletModel.getOptionsModel()->getDisplayUnit();
+    QString balanceComparison = TerraAustralisUnits::formatWithUnit(unit, expected_balance, false, TerraAustralisUnits::SeparatorStyle::ALWAYS);
     QCOMPARE(balance_label_to_check->text().trimmed(), balanceComparison);
 }
 
@@ -238,7 +238,7 @@ void TestGUI(interfaces::Node& node)
     labelInput->setText("TEST_LABEL_1");
 
     // Amount input
-    AustraliaCashAmountField* amountInput = receiveCoinsDialog.findChild<AustraliaCashAmountField*>("reqAmount");
+    TerraAustralisAmountField* amountInput = receiveCoinsDialog.findChild<TerraAustralisAmountField*>("reqAmount");
     amountInput->setValue(1);
 
     // Message input

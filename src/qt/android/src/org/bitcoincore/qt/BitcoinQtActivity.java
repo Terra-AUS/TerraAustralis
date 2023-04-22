@@ -8,7 +8,7 @@ import org.qtproject.qt5.android.bindings.QtActivity;
 
 import java.io.File;
 
-public class AustraliaCashQtActivity extends QtActivity
+public class TerraAustralisQtActivity extends QtActivity
 {
     @Override
     public void onCreate(Bundle savedInstanceState)

@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -63,10 +63,10 @@ class ClickableProgressBar;
 }
 
 /**
-  AustraliaCash GUI main class. This class represents the main window of the AustraliaCash UI. It communicates with both the client and
+  TerraAustralis GUI main class. This class represents the main window of the TerraAustralis UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
 */
-class AustraliaCashGUI : public QMainWindow
+class TerraAustralisGUI : public QMainWindow
 {
     Q_OBJECT
 
@@ -77,8 +77,8 @@ public:
 
     static const std::string DEFAULT_UIPLATFORM;
 
-    explicit AustraliaCashGUI(interfaces::Node& node, const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent = nullptr);
-    ~AustraliaCashGUI();
+    explicit TerraAustralisGUI(interfaces::Node& node, const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent = nullptr);
+    ~TerraAustralisGUI();
 
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
@@ -273,7 +273,7 @@ public Q_SLOTS:
     bool handlePaymentRequest(const SendCoinsRecipient& recipient);
 
     /** Show incoming transaction notification for new transactions. */
-    void incomingTransaction(const QString& date, AustraliaCashUnit unit, const CAmount& amount, const QString& type, const QString& address, const QString& label, const QString& walletName);
+    void incomingTransaction(const QString& date, TerraAustralisUnit unit, const CAmount& amount, const QString& type, const QString& address, const QString& label, const QString& walletName);
 #endif // ENABLE_WALLET
 
 private:
@@ -296,7 +296,7 @@ public Q_SLOTS:
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
-    /** Load Partially Signed AustraliaCash Transaction from file or clipboard */
+    /** Load Partially Signed TerraAustralis Transaction from file or clipboard */
     void gotoLoadPSBT(bool from_clipboard = false);
 
     /** Toggle staking */
@@ -357,7 +357,7 @@ private:
 
 private Q_SLOTS:
     /** When Display Units are changed on OptionsModel it will refresh the display text of the control on the status bar */
-    void updateDisplayUnit(AustraliaCashUnit newUnits);
+    void updateDisplayUnit(TerraAustralisUnit newUnits);
     /** Tells underlying optionsModel to update its current display unit. */
     void onMenuSelection(QAction* action);
 };

@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -37,7 +37,7 @@
 #include <QUrlQuery>
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("australiacash:");
+const QString BITCOIN_IPC_PREFIX("terraaustralis:");
 
 //
 // Create a name that is unique for:
@@ -46,7 +46,7 @@ const QString BITCOIN_IPC_PREFIX("australiacash:");
 //
 static QString ipcServerName()
 {
-    QString name("AustraliaCashQt");
+    QString name("TerraAustralisQt");
 
     // Append a simple hash of the datadir
     // Note that gArgs.GetDataDirNet() returns a different path
@@ -80,7 +80,7 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
         QString arg(argv[i]);
         if (arg.startsWith("-")) continue;
 
-        if (arg.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // australiacash: URI
+        if (arg.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // terraaustralis: URI
         {
             savedPaymentRequests.insert(arg);
         }
@@ -133,7 +133,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
     optionsModel(nullptr)
 {
     // Install global event filter to catch QFileOpenEvents
-    // on Mac: sent when you click australiacash: links
+    // on Mac: sent when you click terraaustralis: links
     // other OSes: helpful when dealing with payment request files
     if (parent)
         parent->installEventFilter(this);
@@ -150,7 +150,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "Q_EMIT message()" here
             QMessageBox::critical(nullptr, tr("Payment request error"),
-                tr("Cannot start australiacash: click-to-pay handler"));
+                tr("Cannot start terraaustralis: click-to-pay handler"));
         }
         else {
             connect(uriServer, &QLocalServer::newConnection, this, &PaymentServer::handleURIConnection);
@@ -161,7 +161,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
 PaymentServer::~PaymentServer() = default;
 
 //
-// OSX-specific way of handling australiacash: URIs
+// OSX-specific way of handling terraaustralis: URIs
 //
 bool PaymentServer::eventFilter(QObject *object, QEvent *event)
 {
@@ -196,18 +196,18 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith("australiacash://", Qt::CaseInsensitive))
+    if (s.startsWith("terraaustralis://", Qt::CaseInsensitive))
     {
-        Q_EMIT message(tr("URI handling"), tr("'australiacash://' is not a valid URI. Use 'australiacash:' instead."),
+        Q_EMIT message(tr("URI handling"), tr("'terraaustralis://' is not a valid URI. Use 'terraaustralis:' instead."),
             CClientUIInterface::MSG_ERROR);
     }
-    else if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // australiacash: URI
+    else if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // terraaustralis: URI
     {
         QUrlQuery uri((QUrl(s)));
         // normal URI
         {
             SendCoinsRecipient recipient;
-            if (GUIUtil::parseAustraliaCashURI(s, &recipient))
+            if (GUIUtil::parseTerraAustralisURI(s, &recipient))
             {
                 std::string error_msg;
                 const CTxDestination dest = DecodeDestination(recipient.address.toStdString(), error_msg);
@@ -228,7 +228,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
             }
             else
                 Q_EMIT message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid AustraliaCash address or malformed URI parameters."),
+                    tr("URI cannot be parsed! This can be caused by an invalid TerraAustralis address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;

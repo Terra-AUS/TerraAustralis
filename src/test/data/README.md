@@ -1,7 +1,7 @@
 Description
 ------------
 
-This directory contains data-driven tests for various aspects of AustraliaCash.
+This directory contains data-driven tests for various aspects of TerraAustralis.
 
 License
 --------

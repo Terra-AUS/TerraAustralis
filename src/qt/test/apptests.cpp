@@ -1,4 +1,4 @@
-// Copyright (c) 2018-2021 The AustraliaCash Core developers
+// Copyright (c) 2018-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -55,7 +55,7 @@ void TestRpcCommand(RPCConsole* console)
 }
 } // namespace
 
-//! Entry point for AustraliaCashApplication tests.
+//! Entry point for TerraAustralisApplication tests.
 void AppTests::appTests()
 {
 #ifdef Q_OS_MACOS
@@ -76,7 +76,7 @@ void AppTests::appTests()
     QScopedPointer<const NetworkStyle> style(NetworkStyle::instantiate(Params().NetworkIDString()));
     m_app.setupPlatformStyle();
     m_app.createWindow(style.data());
-    connect(&m_app, &AustraliaCashApplication::windowShown, this, &AppTests::guiTests);
+    connect(&m_app, &TerraAustralisApplication::windowShown, this, &AppTests::guiTests);
     expectCallback("guiTests");
     m_app.baseInitialize();
     m_app.requestInitialize();
@@ -89,11 +89,11 @@ void AppTests::appTests()
     AbortShutdown();
 }
 
-//! Entry point for AustraliaCashGUI tests.
-void AppTests::guiTests(AustraliaCashGUI* window)
+//! Entry point for TerraAustralisGUI tests.
+void AppTests::guiTests(TerraAustralisGUI* window)
 {
     HandleCallback callback{"guiTests", *this};
-    connect(window, &AustraliaCashGUI::consoleShown, this, &AppTests::consoleTests);
+    connect(window, &TerraAustralisGUI::consoleShown, this, &AppTests::consoleTests);
     expectCallback("consoleTests");
     QAction* action = window->findChild<QAction*>("openRPCConsoleAction");
     action->activate(QAction::Trigger);

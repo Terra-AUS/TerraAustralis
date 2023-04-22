@@ -1,4 +1,4 @@
-# Copyright (c) 2013-2016 The AustraliaCash Core developers
+# Copyright (c) 2013-2016 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -25,17 +25,17 @@ BENCHMARKS =
 
 BITCOIN_INCLUDES=-I$(builddir) -I$(srcdir)/$(MINISKETCH_INCLUDE_DIR_INT) -I$(srcdir)/secp256k1/include -I$(srcdir)/$(UNIVALUE_INCLUDE_DIR_INT) $(LEVELDB_CPPFLAGS)
 
-LIBBITCOIN_NODE=libaustraliacash_node.a
-LIBBITCOIN_COMMON=libaustraliacash_common.a
-LIBBITCOIN_CONSENSUS=libaustraliacash_consensus.a
-LIBBITCOIN_CLI=libaustraliacash_cli.a
-LIBBITCOIN_UTIL=libaustraliacash_util.a
-LIBBITCOIN_CRYPTO_BASE=crypto/libaustraliacash_crypto_base.la
-LIBBITCOINQT=qt/libaustraliacashqt.a
+LIBBITCOIN_NODE=libterraaustralis_node.a
+LIBBITCOIN_COMMON=libterraaustralis_common.a
+LIBBITCOIN_CONSENSUS=libterraaustralis_consensus.a
+LIBBITCOIN_CLI=libterraaustralis_cli.a
+LIBBITCOIN_UTIL=libterraaustralis_util.a
+LIBBITCOIN_CRYPTO_BASE=crypto/libterraaustralis_crypto_base.la
+LIBBITCOINQT=qt/libterraaustralisqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 if ENABLE_ZMQ
-LIBBITCOIN_ZMQ=libaustraliacash_zmq.a
+LIBBITCOIN_ZMQ=libterraaustralis_zmq.a
 endif
 if BUILD_BITCOIN_LIBS
 LIBBITCOINCONSENSUS=libbitcoinconsensus.la
@@ -44,25 +44,25 @@ if BUILD_BITCOIN_KERNEL_LIB
 LIBBITCOINKERNEL=libbitcoinkernel.la
 endif
 if ENABLE_WALLET
-LIBBITCOIN_WALLET=libaustraliacash_wallet.a
-LIBBITCOIN_WALLET_TOOL=libaustraliacash_wallet_tool.a
+LIBBITCOIN_WALLET=libterraaustralis_wallet.a
+LIBBITCOIN_WALLET_TOOL=libterraaustralis_wallet_tool.a
 endif
 
 LIBBITCOIN_CRYPTO = $(LIBBITCOIN_CRYPTO_BASE)
 if ENABLE_SSE41
-LIBBITCOIN_CRYPTO_SSE41 = crypto/libaustraliacash_crypto_sse41.la
+LIBBITCOIN_CRYPTO_SSE41 = crypto/libterraaustralis_crypto_sse41.la
 LIBBITCOIN_CRYPTO += $(LIBBITCOIN_CRYPTO_SSE41)
 endif
 if ENABLE_AVX2
-LIBBITCOIN_CRYPTO_AVX2 = crypto/libaustraliacash_crypto_avx2.la
+LIBBITCOIN_CRYPTO_AVX2 = crypto/libterraaustralis_crypto_avx2.la
 LIBBITCOIN_CRYPTO += $(LIBBITCOIN_CRYPTO_AVX2)
 endif
 if ENABLE_X86_SHANI
-LIBBITCOIN_CRYPTO_X86_SHANI = crypto/libaustraliacash_crypto_x86_shani.la
+LIBBITCOIN_CRYPTO_X86_SHANI = crypto/libterraaustralis_crypto_x86_shani.la
 LIBBITCOIN_CRYPTO += $(LIBBITCOIN_CRYPTO_X86_SHANI)
 endif
 if ENABLE_ARM_SHANI
-LIBBITCOIN_CRYPTO_ARM_SHANI = crypto/libaustraliacash_crypto_arm_shani.la
+LIBBITCOIN_CRYPTO_ARM_SHANI = crypto/libterraaustralis_crypto_arm_shani.la
 LIBBITCOIN_CRYPTO += $(LIBBITCOIN_CRYPTO_ARM_SHANI)
 endif
 noinst_LTLIBRARIES += $(LIBBITCOIN_CRYPTO)
@@ -84,33 +84,33 @@ EXTRA_LIBRARIES += \
   $(LIBBITCOIN_ZMQ)
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += australiacashd
+  bin_PROGRAMS += terraaustralisd
 endif
 
 if BUILD_BITCOIN_NODE
-  bin_PROGRAMS += australiacash-node
+  bin_PROGRAMS += terraaustralis-node
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += australiacash-cli
+  bin_PROGRAMS += terraaustralis-cli
 endif
 
 if BUILD_BITCOIN_TX
-  bin_PROGRAMS += australiacash-tx
+  bin_PROGRAMS += terraaustralis-tx
 endif
 
 if ENABLE_WALLET
 if BUILD_BITCOIN_WALLET
-  bin_PROGRAMS += australiacash-wallet
+  bin_PROGRAMS += terraaustralis-wallet
 endif
 endif
 
 if BUILD_BITCOIN_UTIL
-  bin_PROGRAMS += australiacash-util
+  bin_PROGRAMS += terraaustralis-util
 endif
 
 if BUILD_BITCOIN_CHAINSTATE
-  bin_PROGRAMS += australiacash-chainstate
+  bin_PROGRAMS += terraaustralis-chainstate
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -345,16 +345,16 @@ obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj
 	@$(top_srcdir)/share/genbuild.sh "$(abs_top_builddir)/src/obj/build.h" \
 	  "$(abs_top_srcdir)"
-libaustraliacash_util_a-clientversion.$(OBJEXT): obj/build.h
+libterraaustralis_util_a-clientversion.$(OBJEXT): obj/build.h
 
 
 # server: shared between bitcoind and bitcoin-qt
 # Contains code accessing mempool and chain state that is meant to be separated
 # from wallet and gui code (see node/README.md). Shared code should go in
-# libaustraliacash_common or libaustraliacash_util libraries, instead.
-libaustraliacash_node_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS) $(MINIUPNPC_CPPFLAGS) $(NATPMP_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
-libaustraliacash_node_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaustraliacash_node_a_SOURCES = \
+# libterraaustralis_common or libterraaustralis_util libraries, instead.
+libterraaustralis_node_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS) $(MINIUPNPC_CPPFLAGS) $(NATPMP_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libterraaustralis_node_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libterraaustralis_node_a_SOURCES = \
   addrdb.cpp \
   addrman.cpp \
   banman.cpp \
@@ -439,17 +439,17 @@ libaustraliacash_node_a_SOURCES = \
   $(BITCOIN_CORE_H)
 
 if ENABLE_WALLET
-libaustraliacash_node_a_SOURCES += wallet/init.cpp
-libaustraliacash_node_a_CPPFLAGS += $(BDB_CPPFLAGS)
+libterraaustralis_node_a_SOURCES += wallet/init.cpp
+libterraaustralis_node_a_CPPFLAGS += $(BDB_CPPFLAGS)
 endif
 if !ENABLE_WALLET
-libaustraliacash_node_a_SOURCES += dummywallet.cpp
+libterraaustralis_node_a_SOURCES += dummywallet.cpp
 endif
 
 if ENABLE_ZMQ
-libaustraliacash_zmq_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(ZMQ_CFLAGS)
-libaustraliacash_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaustraliacash_zmq_a_SOURCES = \
+libterraaustralis_zmq_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(ZMQ_CFLAGS)
+libterraaustralis_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libterraaustralis_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
   zmq/zmqnotificationinterface.cpp \
   zmq/zmqpublishnotifier.cpp \
@@ -460,9 +460,9 @@ endif
 
 # wallet: shared between bitcoind and bitcoin-qt, but only linked
 # when wallet enabled
-libaustraliacash_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS) $(BDB_CPPFLAGS) $(SQLITE_CFLAGS)
-libaustraliacash_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaustraliacash_wallet_a_SOURCES = \
+libterraaustralis_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS) $(BDB_CPPFLAGS) $(SQLITE_CFLAGS)
+libterraaustralis_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libterraaustralis_wallet_a_SOURCES = \
   wallet/coincontrol.cpp \
   wallet/context.cpp \
   wallet/crypter.cpp \
@@ -495,29 +495,29 @@ libaustraliacash_wallet_a_SOURCES = \
   $(BITCOIN_CORE_H)
 
 if USE_SQLITE
-libaustraliacash_wallet_a_SOURCES += wallet/sqlite.cpp
+libterraaustralis_wallet_a_SOURCES += wallet/sqlite.cpp
 endif
 if USE_BDB
-libaustraliacash_wallet_a_SOURCES += wallet/bdb.cpp wallet/salvage.cpp
+libterraaustralis_wallet_a_SOURCES += wallet/bdb.cpp wallet/salvage.cpp
 endif
 
-libaustraliacash_wallet_tool_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
-libaustraliacash_wallet_tool_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaustraliacash_wallet_tool_a_SOURCES = \
+libterraaustralis_wallet_tool_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
+libterraaustralis_wallet_tool_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libterraaustralis_wallet_tool_a_SOURCES = \
   wallet/wallettool.cpp \
   $(BITCOIN_CORE_H)
 
 # crypto primitives library
-crypto_libaustraliacash_crypto_base_la_CPPFLAGS = $(AM_CPPFLAGS) $(SSL_CFLAGS)
+crypto_libterraaustralis_crypto_base_la_CPPFLAGS = $(AM_CPPFLAGS) $(SSL_CFLAGS)
 
 # Specify -static in both CXXFLAGS and LDFLAGS so libtool will only build a
 # static version of this library. We don't need a dynamic version, and a dynamic
 # version can't be used on windows anyway because the library doesn't currently
 # export DLL symbols.
-crypto_libaustraliacash_crypto_base_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) -static
-crypto_libaustraliacash_crypto_base_la_LDFLAGS = $(AM_LDFLAGS) -static
+crypto_libterraaustralis_crypto_base_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) -static
+crypto_libterraaustralis_crypto_base_la_LDFLAGS = $(AM_LDFLAGS) -static
 
-crypto_libaustraliacash_crypto_base_la_SOURCES = \
+crypto_libterraaustralis_crypto_base_la_SOURCES = \
   crypto/aes.cpp \
   crypto/aes.h \
   crypto/chacha_poly_aead.h \
@@ -587,49 +587,49 @@ crypto_libaustraliacash_crypto_base_la_SOURCES = \
   crypto/balloon/balloon.cpp
 
 if USE_ASM
-crypto_libaustraliacash_crypto_base_la_SOURCES += crypto/sha256_sse4.cpp
+crypto_libterraaustralis_crypto_base_la_SOURCES += crypto/sha256_sse4.cpp
 endif
 
-# See explanation for -static in crypto_libaustraliacash_crypto_base_la's LDFLAGS and
+# See explanation for -static in crypto_libterraaustralis_crypto_base_la's LDFLAGS and
 # CXXFLAGS above
-crypto_libaustraliacash_crypto_sse41_la_LDFLAGS = $(AM_LDFLAGS) -static
-crypto_libaustraliacash_crypto_sse41_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) -static
-crypto_libaustraliacash_crypto_sse41_la_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libaustraliacash_crypto_sse41_la_CXXFLAGS += $(SSE41_CXXFLAGS)
-crypto_libaustraliacash_crypto_sse41_la_CPPFLAGS += -DENABLE_SSE41
-crypto_libaustraliacash_crypto_sse41_la_SOURCES = crypto/sha256_sse41.cpp
+crypto_libterraaustralis_crypto_sse41_la_LDFLAGS = $(AM_LDFLAGS) -static
+crypto_libterraaustralis_crypto_sse41_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) -static
+crypto_libterraaustralis_crypto_sse41_la_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libterraaustralis_crypto_sse41_la_CXXFLAGS += $(SSE41_CXXFLAGS)
+crypto_libterraaustralis_crypto_sse41_la_CPPFLAGS += -DENABLE_SSE41
+crypto_libterraaustralis_crypto_sse41_la_SOURCES = crypto/sha256_sse41.cpp
 
-# See explanation for -static in crypto_libaustraliacash_crypto_base_la's LDFLAGS and
+# See explanation for -static in crypto_libterraaustralis_crypto_base_la's LDFLAGS and
 # CXXFLAGS above
-crypto_libaustraliacash_crypto_avx2_la_LDFLAGS = $(AM_LDFLAGS) -static
-crypto_libaustraliacash_crypto_avx2_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) -static
-crypto_libaustraliacash_crypto_avx2_la_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libaustraliacash_crypto_avx2_la_CXXFLAGS += $(AVX2_CXXFLAGS)
-crypto_libaustraliacash_crypto_avx2_la_CPPFLAGS += -DENABLE_AVX2
-crypto_libaustraliacash_crypto_avx2_la_SOURCES = crypto/sha256_avx2.cpp
+crypto_libterraaustralis_crypto_avx2_la_LDFLAGS = $(AM_LDFLAGS) -static
+crypto_libterraaustralis_crypto_avx2_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) -static
+crypto_libterraaustralis_crypto_avx2_la_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libterraaustralis_crypto_avx2_la_CXXFLAGS += $(AVX2_CXXFLAGS)
+crypto_libterraaustralis_crypto_avx2_la_CPPFLAGS += -DENABLE_AVX2
+crypto_libterraaustralis_crypto_avx2_la_SOURCES = crypto/sha256_avx2.cpp
 
-# See explanation for -static in crypto_libaustraliacash_crypto_base_la's LDFLAGS and
+# See explanation for -static in crypto_libterraaustralis_crypto_base_la's LDFLAGS and
 # CXXFLAGS above
-crypto_libaustraliacash_crypto_x86_shani_la_LDFLAGS = $(AM_LDFLAGS) -static
-crypto_libaustraliacash_crypto_x86_shani_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) -static
-crypto_libaustraliacash_crypto_x86_shani_la_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libaustraliacash_crypto_x86_shani_la_CXXFLAGS += $(X86_SHANI_CXXFLAGS)
-crypto_libaustraliacash_crypto_x86_shani_la_CPPFLAGS += -DENABLE_X86_SHANI
-crypto_libaustraliacash_crypto_x86_shani_la_SOURCES = crypto/sha256_x86_shani.cpp
+crypto_libterraaustralis_crypto_x86_shani_la_LDFLAGS = $(AM_LDFLAGS) -static
+crypto_libterraaustralis_crypto_x86_shani_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) -static
+crypto_libterraaustralis_crypto_x86_shani_la_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libterraaustralis_crypto_x86_shani_la_CXXFLAGS += $(X86_SHANI_CXXFLAGS)
+crypto_libterraaustralis_crypto_x86_shani_la_CPPFLAGS += -DENABLE_X86_SHANI
+crypto_libterraaustralis_crypto_x86_shani_la_SOURCES = crypto/sha256_x86_shani.cpp
 
-# See explanation for -static in crypto_libaustraliacash_crypto_base_la's LDFLAGS and
+# See explanation for -static in crypto_libterraaustralis_crypto_base_la's LDFLAGS and
 # CXXFLAGS above
-crypto_libaustraliacash_crypto_arm_shani_la_LDFLAGS = $(AM_LDFLAGS) -static
-crypto_libaustraliacash_crypto_arm_shani_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) -static
-crypto_libaustraliacash_crypto_arm_shani_la_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libaustraliacash_crypto_arm_shani_la_CXXFLAGS += $(ARM_SHANI_CXXFLAGS)
-crypto_libaustraliacash_crypto_arm_shani_la_CPPFLAGS += -DENABLE_ARM_SHANI
-crypto_libaustraliacash_crypto_arm_shani_la_SOURCES = crypto/sha256_arm_shani.cpp
+crypto_libterraaustralis_crypto_arm_shani_la_LDFLAGS = $(AM_LDFLAGS) -static
+crypto_libterraaustralis_crypto_arm_shani_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) -static
+crypto_libterraaustralis_crypto_arm_shani_la_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libterraaustralis_crypto_arm_shani_la_CXXFLAGS += $(ARM_SHANI_CXXFLAGS)
+crypto_libterraaustralis_crypto_arm_shani_la_CPPFLAGS += -DENABLE_ARM_SHANI
+crypto_libterraaustralis_crypto_arm_shani_la_SOURCES = crypto/sha256_arm_shani.cpp
 
 # consensus: shared between all executables that validate any consensus rules.
-libaustraliacash_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libaustraliacash_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaustraliacash_consensus_a_SOURCES = \
+libterraaustralis_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libterraaustralis_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libterraaustralis_consensus_a_SOURCES = \
   arith_uint256.cpp \
   arith_uint256.h \
   consensus/amount.h \
@@ -666,9 +666,9 @@ libaustraliacash_consensus_a_SOURCES = \
   version.h
 
 # common: shared between bitcoind, and bitcoin-qt and non-server tools
-libaustraliacash_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libaustraliacash_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaustraliacash_common_a_SOURCES = \
+libterraaustralis_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libterraaustralis_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libterraaustralis_common_a_SOURCES = \
   base58.cpp \
   bech32.cpp \
   chainparams.cpp \
@@ -705,9 +705,9 @@ libaustraliacash_common_a_SOURCES = \
   $(BITCOIN_CORE_H)
 
 # util: shared between all executables.
-libaustraliacash_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
-libaustraliacash_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaustraliacash_util_a_SOURCES = \
+libterraaustralis_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
+libterraaustralis_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libterraaustralis_util_a_SOURCES = \
   support/lockedpool.cpp \
   chainparamsbase.cpp \
   clientversion.cpp \
@@ -750,32 +750,32 @@ libaustraliacash_util_a_SOURCES = \
   $(BITCOIN_CORE_H)
 
 if USE_LIBEVENT
-libaustraliacash_util_a_SOURCES += util/url.cpp
+libterraaustralis_util_a_SOURCES += util/url.cpp
 endif
 
 # cli: shared between bitcoin-cli and bitcoin-qt
-libaustraliacash_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libaustraliacash_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libaustraliacash_cli_a_SOURCES = \
+libterraaustralis_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libterraaustralis_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libterraaustralis_cli_a_SOURCES = \
   compat/stdin.h \
   compat/stdin.cpp \
   rpc/client.cpp \
   $(BITCOIN_CORE_H)
 
-nodist_libaustraliacash_util_a_SOURCES = $(srcdir)/obj/build.h
+nodist_libterraaustralis_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind & bitcoin-node binaries #
-australiacash_daemon_sources = bitcoind.cpp
-australiacash_bin_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-australiacash_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
-australiacash_bin_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+terraaustralis_daemon_sources = bitcoind.cpp
+terraaustralis_bin_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+terraaustralis_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
+terraaustralis_bin_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-australiacash_daemon_sources += bitcoind-res.rc
+terraaustralis_daemon_sources += bitcoind-res.rc
 endif
 
-australiacash_bin_ldadd = \
+terraaustralis_bin_ldadd = \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -787,50 +787,50 @@ australiacash_bin_ldadd = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-australiacash_bin_ldadd += $(BDB_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(SQLITE_LIBS)
+terraaustralis_bin_ldadd += $(BDB_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(SQLITE_LIBS)
 
-australiacashd_SOURCES = $(australiacash_daemon_sources) init/bitcoind.cpp
-australiacashd_CPPFLAGS = $(australiacash_bin_cppflags)
-australiacashd_CXXFLAGS = $(australiacash_bin_cxxflags)
-australiacashd_LDFLAGS = $(australiacash_bin_ldflags)
-australiacashd_LDADD = $(LIBBITCOIN_NODE) $(australiacash_bin_ldadd)
+terraaustralisd_SOURCES = $(terraaustralis_daemon_sources) init/bitcoind.cpp
+terraaustralisd_CPPFLAGS = $(terraaustralis_bin_cppflags)
+terraaustralisd_CXXFLAGS = $(terraaustralis_bin_cxxflags)
+terraaustralisd_LDFLAGS = $(terraaustralis_bin_ldflags)
+terraaustralisd_LDADD = $(LIBBITCOIN_NODE) $(terraaustralis_bin_ldadd)
 
-australiacash_node_SOURCES = $(australiacash_daemon_sources) init/bitcoin-node.cpp
-australiacash_node_CPPFLAGS = $(australiacash_bin_cppflags)
-australiacash_node_CXXFLAGS = $(australiacash_bin_cxxflags)
-australiacash_node_LDFLAGS = $(australiacash_bin_ldflags)
-australiacash_node_LDADD = $(LIBBITCOIN_NODE) $(australiacash_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
+terraaustralis_node_SOURCES = $(terraaustralis_daemon_sources) init/bitcoin-node.cpp
+terraaustralis_node_CPPFLAGS = $(terraaustralis_bin_cppflags)
+terraaustralis_node_CXXFLAGS = $(terraaustralis_bin_cxxflags)
+terraaustralis_node_LDFLAGS = $(terraaustralis_bin_ldflags)
+terraaustralis_node_LDADD = $(LIBBITCOIN_NODE) $(terraaustralis_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
 
 # bitcoin-cli binary #
-australiacash_cli_SOURCES = bitcoin-cli.cpp
-australiacash_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-australiacash_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-australiacash_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+terraaustralis_cli_SOURCES = bitcoin-cli.cpp
+terraaustralis_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+terraaustralis_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+terraaustralis_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-australiacash_cli_SOURCES += bitcoin-cli-res.rc
+terraaustralis_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
-australiacash_cli_LDADD = \
+terraaustralis_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-australiacash_cli_LDADD += $(CRYPTO_LIBS) $(EVENT_LIBS)
+terraaustralis_cli_LDADD += $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # bitcoin-tx binary #
-australiacash_tx_SOURCES = bitcoin-tx.cpp
-australiacash_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-australiacash_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-australiacash_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+terraaustralis_tx_SOURCES = bitcoin-tx.cpp
+terraaustralis_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+terraaustralis_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+terraaustralis_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-australiacash_tx_SOURCES += bitcoin-tx-res.rc
+terraaustralis_tx_SOURCES += bitcoin-tx-res.rc
 endif
 
-australiacash_tx_LDADD = \
+terraaustralis_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -841,12 +841,12 @@ australiacash_tx_LDADD = \
 #
 
 # bitcoin-wallet binary #
-australiacash_wallet_SOURCES = bitcoin-wallet.cpp
-australiacash_wallet_SOURCES += init/bitcoin-wallet.cpp
-australiacash_wallet_CPPFLAGS = $(australiacash_bin_cppflags)
-australiacash_wallet_CXXFLAGS = $(australiacash_bin_cxxflags)
-australiacash_wallet_LDFLAGS = $(australiacash_bin_ldflags)
-australiacash_wallet_LDADD = \
+terraaustralis_wallet_SOURCES = bitcoin-wallet.cpp
+terraaustralis_wallet_SOURCES += init/bitcoin-wallet.cpp
+terraaustralis_wallet_CPPFLAGS = $(terraaustralis_bin_cppflags)
+terraaustralis_wallet_CXXFLAGS = $(terraaustralis_bin_cxxflags)
+terraaustralis_wallet_LDFLAGS = $(terraaustralis_bin_ldflags)
+terraaustralis_wallet_LDADD = \
   $(LIBBITCOIN_WALLET_TOOL) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
@@ -860,21 +860,21 @@ australiacash_wallet_LDADD = \
   $(SQLITE_LIBS)
 
 if TARGET_WINDOWS
-australiacash_wallet_SOURCES += bitcoin-wallet-res.rc
+terraaustralis_wallet_SOURCES += bitcoin-wallet-res.rc
 endif
 #
 
 # bitcoin-util binary #
-australiacash_util_SOURCES = bitcoin-util.cpp
-australiacash_util_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-australiacash_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-australiacash_util_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+terraaustralis_util_SOURCES = bitcoin-util.cpp
+terraaustralis_util_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+terraaustralis_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+terraaustralis_util_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-australiacash_util_SOURCES += bitcoin-util-res.rc
+terraaustralis_util_SOURCES += bitcoin-util-res.rc
 endif
 
-australiacash_util_LDADD = \
+terraaustralis_util_LDADD = \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBUNIVALUE) \
@@ -885,15 +885,15 @@ australiacash_util_LDADD = \
 #
 
 # bitcoin-chainstate binary #
-australiacash_chainstate_SOURCES = bitcoin-chainstate.cpp
-australiacash_chainstate_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
-australiacash_chainstate_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+terraaustralis_chainstate_SOURCES = bitcoin-chainstate.cpp
+terraaustralis_chainstate_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
+terraaustralis_chainstate_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 # $(LIBTOOL_APP_LDFLAGS) deliberately omitted here so that we can test linking
 # bitcoin-chainstate against libbitcoinkernel as a shared or static library by
 # setting --{en,dis}able-shared.
-australiacash_chainstate_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(PTHREAD_FLAGS)
-australiacash_chainstate_LDADD = $(LIBBITCOINKERNEL)
+terraaustralis_chainstate_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(PTHREAD_FLAGS)
+terraaustralis_chainstate_LDADD = $(LIBBITCOINKERNEL)
 #
 
 # bitcoinkernel library #
@@ -1015,7 +1015,7 @@ if BUILD_BITCOIN_LIBS
 lib_LTLIBRARIES += $(LIBBITCOINCONSENSUS)
 
 include_HEADERS = script/bitcoinconsensus.h
-libbitcoinconsensus_la_SOURCES = support/cleanse.cpp $(crypto_libaustraliacash_crypto_base_la_SOURCES) $(libaustraliacash_consensus_a_SOURCES)
+libbitcoinconsensus_la_SOURCES = support/cleanse.cpp $(crypto_libterraaustralis_crypto_base_la_SOURCES) $(libterraaustralis_consensus_a_SOURCES)
 
 libbitcoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
 libbitcoinconsensus_la_LIBADD = $(LIBSECP256K1) $(CRYPTO_LIBS)
@@ -1056,12 +1056,12 @@ CLEANFILES += obj/build.h
 EXTRA_DIST = $(CTAES_DIST)
 
 
-config/australiacash-config.h: config/stamp-h1
+config/terraaustralis-config.h: config/stamp-h1
 	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-config/stamp-h1: $(top_srcdir)/$(subdir)/config/australiacash-config.h.in $(top_builddir)/config.status
+config/stamp-h1: $(top_srcdir)/$(subdir)/config/terraaustralis-config.h.in $(top_builddir)/config.status
 	$(AM_V_at)$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-$(top_srcdir)/$(subdir)/config/australiacash-config.h.in:  $(am__configure_deps)
-	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/australiacash-config.h.in
+$(top_srcdir)/$(subdir)/config/terraaustralis-config.h.in:  $(am__configure_deps)
+	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/terraaustralis-config.h.in
 
 clean-local:
 	-$(MAKE) -C secp256k1 clean
@@ -1084,19 +1084,19 @@ if HARDEN
 	$(AM_V_at) $(PYTHON) $(top_srcdir)/contrib/devtools/security-check.py $(bin_PROGRAMS)
 endif
 
-libaustraliacash_ipc_mpgen_input = \
+libterraaustralis_ipc_mpgen_input = \
   ipc/capnp/echo.capnp \
   ipc/capnp/init.capnp
-EXTRA_DIST += $(libaustraliacash_ipc_mpgen_input)
+EXTRA_DIST += $(libterraaustralis_ipc_mpgen_input)
 %.capnp:
 
 # Explicitly list dependencies on generated headers as described in
 # https://www.gnu.org/software/automake/manual/html_node/Built-Sources-Example.html#Recording-Dependencies-manually
-ipc/capnp/libaustraliacash_ipc_a-protocol.$(OBJEXT): $(libaustraliacash_ipc_mpgen_input:=.h)
+ipc/capnp/libterraaustralis_ipc_a-protocol.$(OBJEXT): $(libterraaustralis_ipc_mpgen_input:=.h)
 
 if BUILD_MULTIPROCESS
-LIBBITCOIN_IPC=libaustraliacash_ipc.a
-libaustraliacash_ipc_a_SOURCES = \
+LIBBITCOIN_IPC=libterraaustralis_ipc.a
+libterraaustralis_ipc_a_SOURCES = \
   ipc/capnp/context.h \
   ipc/capnp/init-types.h \
   ipc/capnp/protocol.cpp \
@@ -1107,20 +1107,20 @@ libaustraliacash_ipc_a_SOURCES = \
   ipc/process.cpp \
   ipc/process.h \
   ipc/protocol.h
-libaustraliacash_ipc_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libaustraliacash_ipc_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) $(LIBMULTIPROCESS_CFLAGS)
+libterraaustralis_ipc_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libterraaustralis_ipc_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) $(LIBMULTIPROCESS_CFLAGS)
 
 include $(MPGEN_PREFIX)/include/mpgen.mk
-libaustraliacash_ipc_mpgen_output = \
-  $(libaustraliacash_ipc_mpgen_input:=.c++) \
-  $(libaustraliacash_ipc_mpgen_input:=.h) \
-  $(libaustraliacash_ipc_mpgen_input:=.proxy-client.c++) \
-  $(libaustraliacash_ipc_mpgen_input:=.proxy-server.c++) \
-  $(libaustraliacash_ipc_mpgen_input:=.proxy-types.c++) \
-  $(libaustraliacash_ipc_mpgen_input:=.proxy-types.h) \
-  $(libaustraliacash_ipc_mpgen_input:=.proxy.h)
-nodist_libaustraliacash_ipc_a_SOURCES = $(libaustraliacash_ipc_mpgen_output)
-CLEANFILES += $(libaustraliacash_ipc_mpgen_output)
+libterraaustralis_ipc_mpgen_output = \
+  $(libterraaustralis_ipc_mpgen_input:=.c++) \
+  $(libterraaustralis_ipc_mpgen_input:=.h) \
+  $(libterraaustralis_ipc_mpgen_input:=.proxy-client.c++) \
+  $(libterraaustralis_ipc_mpgen_input:=.proxy-server.c++) \
+  $(libterraaustralis_ipc_mpgen_input:=.proxy-types.c++) \
+  $(libterraaustralis_ipc_mpgen_input:=.proxy-types.h) \
+  $(libterraaustralis_ipc_mpgen_input:=.proxy.h)
+nodist_libterraaustralis_ipc_a_SOURCES = $(libterraaustralis_ipc_mpgen_output)
+CLEANFILES += $(libterraaustralis_ipc_mpgen_output)
 endif
 
 %.raw.h: %.raw

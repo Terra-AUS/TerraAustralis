@@ -62,13 +62,13 @@
         <translation type="unfinished">Tinatanggap ang mga ♦address♦</translation>
     </message>
     <message>
-        <source>These are your AustraliaCash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Ito ang mga ♦address♦ ng ♦AustraliaCash♦ mo para pagpapadala ng mga bayad. Palaging suriin mo ang halaga at address kung saan tatanggap bago magpadala ka ng mga ♦coin.</translation>
+        <source>These are your TerraAustralis addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Ito ang mga ♦address♦ ng ♦TerraAustralis♦ mo para pagpapadala ng mga bayad. Palaging suriin mo ang halaga at address kung saan tatanggap bago magpadala ka ng mga ♦coin.</translation>
     </message>
     <message>
-        <source>These are your AustraliaCash addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your TerraAustralis addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Ito ang mga address ng ♦AustraliaCash♦ para sa pagtanggap ng mga baya. Gamitin ang 'Create new receiving address' na button sa receive tab para gumawa ng bagong mga address. Ang pag-sign ay posible lamang sa uri ng mga address na 'legacy'.</translation>
+        <translation type="unfinished">Ito ang mga address ng ♦TerraAustralis♦ para sa pagtanggap ng mga baya. Gamitin ang 'Create new receiving address' na button sa receive tab para gumawa ng bagong mga address. Ang pag-sign ay posible lamang sa uri ng mga address na 'legacy'.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -239,7 +239,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>AustraliaCashApplication</name>
+    <name>TerraAustralisApplication</name>
     <message>
         <source>Runaway exception</source>
         <translation type="unfinished">Pagbubukod sa pagtakbo papalayo </translation>
@@ -344,7 +344,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation type="unfinished">&amp;Pangkalahatang ideya</translation>
@@ -403,8 +403,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Ang paghalili ay  &lt;b&gt;na-enable&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a AustraliaCash address</source>
-        <translation type="unfinished">Magpadala ng mga ♦coin♦ sa ♦address♦ ng AustraliaCash</translation>
+        <source>Send coins to a TerraAustralis address</source>
+        <translation type="unfinished">Magpadala ng mga ♦coin♦ sa ♦address♦ ng TerraAustralis</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -447,16 +447,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Pirmahan &amp;magmensahe...</translation>
     </message>
     <message>
-        <source>Sign messages with your AustraliaCash addresses to prove you own them</source>
-        <translation type="unfinished">Tanda na mga mensahe sa mga ♦address♦ ng iyong ♦AustraliaCash♦ para patunayan na pagmamay-ari mo sila</translation>
+        <source>Sign messages with your TerraAustralis addresses to prove you own them</source>
+        <translation type="unfinished">Tanda na mga mensahe sa mga ♦address♦ ng iyong ♦TerraAustralis♦ para patunayan na pagmamay-ari mo sila</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
         <translation type="unfinished">&amp;Patunayan ang mensahe...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified AustraliaCash addresses</source>
-        <translation type="unfinished">Patunayan ang mga mensahe para matiyak na sila ay napirmahan ng may tinukoy na mga ♦AustraliaCash address♦</translation>
+        <source>Verify messages to ensure they were signed with specified TerraAustralis addresses</source>
+        <translation type="unfinished">Patunayan ang mga mensahe para matiyak na sila ay napirmahan ng may tinukoy na mga ♦TerraAustralis address♦</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -570,12 +570,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Impormasyon</translation>
     </message>
     <message>
-        <source>Load Partially Signed AustraliaCash Transaction</source>
-        <translation type="unfinished">Ang ♦Load♦ ay Bahagyang Napirmahan na Transaksyon sa ♦AustraliaCash♦</translation>
+        <source>Load Partially Signed TerraAustralis Transaction</source>
+        <translation type="unfinished">Ang ♦Load♦ ay Bahagyang Napirmahan na Transaksyon sa ♦TerraAustralis♦</translation>
     </message>
     <message>
-        <source>Load Partially Signed AustraliaCash Transaction from clipboard</source>
-        <translation type="unfinished">Ang ♦Load♦ ay Bahagyang Napirmahan na Transaksyon sa ♦AustraliaCash♦ mula sa ♦clipboard♦</translation>
+        <source>Load Partially Signed TerraAustralis Transaction from clipboard</source>
+        <translation type="unfinished">Ang ♦Load♦ ay Bahagyang Napirmahan na Transaksyon sa ♦TerraAustralis♦ mula sa ♦clipboard♦</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -614,8 +614,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Isarado ang lahat na mga pitaka</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible AustraliaCash command-line options</source>
-        <translation type="unfinished">Ipakita ang %1 tumulong sa mensahe na kumuha ng listahan ng posibleng ♦AustraliaCash command-line♦ na mga pagpipilian</translation>
+        <source>Show the %1 help message to get a list with possible TerraAustralis command-line options</source>
+        <translation type="unfinished">Ipakita ang %1 tumulong sa mensahe na kumuha ng listahan ng posibleng ♦TerraAustralis command-line♦ na mga pagpipilian</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -659,7 +659,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Itago</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to AustraliaCash network.</source>
+        <source>%n active connection(s) to TerraAustralis network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -1102,8 +1102,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">I-edit ang pagpapadalhan na ♦address♦</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid AustraliaCash address.</source>
-        <translation type="unfinished">Ang naipasok na ♦address♦ "%1" ay hindi wasto na ♦AustraliaCash address♦.</translation>
+        <source>The entered address "%1" is not a valid TerraAustralis address.</source>
+        <translation type="unfinished">Ang naipasok na ♦address♦ "%1" ay hindi wasto na ♦TerraAustralis address♦.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1148,8 +1148,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>Intro</name>
     <message>
-        <source>AustraliaCash</source>
-        <translation type="unfinished">♦AustraliaCash♦</translation>
+        <source>TerraAustralis</source>
+        <translation type="unfinished">♦TerraAustralis♦</translation>
     </message>
     <message numerus="yes">
         <source>%n GB of space available</source>

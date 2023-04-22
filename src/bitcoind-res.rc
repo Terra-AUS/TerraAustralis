@@ -14,14 +14,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "AustraliaCash"
-            VALUE "FileDescription",    "australiacashd (AustraliaCash node with a JSON-RPC server)"
+            VALUE "CompanyName",        "TerraAustralis"
+            VALUE "FileDescription",    "terraaustralisd (TerraAustralis node with a JSON-RPC server)"
             VALUE "FileVersion",        PACKAGE_VERSION
-            VALUE "InternalName",       "australiacashd"
+            VALUE "InternalName",       "terraaustralisd"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "australiacashd.exe"
-            VALUE "ProductName",        "australiacashd"
+            VALUE "OriginalFilename",   "terraaustralisd.exe"
+            VALUE "ProductName",        "terraaustralisd"
             VALUE "ProductVersion",     PACKAGE_VERSION
         END
     END

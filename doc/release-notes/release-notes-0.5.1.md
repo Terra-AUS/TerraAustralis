@@ -1,5 +1,5 @@
-AustraliaCash version 0.5.1 is now available for download at:
-http://sourceforge.net/projects/bitcoin/files/AustraliaCash/bitcoin-0.5.1/
+TerraAustralis version 0.5.1 is now available for download at:
+http://sourceforge.net/projects/bitcoin/files/TerraAustralis/bitcoin-0.5.1/
 
 This is a bugfix-only release.
 

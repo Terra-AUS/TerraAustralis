@@ -212,7 +212,7 @@
     </message>
 </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;امضای پیام...</translation>
@@ -390,8 +390,8 @@
         <translation>نوارابزار برگه‌ها</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and australiacash: URIs)</source>
-        <translation>درخواست پرداخت ( تولید کد کیوار و ادرس australiacash)</translation>
+        <source>Request payments (generates QR codes and terraaustralis: URIs)</source>
+        <translation>درخواست پرداخت ( تولید کد کیوار و ادرس terraaustralis)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -402,8 +402,8 @@
         <translation>نمایش لیست آدرس های دریافت و لیبل ها</translation>
     </message>
     <message>
-        <source>Open a australiacash: URI or payment request</source>
-        <translation>بازکردن یک australiacash: آدرس یا درخواست پرداخت</translation>
+        <source>Open a terraaustralis: URI or payment request</source>
+        <translation>بازکردن یک terraaustralis: آدرس یا درخواست پرداخت</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

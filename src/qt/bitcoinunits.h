@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -26,17 +26,17 @@
 #define THIN_SP_UTF8 REAL_THIN_SP_UTF8
 #define THIN_SP_HTML HTML_HACK_SP
 
-/** AustraliaCash unit definitions. Encapsulates parsing and formatting
+/** TerraAustralis unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
-class AustraliaCashUnits: public QAbstractListModel
+class TerraAustralisUnits: public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit AustraliaCashUnits(QObject *parent);
+    explicit TerraAustralisUnits(QObject *parent);
 
-    /** AustraliaCash units.
+    /** TerraAustralis units.
       @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
      */
     enum class Unit {
@@ -108,9 +108,9 @@ public:
 private:
     QList<Unit> unitlist;
 };
-typedef AustraliaCashUnits::Unit AustraliaCashUnit;
+typedef TerraAustralisUnits::Unit TerraAustralisUnit;
 
-QDataStream& operator<<(QDataStream& out, const AustraliaCashUnit& unit);
-QDataStream& operator>>(QDataStream& in, AustraliaCashUnit& unit);
+QDataStream& operator<<(QDataStream& out, const TerraAustralisUnit& unit);
+QDataStream& operator>>(QDataStream& in, TerraAustralisUnit& unit);
 
 #endif // BITCOIN_QT_BITCOINUNITS_H

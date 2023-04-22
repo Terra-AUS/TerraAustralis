@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -71,7 +71,7 @@
 #include <QWindow>
 
 
-const std::string AustraliaCashGUI::DEFAULT_UIPLATFORM =
+const std::string TerraAustralisGUI::DEFAULT_UIPLATFORM =
 #if defined(Q_OS_MACOS)
         "macosx"
 #elif defined(Q_OS_WIN)
@@ -81,7 +81,7 @@ const std::string AustraliaCashGUI::DEFAULT_UIPLATFORM =
 #endif
         ;
 
-AustraliaCashGUI::AustraliaCashGUI(interfaces::Node& node, const PlatformStyle *_platformStyle, const NetworkStyle *networkStyle, QWidget *parent) :
+TerraAustralisGUI::TerraAustralisGUI(interfaces::Node& node, const PlatformStyle *_platformStyle, const NetworkStyle *networkStyle, QWidget *parent) :
     QMainWindow(parent),
     m_node(node),
     trayIconMenu{new QMenu()},
@@ -222,8 +222,8 @@ AustraliaCashGUI::AustraliaCashGUI(interfaces::Node& node, const PlatformStyle *
         openOptionsDialogWithTab(OptionsDialog::TAB_NETWORK);
     });
 
-    connect(labelBlocksIcon, &GUIUtil::ClickableLabel::clicked, this, &AustraliaCashGUI::showModalOverlay);
-    connect(progressBar, &GUIUtil::ClickableProgressBar::clicked, this, &AustraliaCashGUI::showModalOverlay);
+    connect(labelBlocksIcon, &GUIUtil::ClickableLabel::clicked, this, &TerraAustralisGUI::showModalOverlay);
+    connect(progressBar, &GUIUtil::ClickableProgressBar::clicked, this, &TerraAustralisGUI::showModalOverlay);
 
 #ifdef Q_OS_MACOS
     m_app_nap_inhibitor = new CAppNapInhibitor;
@@ -237,7 +237,7 @@ AustraliaCashGUI::AustraliaCashGUI(interfaces::Node& node, const PlatformStyle *
     GUIUtil::handleCloseWindowShortcut(this);
 }
 
-AustraliaCashGUI::~AustraliaCashGUI()
+TerraAustralisGUI::~TerraAustralisGUI()
 {
     // Unsubscribe from notifications from core
     unsubscribeFromCoreSignals();
@@ -255,7 +255,7 @@ AustraliaCashGUI::~AustraliaCashGUI()
     delete rpcConsole;
 }
 
-void AustraliaCashGUI::createActions()
+void TerraAustralisGUI::createActions()
 {
     QActionGroup *tabGroup = new QActionGroup(this);
     connect(modalOverlay, &ModalOverlay::triggered, tabGroup, &QActionGroup::setEnabled);
@@ -268,14 +268,14 @@ void AustraliaCashGUI::createActions()
     tabGroup->addAction(overviewAction);
 
     sendCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/send"), tr("&Send"), this);
-    sendCoinsAction->setStatusTip(tr("Send coins to a AustraliaCash address"));
+    sendCoinsAction->setStatusTip(tr("Send coins to a TerraAustralis address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
     sendCoinsAction->setShortcut(QKeySequence(QStringLiteral("Alt+2")));
     tabGroup->addAction(sendCoinsAction);
 
     receiveCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/receiving_addresses"), tr("&Receive"), this);
-    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and australiacash: URIs)"));
+    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and terraaustralis: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
     receiveCoinsAction->setShortcut(QKeySequence(QStringLiteral("Alt+3")));
@@ -292,13 +292,13 @@ void AustraliaCashGUI::createActions()
     // These showNormalIfMinimized are needed because Send Coins and Receive Coins
     // can be triggered from the tray menu, and need to show the GUI to be useful.
     connect(overviewAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
-    connect(overviewAction, &QAction::triggered, this, &AustraliaCashGUI::gotoOverviewPage);
+    connect(overviewAction, &QAction::triggered, this, &TerraAustralisGUI::gotoOverviewPage);
     connect(sendCoinsAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
     connect(sendCoinsAction, &QAction::triggered, [this]{ gotoSendCoinsPage(); });
     connect(receiveCoinsAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
-    connect(receiveCoinsAction, &QAction::triggered, this, &AustraliaCashGUI::gotoReceiveCoinsPage);
+    connect(receiveCoinsAction, &QAction::triggered, this, &TerraAustralisGUI::gotoReceiveCoinsPage);
     connect(historyAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
-    connect(historyAction, &QAction::triggered, this, &AustraliaCashGUI::gotoHistoryPage);
+    connect(historyAction, &QAction::triggered, this, &TerraAustralisGUI::gotoHistoryPage);
 #endif // ENABLE_WALLET
 
     quitAction = new QAction(tr("E&xit"), this);
@@ -327,13 +327,13 @@ void AustraliaCashGUI::createActions()
     changePassphraseAction = new QAction(tr("&Change Passphrase…"), this);
     changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
     signMessageAction = new QAction(tr("Sign &message…"), this);
-    signMessageAction->setStatusTip(tr("Sign messages with your AustraliaCash addresses to prove you own them"));
+    signMessageAction->setStatusTip(tr("Sign messages with your TerraAustralis addresses to prove you own them"));
     verifyMessageAction = new QAction(tr("&Verify message…"), this);
-    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified AustraliaCash addresses"));
+    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified TerraAustralis addresses"));
     m_load_psbt_action = new QAction(tr("&Load PSBT from file…"), this);
-    m_load_psbt_action->setStatusTip(tr("Load Partially Signed AustraliaCash Transaction"));
+    m_load_psbt_action->setStatusTip(tr("Load Partially Signed TerraAustralis Transaction"));
     m_load_psbt_clipboard_action = new QAction(tr("Load PSBT from &clipboard…"), this);
-    m_load_psbt_clipboard_action->setStatusTip(tr("Load Partially Signed AustraliaCash Transaction from clipboard"));
+    m_load_psbt_clipboard_action->setStatusTip(tr("Load Partially Signed TerraAustralis Transaction from clipboard"));
 
     openRPCConsoleAction = new QAction(tr("Node window"), this);
     openRPCConsoleAction->setStatusTip(tr("Open node debugging and diagnostic console"));
@@ -347,7 +347,7 @@ void AustraliaCashGUI::createActions()
     usedReceivingAddressesAction->setStatusTip(tr("Show the list of used receiving addresses and labels"));
 
     openAction = new QAction(tr("Open &URI…"), this);
-    openAction->setStatusTip(tr("Open a australiacash: URI"));
+    openAction->setStatusTip(tr("Open a terraaustralis: URI"));
 
     m_open_wallet_action = new QAction(tr("Open Wallet"), this);
     m_open_wallet_action->setEnabled(false);
@@ -372,26 +372,26 @@ void AustraliaCashGUI::createActions()
 
     showHelpMessageAction = new QAction(tr("&Command-line options"), this);
     showHelpMessageAction->setMenuRole(QAction::NoRole);
-    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible AustraliaCash command-line options").arg(PACKAGE_NAME));
+    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible TerraAustralis command-line options").arg(PACKAGE_NAME));
 
     m_mask_values_action = new QAction(tr("&Mask values"), this);
     m_mask_values_action->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_M));
     m_mask_values_action->setStatusTip(tr("Mask the values in the Overview tab"));
     m_mask_values_action->setCheckable(true);
 
-    connect(quitAction, &QAction::triggered, this, &AustraliaCashGUI::quitRequested);
-    connect(aboutAction, &QAction::triggered, this, &AustraliaCashGUI::aboutClicked);
+    connect(quitAction, &QAction::triggered, this, &TerraAustralisGUI::quitRequested);
+    connect(aboutAction, &QAction::triggered, this, &TerraAustralisGUI::aboutClicked);
     connect(aboutQtAction, &QAction::triggered, qApp, QApplication::aboutQt);
-    connect(optionsAction, &QAction::triggered, this, &AustraliaCashGUI::optionsClicked);
-    connect(showHelpMessageAction, &QAction::triggered, this, &AustraliaCashGUI::showHelpMessageClicked);
-    connect(openRPCConsoleAction, &QAction::triggered, this, &AustraliaCashGUI::showDebugWindow);
+    connect(optionsAction, &QAction::triggered, this, &TerraAustralisGUI::optionsClicked);
+    connect(showHelpMessageAction, &QAction::triggered, this, &TerraAustralisGUI::showHelpMessageClicked);
+    connect(openRPCConsoleAction, &QAction::triggered, this, &TerraAustralisGUI::showDebugWindow);
     // prevents an open debug window from becoming stuck/unusable on client shutdown
     connect(quitAction, &QAction::triggered, rpcConsole, &QWidget::hide);
 
 #ifdef ENABLE_WALLET
     if(walletFrame)
     {
-        connect(toggleStakingAction, &QAction::triggered, this, &AustraliaCashGUI::toggleStaking);
+        connect(toggleStakingAction, &QAction::triggered, this, &TerraAustralisGUI::toggleStaking);
         connect(encryptWalletAction, &QAction::triggered, walletFrame, &WalletFrame::encryptWallet);
         connect(backupWalletAction, &QAction::triggered, walletFrame, &WalletFrame::backupWallet);
         connect(changePassphraseAction, &QAction::triggered, walletFrame, &WalletFrame::changePassphrase);
@@ -403,7 +403,7 @@ void AustraliaCashGUI::createActions()
         connect(verifyMessageAction, &QAction::triggered, [this]{ gotoVerifyMessageTab(); });
         connect(usedSendingAddressesAction, &QAction::triggered, walletFrame, &WalletFrame::usedSendingAddresses);
         connect(usedReceivingAddressesAction, &QAction::triggered, walletFrame, &WalletFrame::usedReceivingAddresses);
-        connect(openAction, &QAction::triggered, this, &AustraliaCashGUI::openClicked);
+        connect(openAction, &QAction::triggered, this, &TerraAustralisGUI::openClicked);
         connect(m_open_wallet_menu, &QMenu::aboutToShow, [this] {
             m_open_wallet_menu->clear();
             for (const std::pair<const std::string, bool>& i : m_wallet_controller->listWalletDir()) {
@@ -423,7 +423,7 @@ void AustraliaCashGUI::createActions()
 
                 connect(action, &QAction::triggered, [this, path] {
                     auto activity = new OpenWalletActivity(m_wallet_controller, this);
-                    connect(activity, &OpenWalletActivity::opened, this, &AustraliaCashGUI::setCurrentWallet);
+                    connect(activity, &OpenWalletActivity::opened, this, &TerraAustralisGUI::setCurrentWallet);
                     activity->open(path);
                 });
             }
@@ -452,7 +452,7 @@ void AustraliaCashGUI::createActions()
             if (!wallet_name_ok || wallet_name.isEmpty()) return;
 
             auto activity = new RestoreWalletActivity(m_wallet_controller, this);
-            connect(activity, &RestoreWalletActivity::restored, this, &AustraliaCashGUI::setCurrentWallet, Qt::QueuedConnection);
+            connect(activity, &RestoreWalletActivity::restored, this, &TerraAustralisGUI::setCurrentWallet, Qt::QueuedConnection);
 
             auto backup_file_path = fs::PathFromString(backup_file.toStdString());
             activity->restore(backup_file_path, wallet_name.toStdString());
@@ -462,21 +462,21 @@ void AustraliaCashGUI::createActions()
         });
         connect(m_create_wallet_action, &QAction::triggered, [this] {
             auto activity = new CreateWalletActivity(m_wallet_controller, this);
-            connect(activity, &CreateWalletActivity::created, this, &AustraliaCashGUI::setCurrentWallet);
+            connect(activity, &CreateWalletActivity::created, this, &TerraAustralisGUI::setCurrentWallet);
             activity->create();
         });
         connect(m_close_all_wallets_action, &QAction::triggered, [this] {
             m_wallet_controller->closeAllWallets(this);
         });
-        connect(m_mask_values_action, &QAction::toggled, this, &AustraliaCashGUI::setPrivacy);
+        connect(m_mask_values_action, &QAction::toggled, this, &TerraAustralisGUI::setPrivacy);
     }
 #endif // ENABLE_WALLET
 
-    connect(new QShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_C), this), &QShortcut::activated, this, &AustraliaCashGUI::showDebugWindowActivateConsole);
-    connect(new QShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_D), this), &QShortcut::activated, this, &AustraliaCashGUI::showDebugWindow);
+    connect(new QShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_C), this), &QShortcut::activated, this, &TerraAustralisGUI::showDebugWindowActivateConsole);
+    connect(new QShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_D), this), &QShortcut::activated, this, &TerraAustralisGUI::showDebugWindow);
 }
 
-void AustraliaCashGUI::createMenuBar()
+void TerraAustralisGUI::createMenuBar()
 {
 #ifdef Q_OS_MACOS
     // Create a decoupled menu bar on Mac which stays even if the window is closed
@@ -576,7 +576,7 @@ void AustraliaCashGUI::createMenuBar()
     help->addAction(aboutQtAction);
 }
 
-void AustraliaCashGUI::createToolBars()
+void TerraAustralisGUI::createToolBars()
 {
     if(walletFrame)
     {
@@ -597,7 +597,7 @@ void AustraliaCashGUI::createToolBars()
 
         m_wallet_selector = new QComboBox();
         m_wallet_selector->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-        connect(m_wallet_selector, qOverload<int>(&QComboBox::currentIndexChanged), this, &AustraliaCashGUI::setCurrentWalletBySelectorIndex);
+        connect(m_wallet_selector, qOverload<int>(&QComboBox::currentIndexChanged), this, &TerraAustralisGUI::setCurrentWalletBySelectorIndex);
 
         m_wallet_selector_label = new QLabel();
         m_wallet_selector_label->setText(tr("Wallet:") + " ");
@@ -612,7 +612,7 @@ void AustraliaCashGUI::createToolBars()
     }
 }
 
-void AustraliaCashGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAndHeaderTipInfo* tip_info)
+void TerraAustralisGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAndHeaderTipInfo* tip_info)
 {
     this->clientModel = _clientModel;
     if(_clientModel)
@@ -626,12 +626,12 @@ void AustraliaCashGUI::setClientModel(ClientModel *_clientModel, interfaces::Blo
         connect(connectionsControl, &GUIUtil::ClickableLabel::clicked, [this] {
             GUIUtil::PopupMenu(m_network_context_menu, QCursor::pos());
         });
-        connect(_clientModel, &ClientModel::numConnectionsChanged, this, &AustraliaCashGUI::setNumConnections);
-        connect(_clientModel, &ClientModel::networkActiveChanged, this, &AustraliaCashGUI::setNetworkActive);
+        connect(_clientModel, &ClientModel::numConnectionsChanged, this, &TerraAustralisGUI::setNumConnections);
+        connect(_clientModel, &ClientModel::networkActiveChanged, this, &TerraAustralisGUI::setNetworkActive);
 
         modalOverlay->setKnownBestHeight(tip_info->header_height, QDateTime::fromSecsSinceEpoch(tip_info->header_time), /*presync=*/false);
         setNumBlocks(tip_info->block_height, QDateTime::fromSecsSinceEpoch(tip_info->block_time), QString::fromStdString(tip_info->block_hash.ToString()), QString::fromStdString(tip_info->block_powhash.ToString()), QString::fromStdString(tip_info->block_powalgo), tip_info->verification_progress, SyncType::BLOCK_SYNC, SynchronizationState::INIT_DOWNLOAD);
-        connect(_clientModel, &ClientModel::numBlocksChanged, this, &AustraliaCashGUI::setNumBlocks);
+        connect(_clientModel, &ClientModel::numBlocksChanged, this, &TerraAustralisGUI::setNumBlocks);
 
         // Receive and report messages from client model
         connect(_clientModel, &ClientModel::message, [this](const QString &title, const QString &message, unsigned int style){
@@ -639,7 +639,7 @@ void AustraliaCashGUI::setClientModel(ClientModel *_clientModel, interfaces::Blo
         });
 
         // Show progress dialog
-        connect(_clientModel, &ClientModel::showProgress, this, &AustraliaCashGUI::showProgress);
+        connect(_clientModel, &ClientModel::showProgress, this, &TerraAustralisGUI::showProgress);
 
         rpcConsole->setClientModel(_clientModel, tip_info->block_height, tip_info->block_time, tip_info->block_hash, tip_info->block_powhash, tip_info->block_powalgo, tip_info->verification_progress);
 
@@ -680,7 +680,7 @@ void AustraliaCashGUI::setClientModel(ClientModel *_clientModel, interfaces::Blo
 }
 
 #ifdef ENABLE_WALLET
-void AustraliaCashGUI::setWalletController(WalletController* wallet_controller)
+void TerraAustralisGUI::setWalletController(WalletController* wallet_controller)
 {
     assert(!m_wallet_controller);
     assert(wallet_controller);
@@ -692,19 +692,19 @@ void AustraliaCashGUI::setWalletController(WalletController* wallet_controller)
     m_open_wallet_action->setMenu(m_open_wallet_menu);
     m_restore_wallet_action->setEnabled(true);
 
-    GUIUtil::ExceptionSafeConnect(wallet_controller, &WalletController::walletAdded, this, &AustraliaCashGUI::addWallet);
-    connect(wallet_controller, &WalletController::walletRemoved, this, &AustraliaCashGUI::removeWallet);
+    GUIUtil::ExceptionSafeConnect(wallet_controller, &WalletController::walletAdded, this, &TerraAustralisGUI::addWallet);
+    connect(wallet_controller, &WalletController::walletRemoved, this, &TerraAustralisGUI::removeWallet);
 
     auto activity = new LoadWalletsActivity(m_wallet_controller, this);
     activity->load();
 }
 
-WalletController* AustraliaCashGUI::getWalletController()
+WalletController* TerraAustralisGUI::getWalletController()
 {
     return m_wallet_controller;
 }
 
-void AustraliaCashGUI::addWallet(WalletModel* walletModel)
+void TerraAustralisGUI::addWallet(WalletModel* walletModel)
 {
     if (!walletFrame) return;
 
@@ -719,21 +719,21 @@ void AustraliaCashGUI::addWallet(WalletModel* walletModel)
         m_wallet_selector_action->setVisible(true);
     }
 
-    connect(wallet_view, &WalletView::outOfSyncWarningClicked, this, &AustraliaCashGUI::showModalOverlay);
-    connect(wallet_view, &WalletView::transactionClicked, this, &AustraliaCashGUI::gotoHistoryPage);
-    connect(wallet_view, &WalletView::coinsSent, this, &AustraliaCashGUI::gotoHistoryPage);
+    connect(wallet_view, &WalletView::outOfSyncWarningClicked, this, &TerraAustralisGUI::showModalOverlay);
+    connect(wallet_view, &WalletView::transactionClicked, this, &TerraAustralisGUI::gotoHistoryPage);
+    connect(wallet_view, &WalletView::coinsSent, this, &TerraAustralisGUI::gotoHistoryPage);
     connect(wallet_view, &WalletView::message, [this](const QString& title, const QString& message, unsigned int style) {
         this->message(title, message, style);
     });
-    connect(wallet_view, &WalletView::encryptionStatusChanged, this, &AustraliaCashGUI::updateWalletStatus);
-    connect(wallet_view, &WalletView::incomingTransaction, this, &AustraliaCashGUI::incomingTransaction);
-    connect(this, &AustraliaCashGUI::setPrivacy, wallet_view, &WalletView::setPrivacy);
+    connect(wallet_view, &WalletView::encryptionStatusChanged, this, &TerraAustralisGUI::updateWalletStatus);
+    connect(wallet_view, &WalletView::incomingTransaction, this, &TerraAustralisGUI::incomingTransaction);
+    connect(this, &TerraAustralisGUI::setPrivacy, wallet_view, &WalletView::setPrivacy);
     wallet_view->setPrivacy(isPrivacyModeActivated());
     const QString display_name = walletModel->getDisplayName();
     m_wallet_selector->addItem(display_name, QVariant::fromValue(walletModel));
 }
 
-void AustraliaCashGUI::removeWallet(WalletModel* walletModel)
+void TerraAustralisGUI::removeWallet(WalletModel* walletModel)
 {
     if (!walletFrame) return;
 
@@ -754,7 +754,7 @@ void AustraliaCashGUI::removeWallet(WalletModel* walletModel)
     updateWindowTitle();
 }
 
-void AustraliaCashGUI::setCurrentWallet(WalletModel* wallet_model)
+void TerraAustralisGUI::setCurrentWallet(WalletModel* wallet_model)
 {
     if (!walletFrame) return;
     walletFrame->setCurrentWallet(wallet_model);
@@ -767,13 +767,13 @@ void AustraliaCashGUI::setCurrentWallet(WalletModel* wallet_model)
     updateWindowTitle();
 }
 
-void AustraliaCashGUI::setCurrentWalletBySelectorIndex(int index)
+void TerraAustralisGUI::setCurrentWalletBySelectorIndex(int index)
 {
     WalletModel* wallet_model = m_wallet_selector->itemData(index).value<WalletModel*>();
     if (wallet_model) setCurrentWallet(wallet_model);
 }
 
-void AustraliaCashGUI::removeAllWallets()
+void TerraAustralisGUI::removeAllWallets()
 {
     if(!walletFrame)
         return;
@@ -782,7 +782,7 @@ void AustraliaCashGUI::removeAllWallets()
 }
 #endif // ENABLE_WALLET
 
-void AustraliaCashGUI::setWalletActionsEnabled(bool enabled)
+void TerraAustralisGUI::setWalletActionsEnabled(bool enabled)
 {
     toggleStakingAction->setEnabled(enabled);
     overviewAction->setEnabled(enabled);
@@ -801,7 +801,7 @@ void AustraliaCashGUI::setWalletActionsEnabled(bool enabled)
     m_close_all_wallets_action->setEnabled(enabled);
 }
 
-void AustraliaCashGUI::createTrayIcon()
+void TerraAustralisGUI::createTrayIcon()
 {
     assert(QSystemTrayIcon::isSystemTrayAvailable());
 
@@ -814,7 +814,7 @@ void AustraliaCashGUI::createTrayIcon()
 #endif
 }
 
-void AustraliaCashGUI::createTrayIconMenu()
+void TerraAustralisGUI::createTrayIconMenu()
 {
 #ifndef Q_OS_MACOS
     if (!trayIcon) return;
@@ -824,7 +824,7 @@ void AustraliaCashGUI::createTrayIconMenu()
     QAction* show_hide_action{nullptr};
 #ifndef Q_OS_MACOS
     // Note: On macOS, the Dock icon's menu already has Show / Hide action.
-    show_hide_action = trayIconMenu->addAction(QString(), this, &AustraliaCashGUI::toggleHidden);
+    show_hide_action = trayIconMenu->addAction(QString(), this, &TerraAustralisGUI::toggleHidden);
     trayIconMenu->addSeparator();
 #endif // Q_OS_MACOS
 
@@ -894,12 +894,12 @@ void AustraliaCashGUI::createTrayIconMenu()
         });
 }
 
-void AustraliaCashGUI::optionsClicked()
+void TerraAustralisGUI::optionsClicked()
 {
     openOptionsDialogWithTab(OptionsDialog::TAB_MAIN);
 }
 
-void AustraliaCashGUI::aboutClicked()
+void TerraAustralisGUI::aboutClicked()
 {
     if(!clientModel)
         return;
@@ -908,25 +908,25 @@ void AustraliaCashGUI::aboutClicked()
     GUIUtil::ShowModalDialogAsynchronously(dlg);
 }
 
-void AustraliaCashGUI::showDebugWindow()
+void TerraAustralisGUI::showDebugWindow()
 {
     GUIUtil::bringToFront(rpcConsole);
     Q_EMIT consoleShown(rpcConsole);
 }
 
-void AustraliaCashGUI::showDebugWindowActivateConsole()
+void TerraAustralisGUI::showDebugWindowActivateConsole()
 {
     rpcConsole->setTabFocus(RPCConsole::TabTypes::CONSOLE);
     showDebugWindow();
 }
 
-void AustraliaCashGUI::showHelpMessageClicked()
+void TerraAustralisGUI::showHelpMessageClicked()
 {
     GUIUtil::bringToFront(helpMessageDialog);
 }
 
 #ifdef ENABLE_WALLET
-void AustraliaCashGUI::toggleStaking()
+void TerraAustralisGUI::toggleStaking()
 {
     if (!m_is_staking) {
         m_is_staking = true;
@@ -941,7 +941,7 @@ void AustraliaCashGUI::toggleStaking()
     }
 }
 
-void AustraliaCashGUI::openClicked()
+void TerraAustralisGUI::openClicked()
 {
     OpenURIDialog dlg(platformStyle, this);
     if(dlg.exec())
@@ -950,46 +950,46 @@ void AustraliaCashGUI::openClicked()
     }
 }
 
-void AustraliaCashGUI::gotoOverviewPage()
+void TerraAustralisGUI::gotoOverviewPage()
 {
     overviewAction->setChecked(true);
     if (walletFrame) walletFrame->gotoOverviewPage();
 }
 
-void AustraliaCashGUI::gotoHistoryPage()
+void TerraAustralisGUI::gotoHistoryPage()
 {
     historyAction->setChecked(true);
     if (walletFrame) walletFrame->gotoHistoryPage();
 }
 
-void AustraliaCashGUI::gotoReceiveCoinsPage()
+void TerraAustralisGUI::gotoReceiveCoinsPage()
 {
     receiveCoinsAction->setChecked(true);
     if (walletFrame) walletFrame->gotoReceiveCoinsPage();
 }
 
-void AustraliaCashGUI::gotoSendCoinsPage(QString addr)
+void TerraAustralisGUI::gotoSendCoinsPage(QString addr)
 {
     sendCoinsAction->setChecked(true);
     if (walletFrame) walletFrame->gotoSendCoinsPage(addr);
 }
 
-void AustraliaCashGUI::gotoSignMessageTab(QString addr)
+void TerraAustralisGUI::gotoSignMessageTab(QString addr)
 {
     if (walletFrame) walletFrame->gotoSignMessageTab(addr);
 }
 
-void AustraliaCashGUI::gotoVerifyMessageTab(QString addr)
+void TerraAustralisGUI::gotoVerifyMessageTab(QString addr)
 {
     if (walletFrame) walletFrame->gotoVerifyMessageTab(addr);
 }
-void AustraliaCashGUI::gotoLoadPSBT(bool from_clipboard)
+void TerraAustralisGUI::gotoLoadPSBT(bool from_clipboard)
 {
     if (walletFrame) walletFrame->gotoLoadPSBT(from_clipboard);
 }
 #endif // ENABLE_WALLET
 
-void AustraliaCashGUI::updateNetworkState()
+void TerraAustralisGUI::updateNetworkState()
 {
     int count = clientModel->getNumConnections();
     QString icon;
@@ -1006,7 +1006,7 @@ void AustraliaCashGUI::updateNetworkState()
 
     if (m_node.getNetworkActive()) {
         //: A substring of the tooltip.
-        tooltip = tr("%n active connection(s) to AustraliaCash network.", "", count);
+        tooltip = tr("%n active connection(s) to TerraAustralis network.", "", count);
     } else {
         //: A substring of the tooltip.
         tooltip = tr("Network activity disabled.");
@@ -1022,12 +1022,12 @@ void AustraliaCashGUI::updateNetworkState()
     connectionsControl->setThemedPixmap(icon, STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE);
 }
 
-void AustraliaCashGUI::setNumConnections(int count)
+void TerraAustralisGUI::setNumConnections(int count)
 {
     updateNetworkState();
 }
 
-void AustraliaCashGUI::setNetworkActive(bool network_active)
+void TerraAustralisGUI::setNetworkActive(bool network_active)
 {
     updateNetworkState();
     m_network_context_menu->clear();
@@ -1047,7 +1047,7 @@ void AustraliaCashGUI::setNetworkActive(bool network_active)
         [this, new_state = !network_active] { m_node.setNetworkActive(new_state); });
 }
 
-void AustraliaCashGUI::updateHeadersSyncProgressLabel()
+void TerraAustralisGUI::updateHeadersSyncProgressLabel()
 {
     int64_t headersTipTime = clientModel->getHeaderTipTime();
     int headersTipHeight = clientModel->getHeaderTipHeight();
@@ -1056,27 +1056,27 @@ void AustraliaCashGUI::updateHeadersSyncProgressLabel()
         progressBarLabel->setText(tr("Syncing Headers (%1%)…").arg(QString::number(100.0 / (headersTipHeight+estHeadersLeft)*headersTipHeight, 'f', 1)));
 }
 
-void AustraliaCashGUI::updateHeadersPresyncProgressLabel(int64_t height, const QDateTime& blockDate)
+void TerraAustralisGUI::updateHeadersPresyncProgressLabel(int64_t height, const QDateTime& blockDate)
 {
     int estHeadersLeft = blockDate.secsTo(QDateTime::currentDateTime()) / Params().GetConsensus().nPowTargetSpacing;
     if (estHeadersLeft > HEADER_HEIGHT_DELTA_SYNC)
         progressBarLabel->setText(tr("Pre-syncing Headers (%1%)…").arg(QString::number(100.0 / (height+estHeadersLeft)*height, 'f', 1)));
 }
 
-void AustraliaCashGUI::openOptionsDialogWithTab(OptionsDialog::Tab tab)
+void TerraAustralisGUI::openOptionsDialogWithTab(OptionsDialog::Tab tab)
 {
     if (!clientModel || !clientModel->getOptionsModel())
         return;
 
     auto dlg = new OptionsDialog(this, enableWallet);
-    connect(dlg, &OptionsDialog::quitOnReset, this, &AustraliaCashGUI::quitRequested);
+    connect(dlg, &OptionsDialog::quitOnReset, this, &TerraAustralisGUI::quitRequested);
     dlg->setCurrentTab(tab);
     dlg->setClientModel(clientModel);
     dlg->setModel(clientModel->getOptionsModel());
     GUIUtil::ShowModalDialogAsynchronously(dlg);
 }
 
-void AustraliaCashGUI::setNumBlocks(int count, const QDateTime& blockDate, const QString& blockHash, const QString& blockPowHash, const QString& blockPowAlgo, double nVerificationProgress, SyncType synctype, SynchronizationState sync_state)
+void TerraAustralisGUI::setNumBlocks(int count, const QDateTime& blockDate, const QString& blockHash, const QString& blockPowHash, const QString& blockPowAlgo, double nVerificationProgress, SyncType synctype, SynchronizationState sync_state)
 {
 // Disabling macOS App Nap on initial sync, disk and reindex operations.
 #ifdef Q_OS_MACOS
@@ -1197,7 +1197,7 @@ void AustraliaCashGUI::setNumBlocks(int count, const QDateTime& blockDate, const
     progressBar->setToolTip(tooltip);
 }
 
-void AustraliaCashGUI::message(const QString& title, QString message, unsigned int style, bool* ret, const QString& detailed_message)
+void TerraAustralisGUI::message(const QString& title, QString message, unsigned int style, bool* ret, const QString& detailed_message)
 {
     // Default title. On macOS, the window title is ignored (as required by the macOS Guidelines).
     QString strTitle{PACKAGE_NAME};
@@ -1257,7 +1257,7 @@ void AustraliaCashGUI::message(const QString& title, QString message, unsigned i
     }
 }
 
-void AustraliaCashGUI::changeEvent(QEvent *e)
+void TerraAustralisGUI::changeEvent(QEvent *e)
 {
     if (e->type() == QEvent::PaletteChange) {
         overviewAction->setIcon(platformStyle->SingleColorIcon(QStringLiteral(":/icons/overview")));
@@ -1276,12 +1276,12 @@ void AustraliaCashGUI::changeEvent(QEvent *e)
             QWindowStateChangeEvent *wsevt = static_cast<QWindowStateChangeEvent*>(e);
             if(!(wsevt->oldState() & Qt::WindowMinimized) && isMinimized())
             {
-                QTimer::singleShot(0, this, &AustraliaCashGUI::hide);
+                QTimer::singleShot(0, this, &TerraAustralisGUI::hide);
                 e->ignore();
             }
             else if((wsevt->oldState() & Qt::WindowMinimized) && !isMinimized())
             {
-                QTimer::singleShot(0, this, &AustraliaCashGUI::show);
+                QTimer::singleShot(0, this, &TerraAustralisGUI::show);
                 e->ignore();
             }
         }
@@ -1289,7 +1289,7 @@ void AustraliaCashGUI::changeEvent(QEvent *e)
 #endif
 }
 
-void AustraliaCashGUI::closeEvent(QCloseEvent *event)
+void TerraAustralisGUI::closeEvent(QCloseEvent *event)
 {
 #ifndef Q_OS_MACOS // Ignored on Mac
     if(clientModel && clientModel->getOptionsModel())
@@ -1312,7 +1312,7 @@ void AustraliaCashGUI::closeEvent(QCloseEvent *event)
 #endif
 }
 
-void AustraliaCashGUI::showEvent(QShowEvent *event)
+void TerraAustralisGUI::showEvent(QShowEvent *event)
 {
     // enable the debug window when the main window shows up
     openRPCConsoleAction->setEnabled(true);
@@ -1321,11 +1321,11 @@ void AustraliaCashGUI::showEvent(QShowEvent *event)
 }
 
 #ifdef ENABLE_WALLET
-void AustraliaCashGUI::incomingTransaction(const QString& date, AustraliaCashUnit unit, const CAmount& amount, const QString& type, const QString& address, const QString& label, const QString& walletName)
+void TerraAustralisGUI::incomingTransaction(const QString& date, TerraAustralisUnit unit, const CAmount& amount, const QString& type, const QString& address, const QString& label, const QString& walletName)
 {
     // On new transaction, make an info balloon
     QString msg = tr("Date: %1\n").arg(date) +
-                  tr("Amount: %1\n").arg(AustraliaCashUnits::formatWithUnit(unit, amount, true));
+                  tr("Amount: %1\n").arg(TerraAustralisUnits::formatWithUnit(unit, amount, true));
     if (m_node.walletLoader().getWallets().size() > 1 && !walletName.isEmpty()) {
         msg += tr("Wallet: %1\n").arg(walletName);
     }
@@ -1339,14 +1339,14 @@ void AustraliaCashGUI::incomingTransaction(const QString& date, AustraliaCashUni
 }
 #endif // ENABLE_WALLET
 
-void AustraliaCashGUI::dragEnterEvent(QDragEnterEvent *event)
+void TerraAustralisGUI::dragEnterEvent(QDragEnterEvent *event)
 {
     // Accept only URIs
     if(event->mimeData()->hasUrls())
         event->acceptProposedAction();
 }
 
-void AustraliaCashGUI::dropEvent(QDropEvent *event)
+void TerraAustralisGUI::dropEvent(QDropEvent *event)
 {
     if(event->mimeData()->hasUrls())
     {
@@ -1358,7 +1358,7 @@ void AustraliaCashGUI::dropEvent(QDropEvent *event)
     event->acceptProposedAction();
 }
 
-bool AustraliaCashGUI::eventFilter(QObject *object, QEvent *event)
+bool TerraAustralisGUI::eventFilter(QObject *object, QEvent *event)
 {
     // Catch status tip events
     if (event->type() == QEvent::StatusTip)
@@ -1371,7 +1371,7 @@ bool AustraliaCashGUI::eventFilter(QObject *object, QEvent *event)
 }
 
 #ifdef ENABLE_WALLET
-bool AustraliaCashGUI::handlePaymentRequest(const SendCoinsRecipient& recipient)
+bool TerraAustralisGUI::handlePaymentRequest(const SendCoinsRecipient& recipient)
 {
     // URI has to be valid
     if (walletFrame && walletFrame->handlePaymentRequest(recipient))
@@ -1383,14 +1383,14 @@ bool AustraliaCashGUI::handlePaymentRequest(const SendCoinsRecipient& recipient)
     return false;
 }
 
-void AustraliaCashGUI::setHDStatus(bool privkeyDisabled, int hdEnabled)
+void TerraAustralisGUI::setHDStatus(bool privkeyDisabled, int hdEnabled)
 {
     labelWalletHDStatusIcon->setThemedPixmap(privkeyDisabled ? QStringLiteral(":/icons/eye") : hdEnabled ? QStringLiteral(":/icons/hd_enabled") : QStringLiteral(":/icons/hd_disabled"), STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE);
     labelWalletHDStatusIcon->setToolTip(privkeyDisabled ? tr("Private key <b>disabled</b>") : hdEnabled ? tr("HD key generation is <b>enabled</b>") : tr("HD key generation is <b>disabled</b>"));
     labelWalletHDStatusIcon->show();
 }
 
-void AustraliaCashGUI::setStakingStatus()
+void TerraAustralisGUI::setStakingStatus()
 {
     if (fStakerRunning) {
         if (!fTryToSync) {
@@ -1410,7 +1410,7 @@ void AustraliaCashGUI::setStakingStatus()
 }
 
 
-void AustraliaCashGUI::setEncryptionStatus(int status)
+void TerraAustralisGUI::setEncryptionStatus(int status)
 {
     switch(status)
     {
@@ -1445,7 +1445,7 @@ void AustraliaCashGUI::setEncryptionStatus(int status)
     }
 }
 
-void AustraliaCashGUI::updateWalletStatus()
+void TerraAustralisGUI::updateWalletStatus()
 {
     assert(walletFrame);
 
@@ -1459,7 +1459,7 @@ void AustraliaCashGUI::updateWalletStatus()
 }
 #endif // ENABLE_WALLET
 
-void AustraliaCashGUI::updateProxyIcon()
+void TerraAustralisGUI::updateProxyIcon()
 {
     std::string ip_port;
     bool proxy_enabled = clientModel->getProxyInfo(ip_port);
@@ -1477,7 +1477,7 @@ void AustraliaCashGUI::updateProxyIcon()
     }
 }
 
-void AustraliaCashGUI::updateWindowTitle()
+void TerraAustralisGUI::updateWindowTitle()
 {
     QString window_title = PACKAGE_NAME;
 #ifdef ENABLE_WALLET
@@ -1494,7 +1494,7 @@ void AustraliaCashGUI::updateWindowTitle()
     setWindowTitle(window_title);
 }
 
-void AustraliaCashGUI::showNormalIfMinimized(bool fToggleHidden)
+void TerraAustralisGUI::showNormalIfMinimized(bool fToggleHidden)
 {
     if(!clientModel)
         return;
@@ -1506,12 +1506,12 @@ void AustraliaCashGUI::showNormalIfMinimized(bool fToggleHidden)
     }
 }
 
-void AustraliaCashGUI::toggleHidden()
+void TerraAustralisGUI::toggleHidden()
 {
     showNormalIfMinimized(true);
 }
 
-void AustraliaCashGUI::detectShutdown()
+void TerraAustralisGUI::detectShutdown()
 {
     if (m_node.shutdownRequested())
     {
@@ -1521,7 +1521,7 @@ void AustraliaCashGUI::detectShutdown()
     }
 }
 
-void AustraliaCashGUI::showProgress(const QString &title, int nProgress)
+void TerraAustralisGUI::showProgress(const QString &title, int nProgress)
 {
     if (nProgress == 0) {
         progressDialog = new QProgressDialog(title, QString(), 0, 100);
@@ -1540,13 +1540,13 @@ void AustraliaCashGUI::showProgress(const QString &title, int nProgress)
     }
 }
 
-void AustraliaCashGUI::showModalOverlay()
+void TerraAustralisGUI::showModalOverlay()
 {
     if (modalOverlay && (progressBar->isVisible() || modalOverlay->isLayerVisible()))
         modalOverlay->toggleVisibility();
 }
 
-static bool ThreadSafeMessageBox(AustraliaCashGUI* gui, const bilingual_str& message, const std::string& caption, unsigned int style)
+static bool ThreadSafeMessageBox(TerraAustralisGUI* gui, const bilingual_str& message, const std::string& caption, unsigned int style)
 {
     bool modal = (style & CClientUIInterface::MODAL);
     // The SECURE flag has no effect in the Qt GUI.
@@ -1556,7 +1556,7 @@ static bool ThreadSafeMessageBox(AustraliaCashGUI* gui, const bilingual_str& mes
 
     QString detailed_message; // This is original message, in English, for googling and referencing.
     if (message.original != message.translated) {
-        detailed_message = AustraliaCashGUI::tr("Original message:") + "\n" + QString::fromStdString(message.original);
+        detailed_message = TerraAustralisGUI::tr("Original message:") + "\n" + QString::fromStdString(message.original);
     }
 
     // In case of modal message, use blocking connection to wait for user to click a button
@@ -1571,21 +1571,21 @@ static bool ThreadSafeMessageBox(AustraliaCashGUI* gui, const bilingual_str& mes
     return ret;
 }
 
-void AustraliaCashGUI::subscribeToCoreSignals()
+void TerraAustralisGUI::subscribeToCoreSignals()
 {
     // Connect signals to client
     m_handler_message_box = m_node.handleMessageBox(std::bind(ThreadSafeMessageBox, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
     m_handler_question = m_node.handleQuestion(std::bind(ThreadSafeMessageBox, this, std::placeholders::_1, std::placeholders::_3, std::placeholders::_4));
 }
 
-void AustraliaCashGUI::unsubscribeFromCoreSignals()
+void TerraAustralisGUI::unsubscribeFromCoreSignals()
 {
     // Disconnect signals from client
     m_handler_message_box->disconnect();
     m_handler_question->disconnect();
 }
 
-bool AustraliaCashGUI::isPrivacyModeActivated() const
+bool TerraAustralisGUI::isPrivacyModeActivated() const
 {
     assert(m_mask_values_action);
     return m_mask_values_action->isChecked();
@@ -1598,11 +1598,11 @@ UnitDisplayStatusBarControl::UnitDisplayStatusBarControl(const PlatformStyle *pl
 {
     createContextMenu();
     setToolTip(tr("Unit to show amounts in. Click to select another unit."));
-    QList<AustraliaCashUnit> units = AustraliaCashUnits::availableUnits();
+    QList<TerraAustralisUnit> units = TerraAustralisUnits::availableUnits();
     int max_width = 0;
     const QFontMetrics fm(font());
-    for (const AustraliaCashUnit unit : units) {
-        max_width = qMax(max_width, GUIUtil::TextWidth(fm, AustraliaCashUnits::longName(unit)));
+    for (const TerraAustralisUnit unit : units) {
+        max_width = qMax(max_width, GUIUtil::TextWidth(fm, TerraAustralisUnits::longName(unit)));
     }
     setMinimumSize(max_width, 0);
     setAlignment(Qt::AlignRight | Qt::AlignVCenter);
@@ -1631,8 +1631,8 @@ void UnitDisplayStatusBarControl::changeEvent(QEvent* e)
 void UnitDisplayStatusBarControl::createContextMenu()
 {
     menu = new QMenu(this);
-    for (const AustraliaCashUnit u : AustraliaCashUnits::availableUnits()) {
-        menu->addAction(AustraliaCashUnits::longName(u))->setData(QVariant::fromValue(u));
+    for (const TerraAustralisUnit u : TerraAustralisUnits::availableUnits()) {
+        menu->addAction(TerraAustralisUnits::longName(u))->setData(QVariant::fromValue(u));
     }
     connect(menu, &QMenu::triggered, this, &UnitDisplayStatusBarControl::onMenuSelection);
 }
@@ -1653,9 +1653,9 @@ void UnitDisplayStatusBarControl::setOptionsModel(OptionsModel *_optionsModel)
 }
 
 /** When Display Units are changed on OptionsModel it will refresh the display text of the control on the status bar */
-void UnitDisplayStatusBarControl::updateDisplayUnit(AustraliaCashUnit newUnits)
+void UnitDisplayStatusBarControl::updateDisplayUnit(TerraAustralisUnit newUnits)
 {
-    setText(AustraliaCashUnits::longName(newUnits));
+    setText(TerraAustralisUnits::longName(newUnits));
 }
 
 /** Shows context menu with Display Unit options by the mouse coordinates */

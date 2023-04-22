@@ -66,8 +66,8 @@
         <translation type="unfinished">Қабылдаушы мекенжайлар</translation>
     </message>
     <message>
-        <source>These are your AustraliaCash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Бұл сіздің төлем жіберетін AustraliaCash мекенжайларыңыз. Тиын жібермес бұрын, әрқашан сома мен алушы мекенжайды тексеріңіз.</translation>
+        <source>These are your TerraAustralis addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Бұл сіздің төлем жіберетін TerraAustralis мекенжайларыңыз. Тиын жібермес бұрын, әрқашан сома мен алушы мекенжайды тексеріңіз.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -234,7 +234,7 @@
     </message>
     </context>
 <context>
-    <name>AustraliaCashApplication</name>
+    <name>TerraAustralisApplication</name>
     <message>
         <source>Internal error</source>
         <translation type="unfinished">Ішкі қате</translation>
@@ -329,7 +329,7 @@
     </message>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation type="unfinished">&amp;Шолу</translation>
@@ -392,8 +392,8 @@
         <translation type="unfinished">Прокси &lt;b&gt;қосулы&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a AustraliaCash address</source>
-        <translation type="unfinished">AustraliaCash мекенжайына тиын жіберу</translation>
+        <source>Send coins to a TerraAustralis address</source>
+        <translation type="unfinished">TerraAustralis мекенжайына тиын жіберу</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -436,16 +436,16 @@
         <translation type="unfinished">Хатқа &amp;қол қою…</translation>
     </message>
     <message>
-        <source>Sign messages with your AustraliaCash addresses to prove you own them</source>
-        <translation type="unfinished">Хатқа AustraliaCash мекенжайларын қосып, олар сізге тиесілі екенін дәлелдеу</translation>
+        <source>Sign messages with your TerraAustralis addresses to prove you own them</source>
+        <translation type="unfinished">Хатқа TerraAustralis мекенжайларын қосып, олар сізге тиесілі екенін дәлелдеу</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
         <translation type="unfinished">&amp;Хат тексеру…</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified AustraliaCash addresses</source>
-        <translation type="unfinished">Хат тексеріп, берілген AustraliaCash мекенжайлары қосылғанына көз жеткізу</translation>
+        <source>Verify messages to ensure they were signed with specified TerraAustralis addresses</source>
+        <translation type="unfinished">Хат тексеріп, берілген TerraAustralis мекенжайлары қосылғанына көз жеткізу</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -559,7 +559,7 @@
         <translation type="unfinished">&amp;Терезе</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to AustraliaCash network.</source>
+        <source>%n active connection(s) to TerraAustralis network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -646,7 +646,7 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>AustraliaCash</source>
+        <source>TerraAustralis</source>
         <translation type="unfinished">Биткоин</translation>
     </message>
     <message numerus="yes">
@@ -679,8 +679,8 @@
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the AustraliaCash block chain.</source>
-        <translation type="unfinished">%1 AustraliaCash блокчейнінің көшірмесін жүктеп сақтайды.</translation>
+        <source>%1 will download and store a copy of the TerraAustralis block chain.</source>
+        <translation type="unfinished">%1 TerraAustralis блокчейнінің көшірмесін жүктеп сақтайды.</translation>
     </message>
     <message>
         <source>Error</source>

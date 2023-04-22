@@ -85,9 +85,9 @@ OpenRC).
 ### macOS
 
     Binary:              /usr/local/bin/bitcoind
-    Configuration file:  ~/Library/Application Support/AustraliaCash/bitcoin.conf
-    Data directory:      ~/Library/Application Support/AustraliaCash
-    Lock file:           ~/Library/Application Support/AustraliaCash/.lock
+    Configuration file:  ~/Library/Application Support/TerraAustralis/bitcoin.conf
+    Data directory:      ~/Library/Application Support/TerraAustralis
+    Lock file:           ~/Library/Application Support/TerraAustralis/.lock
 
 Installing Service Configuration
 -----------------------------------

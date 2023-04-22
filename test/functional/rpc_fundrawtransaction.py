@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2021 The AustraliaCash Core developers
+# Copyright (c) 2014-2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the fundrawtransaction RPC."""
@@ -14,7 +14,7 @@ from test_framework.key import ECKey
 from test_framework.messages import (
     COIN,
 )
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 from test_framework.util import (
     assert_approx,
     assert_equal,
@@ -34,7 +34,7 @@ def get_unspent(listunspent, amount):
             return utx
     raise AssertionError('Could not find unspent with amount={}'.format(amount))
 
-class RawTransactionsTest(AustraliaCashTestFramework):
+class RawTransactionsTest(TerraAustralisTestFramework):
     def set_test_params(self):
         self.num_nodes = 4
         self.setup_clean_chain = True

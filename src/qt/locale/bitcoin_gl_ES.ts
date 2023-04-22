@@ -66,8 +66,8 @@
         <translation type="unfinished">Enderezos de recepción</translation>
     </message>
     <message>
-        <source>These are your AustraliaCash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Estes son os teus enderezos de AustraliaCash para enviar pagamentos. Asegurate sempre de comprobar a cantidade e maila dirección antes de enviar moedas.</translation>
+        <source>These are your TerraAustralis addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Estes son os teus enderezos de TerraAustralis para enviar pagamentos. Asegurate sempre de comprobar a cantidade e maila dirección antes de enviar moedas.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -282,7 +282,7 @@
     </message>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation type="unfinished">&amp;visión xeral</translation>
@@ -345,8 +345,8 @@
         <translation type="unfinished">Proxy &lt;b&gt;activado&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a AustraliaCash address</source>
-        <translation type="unfinished">Envía moedas a un enderezo de AustraliaCash</translation>
+        <source>Send coins to a TerraAustralis address</source>
+        <translation type="unfinished">Envía moedas a un enderezo de TerraAustralis</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -369,12 +369,12 @@
         <translation type="unfinished">Encripta as claves privadas que pertencen á túa carteira</translation>
     </message>
     <message>
-        <source>Sign messages with your AustraliaCash addresses to prove you own them</source>
-        <translation type="unfinished">Asina mensaxes cos teus enderezos de AustraliaCash para probar que che pertencen</translation>
+        <source>Sign messages with your TerraAustralis addresses to prove you own them</source>
+        <translation type="unfinished">Asina mensaxes cos teus enderezos de TerraAustralis para probar que che pertencen</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified AustraliaCash addresses</source>
-        <translation type="unfinished">Verifica mensaxes para asegurar que foron asinados cos enderezos de AustraliaCash especificados</translation>
+        <source>Verify messages to ensure they were signed with specified TerraAustralis addresses</source>
+        <translation type="unfinished">Verifica mensaxes para asegurar que foron asinados cos enderezos de TerraAustralis especificados</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -457,7 +457,7 @@
     </message>
     <message>
         <source>Open a bitcoin: URI</source>
-        <translation type="unfinished">Abre una URI de AustraliaCash</translation>
+        <translation type="unfinished">Abre una URI de TerraAustralis</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -472,8 +472,8 @@
         <translation type="unfinished">Pechar carteira</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible AustraliaCash command-line options</source>
-        <translation type="unfinished">Mostra a %1 mensaxe de axuda para obter unha lista cas posibles opcións de línea de comando de AustraliaCash </translation>
+        <source>Show the %1 help message to get a list with possible TerraAustralis command-line options</source>
+        <translation type="unfinished">Mostra a %1 mensaxe de axuda para obter unha lista cas posibles opcións de línea de comando de TerraAustralis </translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -501,7 +501,7 @@
         <translation type="unfinished">%1 cliente</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to AustraliaCash network.</source>
+        <source>%n active connection(s) to TerraAustralis network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -809,8 +809,8 @@
         <translation type="unfinished">Editar enderezo de envío</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid AustraliaCash address.</source>
-        <translation type="unfinished">O enderezo introducido "%1" non é un enderezo de AustraliaCash válido.</translation>
+        <source>The entered address "%1" is not a valid TerraAustralis address.</source>
+        <translation type="unfinished">O enderezo introducido "%1" non é un enderezo de TerraAustralis válido.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>

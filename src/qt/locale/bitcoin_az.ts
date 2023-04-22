@@ -66,13 +66,13 @@
         <translation type="unfinished">Alınan ünvanlar</translation>
     </message>
     <message>
-        <source>These are your AustraliaCash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Bunlar ödənişləri göndərmək üçün AustraliaCash ünvanlarınızdır. pul göndərməzdən əvvəl həmişə miqdarı və göndəriləcək ünvanı yoxlayın.</translation>
+        <source>These are your TerraAustralis addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Bunlar ödənişləri göndərmək üçün TerraAustralis ünvanlarınızdır. pul göndərməzdən əvvəl həmişə miqdarı və göndəriləcək ünvanı yoxlayın.</translation>
     </message>
     <message>
-        <source>These are your AustraliaCash addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your TerraAustralis addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Bunlar ödəniş almaq üçün AustraliaCash ünvanlarınızdır. Yeni ünvan yaratmaq üçün alacaqlar vərəqində 'Yeni alacaq ünvan yarat' düyməsini istifadə edin.
+        <translation type="unfinished">Bunlar ödəniş almaq üçün TerraAustralis ünvanlarınızdır. Yeni ünvan yaratmaq üçün alacaqlar vərəqində 'Yeni alacaq ünvan yarat' düyməsini istifadə edin.
 Daxil olma, yalnız 'qanuni' tipli ünvanlar ilə mümkündür.</translation>
     </message>
     <message>
@@ -240,7 +240,7 @@ Daxil olma, yalnız 'qanuni' tipli ünvanlar ilə mümkündür.</translation>
     </message>
 </context>
 <context>
-    <name>AustraliaCashApplication</name>
+    <name>TerraAustralisApplication</name>
     <message>
         <source>Settings file %1 might be corrupt or invalid.</source>
         <translation type="unfinished">Ola bilsin ki, %1 faylı zədələnib və ya yararsızdır.</translation>
@@ -373,7 +373,7 @@ Daxil olma, yalnız 'qanuni' tipli ünvanlar ilə mümkündür.</translation>
     </message>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation type="unfinished">&amp;İcmal</translation>
@@ -440,8 +440,8 @@ Daxil olma, yalnız 'qanuni' tipli ünvanlar ilə mümkündür.</translation>
         <translation type="unfinished">Proksi &lt;b&gt;işə salınıb&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a AustraliaCash address</source>
-        <translation type="unfinished">Pulları AustraliaCash ünvanına göndərin</translation>
+        <source>Send coins to a TerraAustralis address</source>
+        <translation type="unfinished">Pulları TerraAustralis ünvanına göndərin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -484,16 +484,16 @@ Daxil olma, yalnız 'qanuni' tipli ünvanlar ilə mümkündür.</translation>
         <translation type="unfinished">İs&amp;marıcı imzalayın...</translation>
     </message>
     <message>
-        <source>Sign messages with your AustraliaCash addresses to prove you own them</source>
-        <translation type="unfinished">AustraliaCash ünvanlarınızın sahibi olduğunuzu sübut etmək üçün ismarıcları imzalayın</translation>
+        <source>Sign messages with your TerraAustralis addresses to prove you own them</source>
+        <translation type="unfinished">TerraAustralis ünvanlarınızın sahibi olduğunuzu sübut etmək üçün ismarıcları imzalayın</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
         <translation type="unfinished">&amp;İsmarıcı doğrulayın...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified AustraliaCash addresses</source>
-        <translation type="unfinished">Göstərilmiş AustraliaCash ünvanları ilə imzalandıqlarına əmin olmaq üçün ismarıcları doğrulayın</translation>
+        <source>Verify messages to ensure they were signed with specified TerraAustralis addresses</source>
+        <translation type="unfinished">Göstərilmiş TerraAustralis ünvanları ilə imzalandıqlarına əmin olmaq üçün ismarıcları doğrulayın</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -557,7 +557,7 @@ Daxil olma, yalnız 'qanuni' tipli ünvanlar ilə mümkündür.</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation type="unfinished">Ödəmə tələbi (QR-kodlar və AustraliaCash URI-ləri yaradılır):</translation>
+        <translation type="unfinished">Ödəmə tələbi (QR-kodlar və TerraAustralis URI-ləri yaradılır):</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -611,16 +611,16 @@ Daxil olma, yalnız 'qanuni' tipli ünvanlar ilə mümkündür.</translation>
         <translation type="unfinished">Eyniləşdirildi</translation>
     </message>
     <message>
-        <source>Load Partially Signed AustraliaCash Transaction</source>
-        <translation type="unfinished">Qismən imzalanmış AustraliaCash köçürmələrini yükləyin</translation>
+        <source>Load Partially Signed TerraAustralis Transaction</source>
+        <translation type="unfinished">Qismən imzalanmış TerraAustralis köçürmələrini yükləyin</translation>
     </message>
     <message>
         <source>Load PSBT from &amp;clipboard…</source>
         <translation type="unfinished">PSBT-i &amp;mübadilə yaddaşından yükləyin...</translation>
     </message>
     <message>
-        <source>Load Partially Signed AustraliaCash Transaction from clipboard</source>
-        <translation type="unfinished">Qismən İmzalanmış AustraliaCash Köçürməsini (PSBT) mübadilə yaddaşından yükləmək</translation>
+        <source>Load Partially Signed TerraAustralis Transaction from clipboard</source>
+        <translation type="unfinished">Qismən İmzalanmış TerraAustralis Köçürməsini (PSBT) mübadilə yaddaşından yükləmək</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -640,7 +640,7 @@ Daxil olma, yalnız 'qanuni' tipli ünvanlar ilə mümkündür.</translation>
     </message>
     <message>
         <source>Open a bitcoin: URI</source>
-        <translation type="unfinished">AustraliaCash açın: URI</translation>
+        <translation type="unfinished">TerraAustralis açın: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -669,8 +669,8 @@ Daxil olma, yalnız 'qanuni' tipli ünvanlar ilə mümkündür.</translation>
         <translation type="unfinished">Bütün cüzdanları bağlayın</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible AustraliaCash command-line options</source>
-        <translation type="unfinished">Mümkün AustraliaCash əmr sətri əməliyyatları siyahısını almaq üçün %1 kömək ismarıcı göstərilsin</translation>
+        <source>Show the %1 help message to get a list with possible TerraAustralis command-line options</source>
+        <translation type="unfinished">Mümkün TerraAustralis əmr sətri əməliyyatları siyahısını almaq üçün %1 kömək ismarıcı göstərilsin</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -733,11 +733,11 @@ Daxil olma, yalnız 'qanuni' tipli ünvanlar ilə mümkündür.</translation>
         <translation type="unfinished">&amp;Göstərin</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to AustraliaCash network.</source>
+        <source>%n active connection(s) to TerraAustralis network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>AustraliaCash şəbəkəsinə %n aktiv bağlantı.</numerusform>
-            <numerusform>AustraliaCash şəbəkəsinə %n aktiv bağlantı.</numerusform>
+            <numerusform>TerraAustralis şəbəkəsinə %n aktiv bağlantı.</numerusform>
+            <numerusform>TerraAustralis şəbəkəsinə %n aktiv bağlantı.</numerusform>
         </translation>
     </message>
     <message>

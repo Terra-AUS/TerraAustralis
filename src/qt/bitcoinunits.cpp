@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2023 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,15 +12,15 @@
 
 static constexpr auto MAX_DIGITS_BTC = 16;
 
-AustraliaCashUnits::AustraliaCashUnits(QObject *parent):
+TerraAustralisUnits::TerraAustralisUnits(QObject *parent):
         QAbstractListModel(parent),
         unitlist(availableUnits())
 {
 }
 
-QList<AustraliaCashUnit> AustraliaCashUnits::availableUnits()
+QList<TerraAustralisUnit> TerraAustralisUnits::availableUnits()
 {
-    QList<AustraliaCashUnit> unitlist;
+    QList<TerraAustralisUnit> unitlist;
     unitlist.append(Unit::BTC);
     unitlist.append(Unit::mBTC);
     unitlist.append(Unit::uBTC);
@@ -28,18 +28,18 @@ QList<AustraliaCashUnit> AustraliaCashUnits::availableUnits()
     return unitlist;
 }
 
-QString AustraliaCashUnits::longName(Unit unit)
+QString TerraAustralisUnits::longName(Unit unit)
 {
     switch (unit) {
-    case Unit::BTC: return QString("AUS");
-    case Unit::mBTC: return QString("mAUS");
-    case Unit::uBTC: return QString::fromUtf8("µAUS (mbits)");
-    case Unit::SAT: return QString("Mateoshi (msat)");
+    case Unit::BTC: return QString("TAUS");
+    case Unit::mBTC: return QString("mTAUS");
+    case Unit::uBTC: return QString::fromUtf8("µTAUS (mbits)");
+    case Unit::SAT: return QString("Terraus (msat)");
     } // no default case, so the compiler can warn about missing cases
     assert(false);
 }
 
-QString AustraliaCashUnits::shortName(Unit unit)
+QString TerraAustralisUnits::shortName(Unit unit)
 {
     switch (unit) {
     case Unit::BTC: return longName(unit);
@@ -50,18 +50,18 @@ QString AustraliaCashUnits::shortName(Unit unit)
     assert(false);
 }
 
-QString AustraliaCashUnits::description(Unit unit)
+QString TerraAustralisUnits::description(Unit unit)
 {
     switch (unit) {
-    case Unit::BTC: return QString("AustraliaCashcoins");
-    case Unit::mBTC: return QString("Milli-AustraliaCashcoins (1 / 1" THIN_SP_UTF8 "000)");
-    case Unit::uBTC: return QString("Micro-AustraliaCashcoins (mbits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-    case Unit::SAT: return QString("Mateoshi (msat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case Unit::BTC: return QString("TerraAustralis");
+    case Unit::mBTC: return QString("Milli-TerraAustralis (1 / 1" THIN_SP_UTF8 "000)");
+    case Unit::uBTC: return QString("Micro-TerraAustralis (mbits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case Unit::SAT: return QString("Terraus (msat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     } // no default case, so the compiler can warn about missing cases
     assert(false);
 }
 
-qint64 AustraliaCashUnits::factor(Unit unit)
+qint64 TerraAustralisUnits::factor(Unit unit)
 {
     switch (unit) {
     case Unit::BTC: return 100'000'000;
@@ -72,7 +72,7 @@ qint64 AustraliaCashUnits::factor(Unit unit)
     assert(false);
 }
 
-int AustraliaCashUnits::decimals(Unit unit)
+int TerraAustralisUnits::decimals(Unit unit)
 {
     switch (unit) {
     case Unit::BTC: return 8;
@@ -83,7 +83,7 @@ int AustraliaCashUnits::decimals(Unit unit)
     assert(false);
 }
 
-QString AustraliaCashUnits::format(Unit unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators, bool justify)
+QString TerraAustralisUnits::format(Unit unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators, bool justify)
 {
     // Note: not using straight sprintf here because we do NOT want
     // localized number formatting.
@@ -128,19 +128,19 @@ QString AustraliaCashUnits::format(Unit unit, const CAmount& nIn, bool fPlus, Se
 // Please take care to use formatHtmlWithUnit instead, when
 // appropriate.
 
-QString AustraliaCashUnits::formatWithUnit(Unit unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString TerraAustralisUnits::formatWithUnit(Unit unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     return format(unit, amount, plussign, separators) + QString(" ") + shortName(unit);
 }
 
-QString AustraliaCashUnits::formatHtmlWithUnit(Unit unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString TerraAustralisUnits::formatHtmlWithUnit(Unit unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QString str(formatWithUnit(unit, amount, plussign, separators));
     str.replace(QChar(THIN_SP_CP), QString(THIN_SP_HTML));
     return QString("<span style='white-space: nowrap;'>%1</span>").arg(str);
 }
 
-QString AustraliaCashUnits::formatWithPrivacy(Unit unit, const CAmount& amount, SeparatorStyle separators, bool privacy)
+QString TerraAustralisUnits::formatWithPrivacy(Unit unit, const CAmount& amount, SeparatorStyle separators, bool privacy)
 {
     assert(amount >= 0);
     QString value;
@@ -152,7 +152,7 @@ QString AustraliaCashUnits::formatWithPrivacy(Unit unit, const CAmount& amount, 
     return value + QString(" ") + shortName(unit);
 }
 
-bool AustraliaCashUnits::parse(Unit unit, const QString& value, CAmount* val_out)
+bool TerraAustralisUnits::parse(Unit unit, const QString& value, CAmount* val_out)
 {
     if (value.isEmpty()) {
         return false; // Refuse to parse invalid unit or empty string
@@ -192,18 +192,18 @@ bool AustraliaCashUnits::parse(Unit unit, const QString& value, CAmount* val_out
     return ok;
 }
 
-QString AustraliaCashUnits::getAmountColumnTitle(Unit unit)
+QString TerraAustralisUnits::getAmountColumnTitle(Unit unit)
 {
     return QObject::tr("Amount") + " (" + shortName(unit) + ")";
 }
 
-int AustraliaCashUnits::rowCount(const QModelIndex &parent) const
+int TerraAustralisUnits::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return unitlist.size();
 }
 
-QVariant AustraliaCashUnits::data(const QModelIndex &index, int role) const
+QVariant TerraAustralisUnits::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
     if(row >= 0 && row < unitlist.size())
@@ -223,41 +223,41 @@ QVariant AustraliaCashUnits::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-CAmount AustraliaCashUnits::maxMoney()
+CAmount TerraAustralisUnits::maxMoney()
 {
     return MAX_MONEY;
 }
 
 namespace {
-qint8 ToQint8(AustraliaCashUnit unit)
+qint8 ToQint8(TerraAustralisUnit unit)
 {
     switch (unit) {
-    case AustraliaCashUnit::BTC: return 0;
-    case AustraliaCashUnit::mBTC: return 1;
-    case AustraliaCashUnit::uBTC: return 2;
-    case AustraliaCashUnit::SAT: return 3;
+    case TerraAustralisUnit::BTC: return 0;
+    case TerraAustralisUnit::mBTC: return 1;
+    case TerraAustralisUnit::uBTC: return 2;
+    case TerraAustralisUnit::SAT: return 3;
     } // no default case, so the compiler can warn about missing cases
     assert(false);
 }
 
-AustraliaCashUnit FromQint8(qint8 num)
+TerraAustralisUnit FromQint8(qint8 num)
 {
     switch (num) {
-    case 0: return AustraliaCashUnit::BTC;
-    case 1: return AustraliaCashUnit::mBTC;
-    case 2: return AustraliaCashUnit::uBTC;
-    case 3: return AustraliaCashUnit::SAT;
+    case 0: return TerraAustralisUnit::BTC;
+    case 1: return TerraAustralisUnit::mBTC;
+    case 2: return TerraAustralisUnit::uBTC;
+    case 3: return TerraAustralisUnit::SAT;
     }
     assert(false);
 }
 } // namespace
 
-QDataStream& operator<<(QDataStream& out, const AustraliaCashUnit& unit)
+QDataStream& operator<<(QDataStream& out, const TerraAustralisUnit& unit)
 {
     return out << ToQint8(unit);
 }
 
-QDataStream& operator>>(QDataStream& in, AustraliaCashUnit& unit)
+QDataStream& operator>>(QDataStream& in, TerraAustralisUnit& unit)
 {
     qint8 input;
     in >> input;

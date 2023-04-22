@@ -1,7 +1,7 @@
 Translation Strings Policy
 ===========================
 
-This document provides guidelines for internationalization of the AustraliaCash Core software.
+This document provides guidelines for internationalization of the TerraAustralis Core software.
 
 How to translate?
 ------------------
@@ -76,10 +76,10 @@ In Qt code, use tr's third argument for optional plurality. For example:
 This adds `<numerusform>`s to the respective `.ts` file, which can be translated separately depending on the language. In English, this is simply:
 
     <message numerus="yes">
-        <source>%n active connection(s) to AustraliaCash network</source>
+        <source>%n active connection(s) to TerraAustralis network</source>
         <translation>
-            <numerusform>%n active connection to AustraliaCash network</numerusform>
-            <numerusform>%n active connections to AustraliaCash network</numerusform>
+            <numerusform>%n active connection to TerraAustralis network</numerusform>
+            <numerusform>%n active connections to TerraAustralis network</numerusform>
         </translation>
     </message>
 

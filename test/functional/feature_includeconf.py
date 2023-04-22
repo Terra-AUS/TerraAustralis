@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2018-2021 The AustraliaCash Core developers
+# Copyright (c) 2018-2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Tests the includeconf argument
@@ -16,9 +16,9 @@ Verify that:
 """
 import os
 
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 
-class IncludeConfTest(AustraliaCashTestFramework):
+class IncludeConfTest(TerraAustralisTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 

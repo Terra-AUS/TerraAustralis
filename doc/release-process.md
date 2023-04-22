@@ -102,7 +102,7 @@ Generate list of authors:
 
 ### Setup and perform Guix builds
 
-Checkout the AustraliaCash Core version you'd like to build:
+Checkout the TerraAustralis Core version you'd like to build:
 
 ```sh
 pushd ./bitcoin
@@ -270,7 +270,7 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 
       - Install [golang](https://golang.org/doc/install)
 
-      - Install the new AustraliaCash Core release
+      - Install the new TerraAustralis Core release
 
       - Run bitcoind on regtest
 
@@ -296,9 +296,9 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 
   - bitcoin-dev and bitcoin-core-dev mailing list
 
-  - AustraliaCash Core announcements list https://bitcoincore.org/en/list/announcements/join/
+  - TerraAustralis Core announcements list https://bitcoincore.org/en/list/announcements/join/
 
-  - AustraliaCash Core Twitter https://twitter.com/bitcoincoreorg
+  - TerraAustralis Core Twitter https://twitter.com/bitcoincoreorg
 
   - Celebrate
 

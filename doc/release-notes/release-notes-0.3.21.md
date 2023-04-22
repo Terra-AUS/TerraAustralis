@@ -1,5 +1,5 @@
-Binaries for AustraliaCash version 0.3.21 are available at:
-  https://sourceforge.net/projects/bitcoin/files/AustraliaCash/bitcoin-0.3.21/
+Binaries for TerraAustralis version 0.3.21 are available at:
+  https://sourceforge.net/projects/bitcoin/files/TerraAustralis/bitcoin-0.3.21/
 
 Changes and new features from the 0.3.20 release include:
 

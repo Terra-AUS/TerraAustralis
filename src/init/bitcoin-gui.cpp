@@ -1,4 +1,4 @@
-// Copyright (c) 2021 The AustraliaCash Core developers
+// Copyright (c) 2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,10 +18,10 @@ namespace init {
 namespace {
 const char* EXE_NAME = "bitcoin-gui";
 
-class AustraliaCashGuiInit : public interfaces::Init
+class TerraAustralisGuiInit : public interfaces::Init
 {
 public:
-    AustraliaCashGuiInit(const char* arg0) : m_ipc(interfaces::MakeIpc(EXE_NAME, arg0, *this))
+    TerraAustralisGuiInit(const char* arg0) : m_ipc(interfaces::MakeIpc(EXE_NAME, arg0, *this))
     {
         m_node.args = &gArgs;
         m_node.init = this;
@@ -43,6 +43,6 @@ public:
 namespace interfaces {
 std::unique_ptr<Init> MakeGuiInit(int argc, char* argv[])
 {
-    return std::make_unique<init::AustraliaCashGuiInit>(argc > 0 ? argv[0] : "");
+    return std::make_unique<init::TerraAustralisGuiInit>(argc > 0 ? argv[0] : "");
 }
 } // namespace interfaces

@@ -39,11 +39,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Izvēlies adresi uz kuru sūtīt australiacashs</translation>
+        <translation>Izvēlies adresi uz kuru sūtīt terraaustraliss</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Izvēlies adresi ar kuru saņemt australiacashs</translation>
+        <translation>Izvēlies adresi ar kuru saņemt terraaustraliss</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -124,7 +124,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Parakstīt &amp;ziņojumu...</translation>
@@ -278,12 +278,12 @@
         <translation>Ciļņu rīkjosla</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and australiacash: URIs)</source>
-        <translation>Pieprasīt maksājumus (izveido QR kodu un australiacash: URIs)</translation>
+        <source>Request payments (generates QR codes and terraaustralis: URIs)</source>
+        <translation>Pieprasīt maksājumus (izveido QR kodu un terraaustralis: URIs)</translation>
     </message>
     <message>
-        <source>Open a australiacash: URI or payment request</source>
-        <translation>Atvērt australiacash URI vai maksājuma pieprasījumu</translation>
+        <source>Open a terraaustralis: URI or payment request</source>
+        <translation>Atvērt terraaustralis URI vai maksājuma pieprasījumu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -559,7 +559,7 @@
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>Ieslēgt australiacash &amp;kontroles funkcijas</translation>
+        <translation>Ieslēgt terraaustralis &amp;kontroles funkcijas</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>

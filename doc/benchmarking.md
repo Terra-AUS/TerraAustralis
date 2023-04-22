@@ -1,7 +1,7 @@
 Benchmarking
 ============
 
-AustraliaCash Core has an internal benchmarking framework, with benchmarks
+TerraAustralis Core has an internal benchmarking framework, with benchmarks
 for cryptographic algorithms (e.g. SHA1, SHA256, SHA512, RIPEMD160, Poly1305, ChaCha20), rolling bloom filter, coins selection,
 thread queue, wallet balance.
 
@@ -56,6 +56,6 @@ More benchmarks are needed for, in no particular order:
 Going Further
 --------------------
 
-To monitor AustraliaCash Core performance more in depth (like reindex or IBD): https://github.com/chaincodelabs/bitcoinperf
+To monitor TerraAustralis Core performance more in depth (like reindex or IBD): https://github.com/chaincodelabs/bitcoinperf
 
-To generate Flame Graphs for AustraliaCash Core: https://github.com/eklitzke/bitcoin/blob/flamegraphs/doc/flamegraphs.md
+To generate Flame Graphs for TerraAustralis Core: https://github.com/eklitzke/bitcoin/blob/flamegraphs/doc/flamegraphs.md

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2017-2021 The AustraliaCash Core developers
+# Copyright (c) 2017-2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test bitcoin-cli"""
@@ -8,7 +8,7 @@ from decimal import Decimal
 import re
 
 from test_framework.blocktools import COINBASE_MATURITY
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than_or_equal,
@@ -65,7 +65,7 @@ def cli_get_info_string_to_dict(cli_get_info_string):
     return cli_get_info
 
 
-class TestAustraliaCashCli(AustraliaCashTestFramework):
+class TestTerraAustralisCli(TerraAustralisTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -323,4 +323,4 @@ class TestAustraliaCashCli(AustraliaCashTestFramework):
 
 
 if __name__ == '__main__':
-    TestAustraliaCashCli().main()
+    TestTerraAustralisCli().main()

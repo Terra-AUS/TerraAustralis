@@ -1,4 +1,4 @@
-AustraliaCash Core version 0.12.1 is now available from:
+TerraAustralis Core version 0.12.1 is now available from:
 
   <https://bitcoin.org/bin/bitcoin-core-0.12.1/>
 
@@ -17,7 +17,7 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over /Applications/AustraliaCash-Qt (on Mac) or
+installer (on Windows) or just copy over /Applications/TerraAustralis-Qt (on Mac) or
 bitcoind/bitcoin-qt (on Linux).
 
 Downgrade warning
@@ -27,10 +27,10 @@ Downgrade warning
 
 Because release 0.12.0 and later will obfuscate the chainstate on every
 fresh sync or reindex, the chainstate is not backwards-compatible with
-pre-0.12 versions of AustraliaCash Core or other software.
+pre-0.12 versions of TerraAustralis Core or other software.
 
 If you want to downgrade after you have done a reindex with 0.12.0 or later,
-you will need to reindex when you first start AustraliaCash Core version 0.11 or
+you will need to reindex when you first start TerraAustralis Core version 0.11 or
 earlier.
 
 Notable changes
@@ -74,7 +74,7 @@ BIP112 soft fork to enforce OP_CHECKSEQUENCEVERIFY
 --------------------------------------------------
 
 [BIP112][] redefines the existing OP_NOP3 as OP_CHECKSEQUENCEVERIFY (CSV)
-for a new opcode in the AustraliaCash scripting system that in combination with
+for a new opcode in the TerraAustralis scripting system that in combination with
 [BIP68][] allows execution pathways of a script to be restricted based
 on the age of the output being spent.
 
@@ -84,11 +84,11 @@ For more information about the implementation, see
 BIP113 locktime enforcement soft fork
 -------------------------------------
 
-AustraliaCash Core 0.11.2 previously introduced mempool-only locktime
+TerraAustralis Core 0.11.2 previously introduced mempool-only locktime
 enforcement using GetMedianTimePast(). This release seeks to
 consensus enforce the rule.
 
-AustraliaCash transactions currently may specify a locktime indicating when
+TerraAustralis transactions currently may specify a locktime indicating when
 they may be added to a valid block.  Current consensus rules require
 that blocks have a block header time greater than the locktime specified
 in any transaction in that block.

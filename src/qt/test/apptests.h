@@ -1,4 +1,4 @@
-// Copyright (c) 2018-2020 The AustraliaCash Core developers
+// Copyright (c) 2018-2020 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,19 +10,19 @@
 #include <string>
 #include <utility>
 
-class AustraliaCashApplication;
-class AustraliaCashGUI;
+class TerraAustralisApplication;
+class TerraAustralisGUI;
 class RPCConsole;
 
 class AppTests : public QObject
 {
     Q_OBJECT
 public:
-    explicit AppTests(AustraliaCashApplication& app) : m_app(app) {}
+    explicit AppTests(TerraAustralisApplication& app) : m_app(app) {}
 
 private Q_SLOTS:
     void appTests();
-    void guiTests(AustraliaCashGUI* window);
+    void guiTests(TerraAustralisGUI* window);
     void consoleTests(RPCConsole* console);
 
 private:
@@ -37,8 +37,8 @@ private:
         ~HandleCallback();
     };
 
-    //! AustraliaCash application.
-    AustraliaCashApplication& m_app;
+    //! TerraAustralis application.
+    TerraAustralisApplication& m_app;
 
     //! Set of pending callback names. Used to track expected callbacks and shut
     //! down the app after the last callback has been handled and all tests have

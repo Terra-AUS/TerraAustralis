@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-# Copyright (c) 2020 The AustraliaCash Core developers
+# Copyright (c) 2020 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import os
 
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 from test_framework.util import assert_raises_rpc_error
 
-class WalletCrossChain(AustraliaCashTestFramework):
+class WalletCrossChain(TerraAustralisTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.setup_clean_chain = True

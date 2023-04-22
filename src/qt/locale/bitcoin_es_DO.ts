@@ -64,7 +64,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Firmar &amp;mensaje...</translation>
@@ -218,7 +218,7 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and australiacash: URIs)</source>
+        <source>Request payments (generates QR codes and terraaustralis: URIs)</source>
         <translation>Solicitar pagos (genera codigo QR y URL's de Australiacash)</translation>
     </message>
     <message>
@@ -230,8 +230,8 @@
         <translation>Muestra la lista de direcciones de recepción y etiquetas</translation>
     </message>
     <message>
-        <source>Open a australiacash: URI or payment request</source>
-        <translation>Abrir un australiacash: URI o petición de pago</translation>
+        <source>Open a terraaustralis: URI or payment request</source>
+        <translation>Abrir un terraaustralis: URI o petición de pago</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

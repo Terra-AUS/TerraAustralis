@@ -1,6 +1,6 @@
-# PSBT Howto for AustraliaCash Core
+# PSBT Howto for TerraAustralis Core
 
-Since AustraliaCash Core 0.17, an RPC interface exists for Partially Signed AustraliaCash
+Since TerraAustralis Core 0.17, an RPC interface exists for Partially Signed TerraAustralis
 Transactions (PSBTs, as specified in
 [BIP 174](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki)).
 
@@ -10,7 +10,7 @@ scenarios.
 
 ## PSBT in general
 
-PSBT is an interchange format for AustraliaCash transactions that are not fully signed
+PSBT is an interchange format for TerraAustralis transactions that are not fully signed
 yet, together with relevant metadata to help entities work towards signing it.
 It is intended to simplify workflows where multiple parties need to cooperate to
 produce a transaction. Examples include hardware wallets, multisig setups, and
@@ -18,7 +18,7 @@ produce a transaction. Examples include hardware wallets, multisig setups, and
 
 ### Overall workflow
 
-Overall, the construction of a fully signed AustraliaCash transaction goes through the
+Overall, the construction of a fully signed TerraAustralis transaction goes through the
 following steps:
 
 - A **Creator** proposes a particular transaction to be created. They construct
@@ -32,7 +32,7 @@ following steps:
   partial signature for the inputs for which they have relevant key(s).
 - A **Finalizer** is run for each input to convert the partial signatures and
   possibly script information into a final `scriptSig` and/or `scriptWitness`.
-- An **Extractor** produces a valid AustraliaCash transaction (in network format)
+- An **Extractor** produces a valid TerraAustralis transaction (in network format)
   from a PSBT for which all inputs are finalized.
 
 Generally, each of the above (excluding Creator and Extractor) will simply
@@ -46,7 +46,7 @@ The names above in bold are the names of the roles defined in BIP174. They're
 useful in understanding the underlying steps, but in practice, software and
 hardware implementations will typically implement multiple roles simultaneously.
 
-## PSBT in AustraliaCash Core
+## PSBT in TerraAustralis Core
 
 ### RPCs
 
@@ -90,13 +90,13 @@ hardware implementations will typically implement multiple roles simultaneously.
 
 ### Workflows
 
-#### Multisig with multiple AustraliaCash Core instances
+#### Multisig with multiple TerraAustralis Core instances
 
 For a quick start see [Basic M-of-N multisig example using descriptor wallets and PSBTs](./descriptors.md#basic-multisig-example).
 If you are using legacy wallets feel free to continue with the example provided here.
 
 Alice, Bob, and Carol want to create a 2-of-3 multisig address. They're all using
-AustraliaCash Core. We assume their wallets only contain the multisig funds. In case
+TerraAustralis Core. We assume their wallets only contain the multisig funds. In case
 they also have a personal wallet, this can be accomplished through the
 multiwallet feature - possibly resulting in a need to add `-rpcwallet=name` to
 the command line in case `bitcoin-cli` is used.

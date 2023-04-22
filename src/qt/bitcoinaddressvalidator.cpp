@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2018 The AustraliaCash Core developers
+// Copyright (c) 2011-2018 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,12 +15,12 @@
   - All lower-case letters except for 'l'
 */
 
-AustraliaCashAddressEntryValidator::AustraliaCashAddressEntryValidator(QObject *parent) :
+TerraAustralisAddressEntryValidator::TerraAustralisAddressEntryValidator(QObject *parent) :
     QValidator(parent)
 {
 }
 
-QValidator::State AustraliaCashAddressEntryValidator::validate(QString &input, int &pos) const
+QValidator::State TerraAustralisAddressEntryValidator::validate(QString &input, int &pos) const
 {
     Q_UNUSED(pos);
 
@@ -80,15 +80,15 @@ QValidator::State AustraliaCashAddressEntryValidator::validate(QString &input, i
     return state;
 }
 
-AustraliaCashAddressCheckValidator::AustraliaCashAddressCheckValidator(QObject *parent) :
+TerraAustralisAddressCheckValidator::TerraAustralisAddressCheckValidator(QObject *parent) :
     QValidator(parent)
 {
 }
 
-QValidator::State AustraliaCashAddressCheckValidator::validate(QString &input, int &pos) const
+QValidator::State TerraAustralisAddressCheckValidator::validate(QString &input, int &pos) const
 {
     Q_UNUSED(pos);
-    // Validate the passed AustraliaCash address
+    // Validate the passed TerraAustralis address
     if (IsValidDestinationString(input.toStdString())) {
         return QValidator::Acceptable;
     }

@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
-# Copyright (c) 2019 The AustraliaCash Core developers
+# Copyright (c) 2019 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 
 class TestShell:
-    """Wrapper Class for AustraliaCashTestFramework.
+    """Wrapper Class for TerraAustralisTestFramework.
 
-    The TestShell class extends the AustraliaCashTestFramework
+    The TestShell class extends the TerraAustralisTestFramework
     rpc & daemon process management functionality to external
     python environments.
 
     It is a singleton class, which ensures that users only
     start a single TestShell at a time."""
 
-    class __TestShell(AustraliaCashTestFramework):
+    class __TestShell(TerraAustralisTestFramework):
         def set_test_params(self):
             pass
 
@@ -28,7 +28,7 @@ class TestShell:
                 return
 
             # Num_nodes parameter must be set
-            # by AustraliaCashTestFramework child class.
+            # by TerraAustralisTestFramework child class.
             self.num_nodes = 1
 
             # User parameters override default values.

@@ -1,21 +1,21 @@
 # TOR SUPPORT IN BITCOIN
 
-It is possible to run AustraliaCash Core as a Tor onion service, and connect to such services.
+It is possible to run TerraAustralis Core as a Tor onion service, and connect to such services.
 
 The following directions assume you have a Tor proxy running on port 9050. Many distributions default to having a SOCKS proxy listening on port 9050, but others may not. In particular, the Tor Browser Bundle defaults to listening on port 9150. See [Tor Project FAQ:TBBSocksPort](https://www.torproject.org/docs/faq.html.en#TBBSocksPort) for how to properly
 configure Tor.
 
 ## Compatibility
 
-- Starting with version 22.0, AustraliaCash Core only supports Tor version 3 hidden
-  services (Tor v3). Tor v2 addresses are ignored by AustraliaCash Core and neither
+- Starting with version 22.0, TerraAustralis Core only supports Tor version 3 hidden
+  services (Tor v3). Tor v2 addresses are ignored by TerraAustralis Core and neither
   relayed nor stored.
 
 - Tor removed v2 support beginning with version 0.4.6.
 
-## How to see information about your Tor configuration via AustraliaCash Core
+## How to see information about your Tor configuration via TerraAustralis Core
 
-There are several ways to see your local onion address in AustraliaCash Core:
+There are several ways to see your local onion address in TerraAustralis Core:
 - in the "Local addresses" output of CLI `-netinfo`
 - in the "localaddresses" output of RPC `getnetworkinfo`
 - in the debug log (grep for "AddLocal"; the Tor address ends in `.onion`)
@@ -30,9 +30,9 @@ e.g. for `-onlynet=onion`.
 To fetch a number of onion addresses that your node knows, for example seven
 addresses, use the `getnodeaddresses 7 onion` RPC.
 
-## 1. Run AustraliaCash Core behind a Tor proxy
+## 1. Run TerraAustralis Core behind a Tor proxy
 
-The first step is running AustraliaCash Core behind a Tor proxy. This will already anonymize all
+The first step is running TerraAustralis Core behind a Tor proxy. This will already anonymize all
 outgoing connections, but more is possible.
 
     -proxy=ip:port  Set the proxy server. If SOCKS5 is selected (default), this proxy
@@ -67,15 +67,15 @@ In a typical situation, this suffices to run behind a Tor proxy:
 
     ./bitcoind -proxy=127.0.0.1:9050
 
-## 2. Automatically create a AustraliaCash Core onion service
+## 2. Automatically create a TerraAustralis Core onion service
 
-AustraliaCash Core makes use of Tor's control socket API to create and destroy
+TerraAustralis Core makes use of Tor's control socket API to create and destroy
 ephemeral onion services programmatically. This means that if Tor is running and
-proper authentication has been configured, AustraliaCash Core automatically creates an
+proper authentication has been configured, TerraAustralis Core automatically creates an
 onion service to listen on. The goal is to increase the number of available
 onion nodes.
 
-This feature is enabled by default if AustraliaCash Core is listening (`-listen`) and
+This feature is enabled by default if TerraAustralis Core is listening (`-listen`) and
 it requires a Tor connection to work. It can be explicitly disabled with
 `-listenonion=0`. If it is not disabled, it can be configured using the
 `-torcontrol` and `-torpassword` settings.
@@ -159,7 +159,7 @@ Manual](https://2019.www.torproject.org/docs/tor-manual.html.en) for more
 details).
 
 
-## 3. Manually create a AustraliaCash Core onion service
+## 3. Manually create a TerraAustralis Core onion service
 
 You can also manually configure your node to be reachable from the Tor network.
 Add these lines to your `/etc/tor/torrc` (or equivalent config file):
@@ -218,7 +218,7 @@ for normal IPv4/IPv6 communication, use:
 
 ## 4. Privacy recommendations
 
-- Do not add anything but AustraliaCash Core ports to the onion service created in section 3.
+- Do not add anything but TerraAustralis Core ports to the onion service created in section 3.
   If you run a web service too, create a new onion service for that.
   Otherwise it is trivial to link them, which may reduce privacy. Onion
   services created automatically (as in section 2) always have only one port

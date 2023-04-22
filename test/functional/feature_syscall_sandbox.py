@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The AustraliaCash Core developers
+# Copyright (c) 2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test bitcoind aborts if a disallowed syscall is used when compiled with the syscall sandbox."""
 
-from test_framework.test_framework import AustraliaCashTestFramework, SkipTest
+from test_framework.test_framework import TerraAustralisTestFramework, SkipTest
 
 
-class SyscallSandboxTest(AustraliaCashTestFramework):
+class SyscallSandboxTest(TerraAustralisTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,7 +18,7 @@ QT_END_NAMESPACE
 
 /** Widget for entering bitcoin amounts.
   */
-class AustraliaCashAmountField: public QWidget
+class TerraAustralisAmountField: public QWidget
 {
     Q_OBJECT
 
@@ -27,7 +27,7 @@ class AustraliaCashAmountField: public QWidget
     Q_PROPERTY(qint64 value READ value WRITE setValue NOTIFY valueChanged USER true)
 
 public:
-    explicit AustraliaCashAmountField(QWidget *parent = nullptr);
+    explicit TerraAustralisAmountField(QWidget *parent = nullptr);
 
     CAmount value(bool *value=nullptr) const;
     void setValue(const CAmount& value);
@@ -53,7 +53,7 @@ public:
     bool validate();
 
     /** Change unit used to display amount. */
-    void setDisplayUnit(AustraliaCashUnit new_unit);
+    void setDisplayUnit(TerraAustralisUnit new_unit);
 
     /** Make field empty and ready for new input. */
     void clear();

@@ -2,5 +2,5 @@
 for i in {1..999}
 do
 	echo " $i "
-	./australiacash-cli -testnet -generate
+	./terraaustralis-cli -testnet -generate
 done

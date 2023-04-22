@@ -1,6 +1,6 @@
 # Dependencies
 
-These are the dependencies used by AustraliaCash Core.
+These are the dependencies used by TerraAustralis Core.
 You can find installation instructions in the `build-*.md` file for your platform.
 "Runtime" and "Version Used" are both in reference to the release binaries.
 

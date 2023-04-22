@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2018-2021 The AustraliaCash Core developers
+# Copyright (c) 2018-2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Check that it's not possible to start a second bitcoind instance using the same datadir or wallet."""
@@ -7,10 +7,10 @@ import os
 import random
 import string
 
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 from test_framework.test_node import ErrorMatch
 
-class FilelockTest(AustraliaCashTestFramework):
+class FilelockTest(TerraAustralisTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2

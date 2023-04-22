@@ -20,7 +20,7 @@
     </message>
     </context>
 <context>
-    <name>AustraliaCashApplication</name>
+    <name>TerraAustralisApplication</name>
     <message>
         <source>Internal error</source>
         <translation type="unfinished">Iphutha langaphakathi.</translation>
@@ -91,7 +91,7 @@
     </message>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>&amp;Options…</source>
         <translation type="unfinished">&amp;Ongakukhetha...</translation>
@@ -128,7 +128,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to AustraliaCash network.</source>
+        <source>%n active connection(s) to TerraAustralis network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />

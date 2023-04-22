@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2021 The AustraliaCash Core developers
+// Copyright (c) 2009-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -81,8 +81,8 @@ int main(int argc, char* argv[])
 
     // Don't remove this, it's needed to access
     // QApplication:: and QCoreApplication:: in the tests
-    AustraliaCashApplication app;
-    app.setApplicationName("AustraliaCash-Qt-test");
+    TerraAustralisApplication app;
+    app.setApplicationName("TerraAustralis-Qt-test");
     app.createNode(*init);
 
     int num_test_failures{0};

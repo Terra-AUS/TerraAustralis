@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2020 The AustraliaCash Core developers
+// Copyright (c) 2014-2020 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,7 +12,7 @@ class ArgsManager;
 
 /**
  * CBaseChainParams defines the base parameters (shared between bitcoin-cli and bitcoind)
- * of a given instance of the AustraliaCash system.
+ * of a given instance of the TerraAustralis system.
  */
 class CBaseChainParams
 {

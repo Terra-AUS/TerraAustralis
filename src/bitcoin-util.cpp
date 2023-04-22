@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2021 The AustraliaCash Core developers
+// Copyright (c) 2009-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -28,7 +28,7 @@ static const int CONTINUE_EXECUTION=-1;
 
 const std::function<std::string(const char*)> G_TRANSLATION_FUN = nullptr;
 
-static void SetupAustraliaCashUtilArgs(ArgsManager &argsman)
+static void SetupTerraAustralisUtilArgs(ArgsManager &argsman)
 {
     SetupHelpOptions(argsman);
 
@@ -43,7 +43,7 @@ static void SetupAustraliaCashUtilArgs(ArgsManager &argsman)
 // CONTINUE_EXECUTION when it's expected to continue further.
 static int AppInitUtil(ArgsManager& args, int argc, char* argv[])
 {
-    SetupAustraliaCashUtilArgs(args);
+    SetupTerraAustralisUtilArgs(args);
     std::string error;
     if (!args.ParseParameters(argc, argv, error)) {
         tfm::format(std::cerr, "Error parsing command line arguments: %s\n", error);

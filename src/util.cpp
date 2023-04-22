@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2017 The AustraliaCash Core developers
+// Copyright (c) 2009-2017 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -82,8 +82,8 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "australiacash.conf";
-const char * const BITCOIN_PID_FILENAME = "australiacashd.pid";
+const char * const BITCOIN_CONF_FILENAME = "terraaustralis.conf";
+const char * const BITCOIN_PID_FILENAME = "terraaustralisd.pid";
 const char * const DEFAULT_DEBUGLOGFILE = "debug.log";
 
 ArgsManager gArgs;
@@ -558,7 +558,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(nullptr, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "australiacash";
+    const char* pszModule = "terraaustralis";
 #endif
     if (pex)
         return strprintf(
@@ -577,9 +577,9 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\AustraliaCash
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\AustraliaCash
-    // Mac: ~/Library/Application Support/AustraliaCash
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\TerraAustralis
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\TerraAustralis
+    // Mac: ~/Library/Application Support/TerraAustralis
     // Unix: ~/.bitcoin
 #ifdef WIN32
     // Windows
@@ -596,7 +596,7 @@ fs::path GetDefaultDataDir()
     return pathRet / "Library/Application Support/Australiacash";
 #else
     // Unix
-    return pathRet / ".australiacash";
+    return pathRet / ".terraaustralis";
 #endif
 #endif
 }
@@ -947,11 +947,11 @@ std::string CopyrightHolders(const std::string& strPrefix)
 {
     std::string strCopyrightHolders = strPrefix + strprintf(_(COPYRIGHT_HOLDERS), _(COPYRIGHT_HOLDERS_SUBSTITUTION));
 
-    // Check for untranslated substitution to make sure AustraliaCash Core copyright is not removed by accident
-    if (strprintf(COPYRIGHT_HOLDERS, COPYRIGHT_HOLDERS_SUBSTITUTION).find("AustraliaCash Core") == std::string::npos) {
+    // Check for untranslated substitution to make sure TerraAustralis Core copyright is not removed by accident
+    if (strprintf(COPYRIGHT_HOLDERS, COPYRIGHT_HOLDERS_SUBSTITUTION).find("TerraAustralis Core") == std::string::npos) {
         std::string strYear = strPrefix;
         strYear.replace(strYear.find("2011"), sizeof("2011")-1, "2009");
-        strCopyrightHolders += "\n" + strYear + "The AustraliaCash Core developers";
+        strCopyrightHolders += "\n" + strYear + "The TerraAustralis Core developers";
     }
     return strCopyrightHolders;
 }

@@ -220,7 +220,7 @@
     </message>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Signeeri &amp;sõnum</translation>
@@ -366,12 +366,12 @@
         <translation>Vahelehe tööriistariba</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and australiacash: URIs)</source>
-        <translation>Loo maksepäring (genereerib QR koodid ja australiacashi: URId)</translation>
+        <source>Request payments (generates QR codes and terraaustralis: URIs)</source>
+        <translation>Loo maksepäring (genereerib QR koodid ja terraaustralisi: URId)</translation>
     </message>
     <message>
-        <source>Open a australiacash: URI or payment request</source>
-        <translation>Ava australiacashi: URI või maksepäring</translation>
+        <source>Open a terraaustralis: URI or payment request</source>
+        <translation>Ava terraaustralisi: URI või maksepäring</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

@@ -156,7 +156,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     </context>
 <context>
     <name>CoinControlDialog</name>

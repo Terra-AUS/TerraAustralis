@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -126,10 +126,10 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
     widget->setFont(fixedPitchFont());
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a AustraliaCash address (e.g. %1)").arg(
+    widget->setPlaceholderText(QObject::tr("Enter a TerraAustralis address (e.g. %1)").arg(
         QString::fromStdString(DummyAddress(Params()))));
-    widget->setValidator(new AustraliaCashAddressEntryValidator(parent));
-    widget->setCheckValidator(new AustraliaCashAddressCheckValidator(parent));
+    widget->setValidator(new TerraAustralisAddressEntryValidator(parent));
+    widget->setCheckValidator(new TerraAustralisAddressCheckValidator(parent));
 }
 
 void AddButtonShortcut(QAbstractButton* button, const QKeySequence& shortcut)
@@ -137,10 +137,10 @@ void AddButtonShortcut(QAbstractButton* button, const QKeySequence& shortcut)
     QObject::connect(new QShortcut(shortcut, button), &QShortcut::activated, [button]() { button->animateClick(); });
 }
 
-bool parseAustraliaCashURI(const QUrl &uri, SendCoinsRecipient *out)
+bool parseTerraAustralisURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no australiacash: URI
-    if(!uri.isValid() || uri.scheme() != QString("australiacash"))
+    // return if URI is not valid or is no terraaustralis: URI
+    if(!uri.isValid() || uri.scheme() != QString("terraaustralis"))
         return false;
 
     SendCoinsRecipient rv;
@@ -176,7 +176,7 @@ bool parseAustraliaCashURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if (!AustraliaCashUnits::parse(AustraliaCashUnit::BTC, i->second, &rv.amount)) {
+                if (!TerraAustralisUnits::parse(TerraAustralisUnit::BTC, i->second, &rv.amount)) {
                     return false;
                 }
             }
@@ -193,22 +193,22 @@ bool parseAustraliaCashURI(const QUrl &uri, SendCoinsRecipient *out)
     return true;
 }
 
-bool parseAustraliaCashURI(QString uri, SendCoinsRecipient *out)
+bool parseTerraAustralisURI(QString uri, SendCoinsRecipient *out)
 {
     QUrl uriInstance(uri);
-    return parseAustraliaCashURI(uriInstance, out);
+    return parseTerraAustralisURI(uriInstance, out);
 }
 
-QString formatAustraliaCashURI(const SendCoinsRecipient &info)
+QString formatTerraAustralisURI(const SendCoinsRecipient &info)
 {
     bool bech_32 = info.address.startsWith(QString::fromStdString(Params().Bech32HRP() + "1"));
 
-    QString ret = QString("australiacash:%1").arg(bech_32 ? info.address.toUpper() : info.address);
+    QString ret = QString("terraaustralis:%1").arg(bech_32 ? info.address.toUpper() : info.address);
     int paramCount = 0;
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(AustraliaCashUnits::format(AustraliaCashUnit::BTC, info.amount, false, AustraliaCashUnits::SeparatorStyle::NEVER));
+        ret += QString("?amount=%1").arg(TerraAustralisUnits::format(TerraAustralisUnit::BTC, info.amount, false, TerraAustralisUnits::SeparatorStyle::NEVER));
         paramCount++;
     }
 
@@ -426,7 +426,7 @@ void openDebugLogfile()
         QDesktopServices::openUrl(QUrl::fromLocalFile(PathToQString(pathDebug)));
 }
 
-bool openAustraliaCashConf()
+bool openTerraAustralisConf()
 {
     fs::path pathConfig = GetConfigFile(gArgs.GetPathArg("-conf", BITCOIN_CONF_FILENAME));
 
@@ -502,15 +502,15 @@ fs::path static StartupShortcutPath()
 {
     std::string chain = gArgs.GetChainName();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "AustraliaCash.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "TerraAustralis.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "AustraliaCash (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / fs::u8path(strprintf("AustraliaCash (%s).lnk", chain));
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "TerraAustralis (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / fs::u8path(strprintf("TerraAustralis (%s).lnk", chain));
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for AustraliaCash*.lnk
+    // check for TerraAustralis*.lnk
     return fs::exists(StartupShortcutPath());
 }
 
@@ -631,9 +631,9 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=AustraliaCash\n";
+            optionFile << "Name=TerraAustralis\n";
         else
-            optionFile << strprintf("Name=AustraliaCash (%s)\n", chain);
+            optionFile << strprintf("Name=TerraAustralis (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -chain=%s\n", chain);
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";

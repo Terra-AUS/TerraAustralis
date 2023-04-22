@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2020 The AustraliaCash Core developers
+// Copyright (c) 2011-2020 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,7 +19,7 @@ static constexpr auto SHUTDOWN_POLLING_DELAY{200ms};
 /* AskPassphraseDialog -- Maximum passphrase length */
 static const int MAX_PASSPHRASE_SIZE = 1024;
 
-/* AustraliaCashGUI -- Size of icons in status bar */
+/* TerraAustralisGUI -- Size of icons in status bar */
 static const int STATUSBAR_ICONSIZE = 16;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
@@ -46,12 +46,12 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "AustraliaCash"
-#define QAPP_ORG_DOMAIN "coin.australiacash.com"
-#define QAPP_APP_NAME_DEFAULT "AustraliaCash-Qt"
-#define QAPP_APP_NAME_TESTNET "AustraliaCash-Qt-testnet"
-#define QAPP_APP_NAME_SIGNET "AustraliaCash-Qt-signet"
-#define QAPP_APP_NAME_REGTEST "AustraliaCash-Qt-regtest"
+#define QAPP_ORG_NAME "TerraAustralis"
+#define QAPP_ORG_DOMAIN "coin.terraaustralis.com"
+#define QAPP_APP_NAME_DEFAULT "TerraAustralis-Qt"
+#define QAPP_APP_NAME_TESTNET "TerraAustralis-Qt-testnet"
+#define QAPP_APP_NAME_SIGNET "TerraAustralis-Qt-signet"
+#define QAPP_APP_NAME_REGTEST "TerraAustralis-Qt-regtest"
 
 /* One gigabyte (GB) in bytes */
 static constexpr uint64_t GB_BYTES{1000000000};

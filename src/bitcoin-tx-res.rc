@@ -15,13 +15,13 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "Australiacash"
-            VALUE "FileDescription",    "australiacash-tx (CLI Australiacash transaction editor utility)"
+            VALUE "FileDescription",    "terraaustralis-tx (CLI Australiacash transaction editor utility)"
             VALUE "FileVersion",        PACKAGE_VERSION
-            VALUE "InternalName",       "australiacash-tx"
+            VALUE "InternalName",       "terraaustralis-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "australiacash-tx.exe"
-            VALUE "ProductName",        "australiacash-tx"
+            VALUE "OriginalFilename",   "terraaustralis-tx.exe"
+            VALUE "ProductName",        "terraaustralis-tx"
             VALUE "ProductVersion",     PACKAGE_VERSION
         END
     END

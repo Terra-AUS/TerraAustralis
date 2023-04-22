@@ -150,7 +150,7 @@ chain for " target " development."))
                                        (base-libc (make-glibc-with-bind-now (make-glibc-without-werror glibc-2.24)))
                                        (base-gcc (make-gcc-rpath-link (hardened-gcc base-gcc))))
   "Convenience wrapper around MAKE-CROSS-TOOLCHAIN with default values
-desirable for building AustraliaCash Core release binaries."
+desirable for building TerraAustralis Core release binaries."
   (make-cross-toolchain target
                         base-gcc-for-libc
                         base-kernel-headers

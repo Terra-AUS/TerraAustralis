@@ -64,7 +64,7 @@
     </message>
 </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>E&amp;xit</source>
         <translation>Buda</translation>

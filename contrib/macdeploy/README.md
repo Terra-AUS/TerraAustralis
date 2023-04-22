@@ -6,7 +6,7 @@ The `macdeployqtplus` script should not be run manually. Instead, after building
 make deploy
 ```
 
-When complete, it will have produced `AustraliaCash-Core.dmg`.
+When complete, it will have produced `TerraAustralis-Core.dmg`.
 
 ## SDK Extraction
 

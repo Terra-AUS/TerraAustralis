@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,7 +18,7 @@
 
 #include <QApplication>
 
-class AustraliaCashGUI;
+class TerraAustralisGUI;
 class ClientModel;
 class NetworkStyle;
 class OptionsModel;
@@ -32,13 +32,13 @@ class Init;
 } // namespace interfaces
 
 
-/** Main AustraliaCash application object */
-class AustraliaCashApplication: public QApplication
+/** Main TerraAustralis application object */
+class TerraAustralisApplication: public QApplication
 {
     Q_OBJECT
 public:
-    explicit AustraliaCashApplication();
-    ~AustraliaCashApplication();
+    explicit TerraAustralisApplication();
+    ~TerraAustralisApplication();
 
 #ifdef ENABLE_WALLET
     /// Create payment server
@@ -65,7 +65,7 @@ public:
     /// Get process return value
     int getReturnValue() const { return returnValue; }
 
-    /// Get window identifier of QMainWindow (AustraliaCashGUI)
+    /// Get window identifier of QMainWindow (TerraAustralisGUI)
     WId getMainWinId() const;
 
     /// Setup platform style
@@ -90,7 +90,7 @@ Q_SIGNALS:
     void requestedInitialize();
     void requestedShutdown();
     void splashFinished();
-    void windowShown(AustraliaCashGUI* window);
+    void windowShown(TerraAustralisGUI* window);
 
 protected:
     bool event(QEvent* e) override;
@@ -99,7 +99,7 @@ private:
     std::optional<InitExecutor> m_executor;
     OptionsModel *optionsModel;
     ClientModel *clientModel;
-    AustraliaCashGUI *window;
+    TerraAustralisGUI *window;
     QTimer *pollShutdownTimer;
 #ifdef ENABLE_WALLET
     PaymentServer* paymentServer{nullptr};

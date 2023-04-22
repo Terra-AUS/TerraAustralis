@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -59,7 +59,7 @@ public:
 
         if (valid) {
             val = qBound(m_min_amount, val, m_max_amount);
-            input = AustraliaCashUnits::format(currentUnit, val, false, AustraliaCashUnits::SeparatorStyle::ALWAYS);
+            input = TerraAustralisUnits::format(currentUnit, val, false, TerraAustralisUnits::SeparatorStyle::ALWAYS);
             lineEdit()->setText(input);
         }
     }
@@ -71,7 +71,7 @@ public:
 
     void setValue(const CAmount& value)
     {
-        lineEdit()->setText(AustraliaCashUnits::format(currentUnit, value, false, AustraliaCashUnits::SeparatorStyle::ALWAYS));
+        lineEdit()->setText(TerraAustralisUnits::format(currentUnit, value, false, TerraAustralisUnits::SeparatorStyle::ALWAYS));
         Q_EMIT valueChanged();
     }
 
@@ -99,13 +99,13 @@ public:
         setValue(val);
     }
 
-    void setDisplayUnit(AustraliaCashUnit unit)
+    void setDisplayUnit(TerraAustralisUnit unit)
     {
         bool valid = false;
         CAmount val = value(&valid);
 
         currentUnit = unit;
-        lineEdit()->setPlaceholderText(AustraliaCashUnits::format(currentUnit, m_min_amount, false, AustraliaCashUnits::SeparatorStyle::ALWAYS));
+        lineEdit()->setPlaceholderText(TerraAustralisUnits::format(currentUnit, m_min_amount, false, TerraAustralisUnits::SeparatorStyle::ALWAYS));
         if(valid)
             setValue(val);
         else
@@ -125,7 +125,7 @@ public:
 
             const QFontMetrics fm(fontMetrics());
             int h = lineEdit()->minimumSizeHint().height();
-            int w = GUIUtil::TextWidth(fm, AustraliaCashUnits::format(AustraliaCashUnit::BTC, AustraliaCashUnits::maxMoney(), false, AustraliaCashUnits::SeparatorStyle::ALWAYS));
+            int w = GUIUtil::TextWidth(fm, TerraAustralisUnits::format(TerraAustralisUnit::BTC, TerraAustralisUnits::maxMoney(), false, TerraAustralisUnits::SeparatorStyle::ALWAYS));
             w += 2; // cursor blinking space
 
             QStyleOptionSpinBox opt;
@@ -150,12 +150,12 @@ public:
     }
 
 private:
-    AustraliaCashUnit currentUnit{AustraliaCashUnit::BTC};
+    TerraAustralisUnit currentUnit{TerraAustralisUnit::BTC};
     CAmount singleStep{CAmount(100000)}; // satoshis
     mutable QSize cachedMinimumSizeHint;
     bool m_allow_empty{true};
     CAmount m_min_amount{CAmount(0)};
-    CAmount m_max_amount{AustraliaCashUnits::maxMoney()};
+    CAmount m_max_amount{TerraAustralisUnits::maxMoney()};
 
     /**
      * Parse a string into a number of base monetary units and
@@ -165,10 +165,10 @@ private:
     CAmount parse(const QString &text, bool *valid_out=nullptr) const
     {
         CAmount val = 0;
-        bool valid = AustraliaCashUnits::parse(currentUnit, text, &val);
+        bool valid = TerraAustralisUnits::parse(currentUnit, text, &val);
         if(valid)
         {
-            if(val < 0 || val > AustraliaCashUnits::maxMoney())
+            if(val < 0 || val > TerraAustralisUnits::maxMoney())
                 valid = false;
         }
         if(valid_out)
@@ -217,7 +217,7 @@ Q_SIGNALS:
 
 #include <qt/bitcoinamountfield.moc>
 
-AustraliaCashAmountField::AustraliaCashAmountField(QWidget *parent) :
+TerraAustralisAmountField::TerraAustralisAmountField(QWidget *parent) :
     QWidget(parent),
     amount(nullptr)
 {
@@ -229,7 +229,7 @@ AustraliaCashAmountField::AustraliaCashAmountField(QWidget *parent) :
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->addWidget(amount);
     unit = new QValueComboBox(this);
-    unit->setModel(new AustraliaCashUnits(this));
+    unit->setModel(new TerraAustralisUnits(this));
     layout->addWidget(unit);
     layout->addStretch(1);
     layout->setContentsMargins(0,0,0,0);
@@ -240,26 +240,26 @@ AustraliaCashAmountField::AustraliaCashAmountField(QWidget *parent) :
     setFocusProxy(amount);
 
     // If one if the widgets changes, the combined content changes as well
-    connect(amount, &AmountSpinBox::valueChanged, this, &AustraliaCashAmountField::valueChanged);
-    connect(unit, qOverload<int>(&QComboBox::currentIndexChanged), this, &AustraliaCashAmountField::unitChanged);
+    connect(amount, &AmountSpinBox::valueChanged, this, &TerraAustralisAmountField::valueChanged);
+    connect(unit, qOverload<int>(&QComboBox::currentIndexChanged), this, &TerraAustralisAmountField::unitChanged);
 
     // Set default based on configuration
     unitChanged(unit->currentIndex());
 }
 
-void AustraliaCashAmountField::clear()
+void TerraAustralisAmountField::clear()
 {
     amount->clear();
     unit->setCurrentIndex(0);
 }
 
-void AustraliaCashAmountField::setEnabled(bool fEnabled)
+void TerraAustralisAmountField::setEnabled(bool fEnabled)
 {
     amount->setEnabled(fEnabled);
     unit->setEnabled(fEnabled);
 }
 
-bool AustraliaCashAmountField::validate()
+bool TerraAustralisAmountField::validate()
 {
     bool valid = false;
     value(&valid);
@@ -267,7 +267,7 @@ bool AustraliaCashAmountField::validate()
     return valid;
 }
 
-void AustraliaCashAmountField::setValid(bool valid)
+void TerraAustralisAmountField::setValid(bool valid)
 {
     if (valid)
         amount->setStyleSheet("");
@@ -275,7 +275,7 @@ void AustraliaCashAmountField::setValid(bool valid)
         amount->setStyleSheet(STYLE_INVALID);
 }
 
-bool AustraliaCashAmountField::eventFilter(QObject *object, QEvent *event)
+bool TerraAustralisAmountField::eventFilter(QObject *object, QEvent *event)
 {
     if (event->type() == QEvent::FocusIn)
     {
@@ -285,60 +285,60 @@ bool AustraliaCashAmountField::eventFilter(QObject *object, QEvent *event)
     return QWidget::eventFilter(object, event);
 }
 
-QWidget *AustraliaCashAmountField::setupTabChain(QWidget *prev)
+QWidget *TerraAustralisAmountField::setupTabChain(QWidget *prev)
 {
     QWidget::setTabOrder(prev, amount);
     QWidget::setTabOrder(amount, unit);
     return unit;
 }
 
-CAmount AustraliaCashAmountField::value(bool *valid_out) const
+CAmount TerraAustralisAmountField::value(bool *valid_out) const
 {
     return amount->value(valid_out);
 }
 
-void AustraliaCashAmountField::setValue(const CAmount& value)
+void TerraAustralisAmountField::setValue(const CAmount& value)
 {
     amount->setValue(value);
 }
 
-void AustraliaCashAmountField::SetAllowEmpty(bool allow)
+void TerraAustralisAmountField::SetAllowEmpty(bool allow)
 {
     amount->SetAllowEmpty(allow);
 }
 
-void AustraliaCashAmountField::SetMinValue(const CAmount& value)
+void TerraAustralisAmountField::SetMinValue(const CAmount& value)
 {
     amount->SetMinValue(value);
 }
 
-void AustraliaCashAmountField::SetMaxValue(const CAmount& value)
+void TerraAustralisAmountField::SetMaxValue(const CAmount& value)
 {
     amount->SetMaxValue(value);
 }
 
-void AustraliaCashAmountField::setReadOnly(bool fReadOnly)
+void TerraAustralisAmountField::setReadOnly(bool fReadOnly)
 {
     amount->setReadOnly(fReadOnly);
 }
 
-void AustraliaCashAmountField::unitChanged(int idx)
+void TerraAustralisAmountField::unitChanged(int idx)
 {
     // Use description tooltip for current unit for the combobox
     unit->setToolTip(unit->itemData(idx, Qt::ToolTipRole).toString());
 
     // Determine new unit ID
-    QVariant new_unit = unit->currentData(AustraliaCashUnits::UnitRole);
+    QVariant new_unit = unit->currentData(TerraAustralisUnits::UnitRole);
     assert(new_unit.isValid());
-    amount->setDisplayUnit(new_unit.value<AustraliaCashUnit>());
+    amount->setDisplayUnit(new_unit.value<TerraAustralisUnit>());
 }
 
-void AustraliaCashAmountField::setDisplayUnit(AustraliaCashUnit new_unit)
+void TerraAustralisAmountField::setDisplayUnit(TerraAustralisUnit new_unit)
 {
     unit->setValue(QVariant::fromValue(new_unit));
 }
 
-void AustraliaCashAmountField::setSingleStep(const CAmount& step)
+void TerraAustralisAmountField::setSingleStep(const CAmount& step)
 {
     amount->setSingleStep(step);
 }

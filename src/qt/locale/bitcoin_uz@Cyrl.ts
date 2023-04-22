@@ -68,7 +68,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;Хабар ёзиш...</translation>
@@ -222,8 +222,8 @@
         <translation>Ички ойналар асбоблар панели</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and australiacash: URIs)</source>
-        <translation>Тўловлар (QR кодлари ва australiacash ёрдамида яратишлар: URI’лар) сўраш</translation>
+        <source>Request payments (generates QR codes and terraaustralis: URIs)</source>
+        <translation>Тўловлар (QR кодлари ва terraaustralis ёрдамида яратишлар: URI’лар) сўраш</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -234,7 +234,7 @@
         <translation>Фойдаланилган қабул қилинган манзиллар ва ёрлиқлар рўйхатини кўрсатиш</translation>
     </message>
     <message>
-        <source>Open a australiacash: URI or payment request</source>
+        <source>Open a terraaustralis: URI or payment request</source>
         <translation>Australiacash’ни очиш: URI ёки тўлов сўрови</translation>
     </message>
     <message>

@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -52,7 +52,7 @@ class QUrl;
 class QWidget;
 QT_END_NAMESPACE
 
-/** Utility functions used by the AustraliaCash Qt UI.
+/** Utility functions used by the TerraAustralis Qt UI.
  */
 namespace GUIUtil
 {
@@ -78,9 +78,9 @@ namespace GUIUtil
     void AddButtonShortcut(QAbstractButton* button, const QKeySequence& shortcut);
 
     // Parse "bitcoin:" URI into recipient object, return true on successful parsing
-    bool parseAustraliaCashURI(const QUrl &uri, SendCoinsRecipient *out);
-    bool parseAustraliaCashURI(QString uri, SendCoinsRecipient *out);
-    QString formatAustraliaCashURI(const SendCoinsRecipient &info);
+    bool parseTerraAustralisURI(const QUrl &uri, SendCoinsRecipient *out);
+    bool parseTerraAustralisURI(QString uri, SendCoinsRecipient *out);
+    QString formatTerraAustralisURI(const SendCoinsRecipient &info);
 
     // Returns true if given address+amount meets "dust" definition
     bool isDust(interfaces::Node& node, const QString& address, const CAmount& amount);
@@ -178,7 +178,7 @@ namespace GUIUtil
     void openDebugLogfile();
 
     // Open the config file
-    bool openAustraliaCashConf();
+    bool openTerraAustralisConf();
 
     /** Qt event filter that intercepts ToolTipChange events, and replaces the tooltip with a rich text
       representation if needed. This assures that Qt can word-wrap long tooltip messages.

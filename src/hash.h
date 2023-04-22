@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2020 The AustraliaCash Core developers
+// Copyright (c) 2009-2020 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,7 +24,7 @@
 
 typedef uint256 ChainCode;
 
-/** A hasher class for AustraliaCash's 256-bit hash (double SHA-256). */
+/** A hasher class for TerraAustralis's 256-bit hash (double SHA-256). */
 class CHash256 {
 private:
     CSHA256 sha;
@@ -49,7 +49,7 @@ public:
     }
 };
 
-/** A hasher class for AustraliaCash's 160-bit hash (SHA-256 + RIPEMD-160). */
+/** A hasher class for TerraAustralis's 160-bit hash (SHA-256 + RIPEMD-160). */
 class CHash160 {
 private:
     CSHA256 sha;

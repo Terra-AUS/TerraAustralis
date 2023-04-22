@@ -62,13 +62,13 @@
         <translation type="unfinished">Qabul qilinadigan manzillar</translation>
     </message>
     <message>
-        <source>These are your AustraliaCash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Quyidagilar to'lovlarni yuborish uchun AustraliaCash manzillaringizdir. Har doim yuborishdan oldin yuborilayotgan tangalar sonini va qabul qiluvchi manzilni tekshirib ko'ring.</translation>
+        <source>These are your TerraAustralis addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Quyidagilar to'lovlarni yuborish uchun TerraAustralis manzillaringizdir. Har doim yuborishdan oldin yuborilayotgan tangalar sonini va qabul qiluvchi manzilni tekshirib ko'ring.</translation>
     </message>
     <message>
-        <source>These are your AustraliaCash addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your TerraAustralis addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Bular to'lovlarni qabul qilishingiz uchun sizning AustraliaCash manzillaringizdir. Yangi qabul qiluvchi manzil yaratish uchun qabul qilish varag'idagi ''Yangi qabul qilish manzilini yaratish'' ustiga bosing. Faqat 'legacy' turdagi manzillar bilan xisobga kirish mumkin.</translation>
+        <translation type="unfinished">Bular to'lovlarni qabul qilishingiz uchun sizning TerraAustralis manzillaringizdir. Yangi qabul qiluvchi manzil yaratish uchun qabul qilish varag'idagi ''Yangi qabul qilish manzilini yaratish'' ustiga bosing. Faqat 'legacy' turdagi manzillar bilan xisobga kirish mumkin.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -138,7 +138,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>AustraliaCashGUI</name>
+    <name>TerraAustralisGUI</name>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
         <translation type="unfinished">
@@ -147,7 +147,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to AustraliaCash network.</source>
+        <source>%n active connection(s) to TerraAustralis network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />

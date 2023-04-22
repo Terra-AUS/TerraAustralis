@@ -1,5 +1,5 @@
-AustraliaCash-Qt version 0.8.3 is now available from:
-  http://sourceforge.net/projects/bitcoin/files/AustraliaCash/bitcoin-0.8.3/
+TerraAustralis-Qt version 0.8.3 is now available from:
+  http://sourceforge.net/projects/bitcoin/files/TerraAustralis/bitcoin-0.8.3/
 
 This is a maintenance release to fix a denial-of-service attack that
 can cause nodes to crash.

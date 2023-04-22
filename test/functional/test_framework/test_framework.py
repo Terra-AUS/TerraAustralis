@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2021 The AustraliaCash Core developers
+# Copyright (c) 2014-2021 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Base class for RPC testing."""
@@ -56,27 +56,27 @@ class SkipTest(Exception):
         self.message = message
 
 
-class AustraliaCashTestMetaClass(type):
-    """Metaclass for AustraliaCashTestFramework.
+class TerraAustralisTestMetaClass(type):
+    """Metaclass for TerraAustralisTestFramework.
 
-    Ensures that any attempt to register a subclass of `AustraliaCashTestFramework`
+    Ensures that any attempt to register a subclass of `TerraAustralisTestFramework`
     adheres to a standard whereby the subclass overrides `set_test_params` and
     `run_test` but DOES NOT override either `__init__` or `main`. If any of
     those standards are violated, a ``TypeError`` is raised."""
 
     def __new__(cls, clsname, bases, dct):
-        if not clsname == 'AustraliaCashTestFramework':
+        if not clsname == 'TerraAustralisTestFramework':
             if not ('run_test' in dct and 'set_test_params' in dct):
-                raise TypeError("AustraliaCashTestFramework subclasses must override "
+                raise TypeError("TerraAustralisTestFramework subclasses must override "
                                 "'run_test' and 'set_test_params'")
             if '__init__' in dct or 'main' in dct:
-                raise TypeError("AustraliaCashTestFramework subclasses may not override "
+                raise TypeError("TerraAustralisTestFramework subclasses may not override "
                                 "'__init__' or 'main'")
 
         return super().__new__(cls, clsname, bases, dct)
 
 
-class AustraliaCashTestFramework(metaclass=AustraliaCashTestMetaClass):
+class TerraAustralisTestFramework(metaclass=TerraAustralisTestMetaClass):
     """Base class for a bitcoin test script.
 
     Individual bitcoin test scripts should subclass this class and override the set_test_params() and run_test() methods.
@@ -353,7 +353,7 @@ class AustraliaCashTestFramework(metaclass=AustraliaCashTestMetaClass):
             h.flush()
             h.close()
             self.log.removeHandler(h)
-        rpc_logger = logging.getLogger("AustraliaCashRPC")
+        rpc_logger = logging.getLogger("TerraAustralisRPC")
         for h in list(rpc_logger.handlers):
             h.flush()
             rpc_logger.removeHandler(h)
@@ -741,7 +741,7 @@ class AustraliaCashTestFramework(metaclass=AustraliaCashTestMetaClass):
         self.log.addHandler(ch)
 
         if self.options.trace_rpc:
-            rpc_logger = logging.getLogger("AustraliaCashRPC")
+            rpc_logger = logging.getLogger("TerraAustralisRPC")
             rpc_logger.setLevel(logging.DEBUG)
             rpc_handler = logging.StreamHandler(sys.stdout)
             rpc_handler.setLevel(logging.DEBUG)

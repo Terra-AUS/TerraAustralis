@@ -34,16 +34,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>AustraliaCash-Qt</string>
+  <string>TerraAustralis-Qt</string>
 
   <key>CFBundleName</key>
-  <string>AustraliaCash-Qt</string>
+  <string>TerraAustralis-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.bitcoinfoundation.AustraliaCash-Qt</string>
+  <string>org.bitcoinfoundation.TerraAustralis-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -51,7 +51,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.bitcoin.AustraliaCashPayment</string>
+      <string>org.bitcoin.TerraAustralisPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>bitcoin</string>

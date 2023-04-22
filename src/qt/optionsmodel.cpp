@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -58,7 +58,7 @@ static const char* SettingName(OptionsModel::OptionID option)
     }
 }
 
-/** Call node.updateRwSetting() with AustraliaCash 22.x workaround. */
+/** Call node.updateRwSetting() with TerraAustralis 22.x workaround. */
 static void UpdateRwSetting(interfaces::Node& node, OptionsModel::OptionID option, const util::SettingsValue& value)
 {
     if (value.isNum() &&
@@ -67,7 +67,7 @@ static void UpdateRwSetting(interfaces::Node& node, OptionsModel::OptionID optio
          option == OptionsModel::Prune ||
          option == OptionsModel::PruneSize)) {
         // Write certain old settings as strings, even though they are numbers,
-        // because AustraliaCash 22.x releases try to read these specific settings as
+        // because TerraAustralis 22.x releases try to read these specific settings as
         // strings in addOverriddenOption() calls at startup, triggering
         // uncaught exceptions in UniValue::get_str(). These errors were fixed
         // in later releases by https://github.com/bitcoin/bitcoin/pull/24498.
@@ -165,15 +165,15 @@ bool OptionsModel::Init(bilingual_str& error)
     fMinimizeOnClose = settings.value("fMinimizeOnClose").toBool();
 
     // Display
-    if (!settings.contains("DisplayAustraliaCashUnit")) {
-        settings.setValue("DisplayAustraliaCashUnit", QVariant::fromValue(AustraliaCashUnit::BTC));
+    if (!settings.contains("DisplayTerraAustralisUnit")) {
+        settings.setValue("DisplayTerraAustralisUnit", QVariant::fromValue(TerraAustralisUnit::BTC));
     }
-    QVariant unit = settings.value("DisplayAustraliaCashUnit");
-    if (unit.canConvert<AustraliaCashUnit>()) {
-        m_display_bitcoin_unit = unit.value<AustraliaCashUnit>();
+    QVariant unit = settings.value("DisplayTerraAustralisUnit");
+    if (unit.canConvert<TerraAustralisUnit>()) {
+        m_display_bitcoin_unit = unit.value<TerraAustralisUnit>();
     } else {
-        m_display_bitcoin_unit = AustraliaCashUnit::BTC;
-        settings.setValue("DisplayAustraliaCashUnit", QVariant::fromValue(m_display_bitcoin_unit));
+        m_display_bitcoin_unit = TerraAustralisUnit::BTC;
+        settings.setValue("DisplayTerraAustralisUnit", QVariant::fromValue(m_display_bitcoin_unit));
     }
 
     if (!settings.contains("strThirdPartyTxUrls"))
@@ -621,10 +621,10 @@ bool OptionsModel::setOption(OptionID option, const QVariant& value)
 
 void OptionsModel::setDisplayUnit(const QVariant& new_unit)
 {
-    if (new_unit.isNull() || new_unit.value<AustraliaCashUnit>() == m_display_bitcoin_unit) return;
-    m_display_bitcoin_unit = new_unit.value<AustraliaCashUnit>();
+    if (new_unit.isNull() || new_unit.value<TerraAustralisUnit>() == m_display_bitcoin_unit) return;
+    m_display_bitcoin_unit = new_unit.value<TerraAustralisUnit>();
     QSettings settings;
-    settings.setValue("DisplayAustraliaCashUnit", QVariant::fromValue(m_display_bitcoin_unit));
+    settings.setValue("DisplayTerraAustralisUnit", QVariant::fromValue(m_display_bitcoin_unit));
     Q_EMIT displayUnitChanged(m_display_bitcoin_unit);
 }
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2020-2021 The AustraliaCash Core developers
+// Copyright (c) 2020-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -36,7 +36,7 @@ enum class SyscallSandboxPolicy {
 //!
 //! This function is a no-op unless SetupSyscallSandbox(...) has been called.
 //!
-//! SetupSyscallSandbox(...) is called during bitcoind initialization if AustraliaCash Core was compiled
+//! SetupSyscallSandbox(...) is called during bitcoind initialization if TerraAustralis Core was compiled
 //! with seccomp-bpf support (--with-seccomp) *and* the parameter -sandbox=<mode> was passed to
 //! bitcoind.
 //!

@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The AustraliaCash Core developers
+// Copyright (c) 2011-2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -86,9 +86,9 @@ QVariant RecentRequestsTableModel::data(const QModelIndex &index, int role) cons
             if (rec->recipient.amount == 0 && role == Qt::DisplayRole)
                 return tr("(no amount requested)");
             else if (role == Qt::EditRole)
-                return AustraliaCashUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount, false, AustraliaCashUnits::SeparatorStyle::NEVER);
+                return TerraAustralisUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount, false, TerraAustralisUnits::SeparatorStyle::NEVER);
             else
-                return AustraliaCashUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount);
+                return TerraAustralisUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount);
         }
     }
     else if (role == Qt::TextAlignmentRole)
@@ -129,7 +129,7 @@ QString RecentRequestsTableModel::getAmountTitle()
     if (!walletModel->getOptionsModel()) return {};
     return tr("Requested") +
            QLatin1String(" (") +
-           AustraliaCashUnits::shortName(this->walletModel->getOptionsModel()->getDisplayUnit()) +
+           TerraAustralisUnits::shortName(this->walletModel->getOptionsModel()->getDisplayUnit()) +
            QLatin1Char(')');
 }
 

@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-# Copyright (c) 2022-2022 The AustraliaCash Core developers
+# Copyright (c) 2022-2022 The TerraAustralis Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
 Test whether persistent or transient I2P sessions are being used, based on `-i2pacceptincoming`.
 """
 
-from test_framework.test_framework import AustraliaCashTestFramework
+from test_framework.test_framework import TerraAustralisTestFramework
 
 
-class I2PSessions(AustraliaCashTestFramework):
+class I2PSessions(TerraAustralisTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         # The test assumes that an I2P SAM proxy is not listening here.

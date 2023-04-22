@@ -1,4 +1,4 @@
-// Copyright (c) 2021 The AustraliaCash Core developers
+// Copyright (c) 2021 The TerraAustralis Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,10 +17,10 @@ using node::NodeContext;
 
 namespace init {
 namespace {
-class AustraliaCashdInit : public interfaces::Init
+class TerraAustralisdInit : public interfaces::Init
 {
 public:
-    AustraliaCashdInit(NodeContext& node) : m_node(node)
+    TerraAustralisdInit(NodeContext& node) : m_node(node)
     {
         m_node.args = &gArgs;
         m_node.init = this;
@@ -40,6 +40,6 @@ public:
 namespace interfaces {
 std::unique_ptr<Init> MakeNodeInit(NodeContext& node, int argc, char* argv[], int& exit_status)
 {
-    return std::make_unique<init::AustraliaCashdInit>(node);
+    return std::make_unique<init::TerraAustralisdInit>(node);
 }
 } // namespace interfaces

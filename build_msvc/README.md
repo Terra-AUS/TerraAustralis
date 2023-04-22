@@ -1,13 +1,13 @@
-Building AustraliaCash Core with Visual Studio
+Building TerraAustralis Core with Visual Studio
 ========================================
 
 Introduction
 ---------------------
-Visual Studio 2022 is minimum required to build AustraliaCash Core.
+Visual Studio 2022 is minimum required to build TerraAustralis Core.
 
 Solution and project files to build with `msbuild` or Visual Studio can be found in the `build_msvc` directory.
 
-To build AustraliaCash Core from the command-line, it is sufficient to only install the Visual Studio Build Tools component.
+To build TerraAustralis Core from the command-line, it is sufficient to only install the Visual Studio Build Tools component.
 
 Building with Visual Studio is an alternative to the Linux based [cross-compiler build](../doc/build-windows.md).
 
@@ -28,7 +28,7 @@ Add-Content -Path "vcpkg\triplets\x64-windows-static.cmake" -Value "set(VCPKG_BU
 
 Qt
 ---------------------
-To build AustraliaCash Core with the GUI, a static build of Qt is required.
+To build TerraAustralis Core with the GUI, a static build of Qt is required.
 
 1. Download a single ZIP archive of Qt source code from https://download.qt.io/official_releases/qt/ (e.g., [`qt-everywhere-opensource-src-5.15.5.zip`](https://download.qt.io/official_releases/qt/5.15/5.15.5/single/qt-everywhere-opensource-src-5.15.5.zip)), and expand it into a dedicated folder. The following instructions assume that this folder is `C:\dev\qt-source`.
 
@@ -44,7 +44,7 @@ nmake install
 
 One could speed up building with [`jom`](https://wiki.qt.io/Jom), a replacement for `nmake` which makes use of all CPU cores.
 
-To build AustraliaCash Core without Qt, unload or disable the `bitcoin-qt`, `libbitcoin_qt` and `test_bitcoin-qt` projects.
+To build TerraAustralis Core without Qt, unload or disable the `bitcoin-qt`, `libbitcoin_qt` and `test_bitcoin-qt` projects.
 
 
 Building
@@ -67,7 +67,7 @@ Alternatively, open the `build_msvc/bitcoin.sln` file in Visual Studio.
 
 Security
 ---------------------
-[Base address randomization](https://docs.microsoft.com/en-us/cpp/build/reference/dynamicbase-use-address-space-layout-randomization?view=msvc-160) is used to make AustraliaCash Core more secure. When building AustraliaCash using the `build_msvc` process base address randomization can be disabled by editing `common.init.vcproj` to change `RandomizedBaseAddress` from `true` to `false` and then rebuilding the project.
+[Base address randomization](https://docs.microsoft.com/en-us/cpp/build/reference/dynamicbase-use-address-space-layout-randomization?view=msvc-160) is used to make TerraAustralis Core more secure. When building TerraAustralis using the `build_msvc` process base address randomization can be disabled by editing `common.init.vcproj` to change `RandomizedBaseAddress` from `true` to `false` and then rebuilding the project.
 
 To check if `bitcoind` has `RandomizedBaseAddress` enabled or disabled run
 
