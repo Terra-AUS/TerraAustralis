@@ -142,8 +142,8 @@
         <translation>Reindexando bloques en disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Australiacash address</source>
-        <translation>Enviar monedas a una dirección Australiacash</translation>
+        <source>Send coins to a TerraAustralis address</source>
+        <translation>Enviar monedas a una dirección TerraAustralis</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -166,8 +166,8 @@
         <translation>&amp;Verificar mensaje...</translation>
     </message>
     <message>
-        <source>Australiacash</source>
-        <translation>Australiacash</translation>
+        <source>TerraAustralis</source>
+        <translation>TerraAustralis</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -194,12 +194,12 @@
         <translation>Cifrar las claves privadas de su monedero</translation>
     </message>
     <message>
-        <source>Sign messages with your Australiacash addresses to prove you own them</source>
-        <translation>Firmar mensajes con sus direcciones Australiacash para demostrar la propiedad</translation>
+        <source>Sign messages with your TerraAustralis addresses to prove you own them</source>
+        <translation>Firmar mensajes con sus direcciones TerraAustralis para demostrar la propiedad</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Australiacash addresses</source>
-        <translation>Verificar mensajes comprobando que están firmados con direcciones Australiacash concretas</translation>
+        <source>Verify messages to ensure they were signed with specified TerraAustralis addresses</source>
+        <translation>Verificar mensajes comprobando que están firmados con direcciones TerraAustralis concretas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -219,7 +219,7 @@
     </message>
     <message>
         <source>Request payments (generates QR codes and terraaustralis: URIs)</source>
-        <translation>Solicitar pagos (genera codigo QR y URL's de Australiacash)</translation>
+        <translation>Solicitar pagos (genera codigo QR y URL's de TerraAustralis)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -421,8 +421,8 @@
         <translation>Utilice un directorio de datos personalizado:</translation>
     </message>
     <message>
-        <source>Australiacash</source>
-        <translation>Australiacash</translation>
+        <source>TerraAustralis</source>
+        <translation>TerraAustralis</translation>
     </message>
     <message>
         <source>Error</source>
@@ -498,8 +498,8 @@
         <translation>Experto</translation>
     </message>
     <message>
-        <source>Automatically open the Australiacash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente el puerto del cliente Australiacash en el router. Esta opción solo funciona si el router admite UPnP y está activado.</translation>
+        <source>Automatically open the TerraAustralis client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente el puerto del cliente TerraAustralis en el router. Esta opción solo funciona si el router admite UPnP y está activado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -597,8 +597,8 @@
         <translation>Desde</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Australiacash network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red Australiacash después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the TerraAustralis network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red TerraAustralis después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>Your current spendable balance</source>
@@ -1011,8 +1011,8 @@
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Australiacash address</source>
-        <translation>Firmar el mensaje para demostrar que se posee esta dirección Australiacash</translation>
+        <source>Sign the message to prove you own this TerraAustralis address</source>
+        <translation>Firmar el mensaje para demostrar que se posee esta dirección TerraAustralis</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1031,8 +1031,8 @@
         <translation>&amp;Verificar mensaje</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Australiacash address</source>
-        <translation>Verificar el mensaje para comprobar que fue firmado con la dirección Australiacash indicada</translation>
+        <source>Verify the message to ensure it was signed with the specified TerraAustralis address</source>
+        <translation>Verificar el mensaje para comprobar que fue firmado con la dirección TerraAustralis indicada</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1115,8 +1115,8 @@
 </translation>
     </message>
     <message>
-        <source>Australiacash Core</source>
-        <translation>Núcleo de Australiacash</translation>
+        <source>TerraAustralis Core</source>
+        <translation>Núcleo de TerraAustralis</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

@@ -583,7 +583,7 @@ fs::path GetDefaultDataDir()
     // Unix: ~/.bitcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Australiacash";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "TerraAustralis";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -593,7 +593,7 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/Australiacash";
+    return pathRet / "Library/Application Support/TerraAustralis";
 #else
     // Unix
     return pathRet / ".terraaustralis";

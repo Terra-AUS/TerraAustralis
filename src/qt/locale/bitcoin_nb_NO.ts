@@ -62,12 +62,12 @@
         <translation>Mottager adresser</translation>
     </message>
     <message>
-        <source>These are your Australiacash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dette er dine Australiacash adresser for å sende  å sende betalinger. Husk å sjekke beløp og mottager adresser før du sender mynter.</translation>
+        <source>These are your TerraAustralis addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dette er dine TerraAustralis adresser for å sende  å sende betalinger. Husk å sjekke beløp og mottager adresser før du sender mynter.</translation>
     </message>
     <message>
-        <source>These are your Australiacash addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dette er dine Australiacash adresse for å motta betalinger. Det er anbefalt å bruke en ny mottager adresse for hver transaksjon.</translation>
+        <source>These are your TerraAustralis addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dette er dine TerraAustralis adresse for å motta betalinger. Det er anbefalt å bruke en ny mottager adresse for hver transaksjon.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -338,8 +338,8 @@
         <translation>Reindekserer blokker på disken</translation>
     </message>
     <message>
-        <source>Send coins to a Australiacash address</source>
-        <translation>Send mynter til en Australiacash adresse</translation>
+        <source>Send coins to a TerraAustralis address</source>
+        <translation>Send mynter til en TerraAustralis adresse</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -362,8 +362,8 @@
         <translation>&amp;Verifiser meldingen...</translation>
     </message>
     <message>
-        <source>Australiacash</source>
-        <translation>Australiacash</translation>
+        <source>TerraAustralis</source>
+        <translation>TerraAustralis</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -390,12 +390,12 @@
         <translation>Krypter de private nøklene som tilhører lommeboken din</translation>
     </message>
     <message>
-        <source>Sign messages with your Australiacash addresses to prove you own them</source>
-        <translation>Signer meldingene med Australiacash adresse for å bevise at diu eier dem</translation>
+        <source>Sign messages with your TerraAustralis addresses to prove you own them</source>
+        <translation>Signer meldingene med TerraAustralis adresse for å bevise at diu eier dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Australiacash addresses</source>
-        <translation>Verifiser meldinger for å sikre at de ble signert med en angitt Australiacash adresse</translation>
+        <source>Verify messages to ensure they were signed with specified TerraAustralis addresses</source>
+        <translation>Verifiser meldinger for å sikre at de ble signert med en angitt TerraAustralis adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -466,8 +466,8 @@
         <translation>Oppdatert</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Australiacash command-line options</source>
-        <translation>Vis %1-hjelpemeldingen for å få en liste over mulige Australiacash-kommandolinjealternativer</translation>
+        <source>Show the %1 help message to get a list with possible TerraAustralis command-line options</source>
+        <translation>Vis %1-hjelpemeldingen for å få en liste over mulige TerraAustralis-kommandolinjealternativer</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -535,8 +535,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Australiacash</source>
-        <translation>Australiacash</translation>
+        <source>TerraAustralis</source>
+        <translation>TerraAustralis</translation>
     </message>
     <message>
         <source>Error</source>

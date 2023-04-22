@@ -62,11 +62,11 @@
         <translation>Přijímací adresy</translation>
     </message>
     <message>
-        <source>These are your Australiacash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your TerraAustralis addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Tohle jsou tvé terraaustralisové adresy pro posílání plateb. Před odesláním mincí si vždy zkontroluj částku a cílovou adresu.</translation>
     </message>
     <message>
-        <source>These are your Australiacash addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your TerraAustralis addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Tohle jsou tvé terraaustralisové adresy pro příjem plateb. Je doporučeno pro každou transakci vždy vygenerovat novou adresu.</translation>
     </message>
     <message>
@@ -342,7 +342,7 @@
         <translation>Vytvářím nový index bloků na disku...</translation>
     </message>
     <message>
-        <source>Send coins to a Australiacash address</source>
+        <source>Send coins to a TerraAustralis address</source>
         <translation>Pošli mince na terraaustralisovou adresu</translation>
     </message>
     <message>
@@ -366,8 +366,8 @@
         <translation>&amp;Ověř zprávu...</translation>
     </message>
     <message>
-        <source>Australiacash</source>
-        <translation>Australiacash</translation>
+        <source>TerraAustralis</source>
+        <translation>TerraAustralis</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -394,11 +394,11 @@
         <translation>Zašifruj soukromé klíče ve své peněžence</translation>
     </message>
     <message>
-        <source>Sign messages with your Australiacash addresses to prove you own them</source>
+        <source>Sign messages with your TerraAustralis addresses to prove you own them</source>
         <translation>Podepiš zprávy svými terraaustralisovými adresami, čímž prokážeš, že jsi jejich vlastníkem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Australiacash addresses</source>
+        <source>Verify messages to ensure they were signed with specified TerraAustralis addresses</source>
         <translation>Ověř zprávy, aby ses ujistil, že byly podepsány danými terraaustralisovými adresami</translation>
     </message>
     <message>
@@ -438,7 +438,7 @@
         <translation>Ar&amp;gumenty příkazové řádky</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Australiacash network</source>
+        <source>%n active connection(s) to TerraAustralis network</source>
         <translation><numerusform>%n aktivní spojení do terraaustralisové sítě</numerusform><numerusform>%n aktivní spojení do terraaustralisové sítě</numerusform><numerusform>%n aktivních spojení do terraaustralisové sítě</numerusform><numerusform>%n aktivních spojení do terraaustralisové sítě</numerusform></translation>
     </message>
     <message>
@@ -482,8 +482,8 @@
         <translation>Aktuální</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Australiacash command-line options</source>
-        <translation>Seznam argumentů Australiacashu pro příkazovou řádku získáš v nápovědě %1</translation>
+        <source>Show the %1 help message to get a list with possible TerraAustralis command-line options</source>
+        <translation>Seznam argumentů TerraAustralisu pro příkazovou řádku získáš v nápovědě %1</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -552,8 +552,8 @@
         <translation>Peněženka je &lt;b&gt;zašifrovaná&lt;/b&gt; a momentálně &lt;b&gt;zamčená&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Australiacash can no longer continue safely and will quit.</source>
-        <translation>Stala se fatální chyba. Australiacash nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
+        <source>A fatal error occurred. TerraAustralis can no longer continue safely and will quit.</source>
+        <translation>Stala se fatální chyba. TerraAustralis nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
     </message>
 </context>
 <context>
@@ -746,7 +746,7 @@
         <translation>Uprav odesílací adresu</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Australiacash address.</source>
+        <source>The entered address "%1" is not a valid TerraAustralis address.</source>
         <translation>Zadaná adresa „%1“ není platná terraaustralisová adresa.</translation>
     </message>
     <message>
@@ -875,8 +875,8 @@
         <translation>Použij tento adresář pro data:</translation>
     </message>
     <message>
-        <source>Australiacash</source>
-        <translation>Australiacash</translation>
+        <source>TerraAustralis</source>
+        <translation>TerraAustralis</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -887,7 +887,7 @@
         <translation>Bude proto potřebovat do tohoto adresáře uložit přibližně %1 GB dat.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Australiacash block chain.</source>
+        <source>%1 will download and store a copy of the TerraAustralis block chain.</source>
         <translation>%1 bude stahovat kopii bločenky.</translation>
     </message>
     <message>
@@ -1092,7 +1092,7 @@
         <translation>&amp;Utrácet i ještě nepotvrzené drobné</translation>
     </message>
     <message>
-        <source>Automatically open the Australiacash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the TerraAustralis client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Automaticky otevře potřebný port na routeru. Tohle funguje jen za předpokladu, že tvůj router podporuje UPnP a že je UPnP povolené.</translation>
     </message>
     <message>
@@ -1104,7 +1104,7 @@
         <translation>Přijímat spojení z venku.</translation>
     </message>
     <message>
-        <source>Connect to the Australiacash network through a SOCKS5 proxy.</source>
+        <source>Connect to the TerraAustralis network through a SOCKS5 proxy.</source>
         <translation>Připojí se do terraaustralisové sítě přes SOCKS5 proxy.</translation>
     </message>
     <message>
@@ -1140,7 +1140,7 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Australiacash network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the TerraAustralis network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation>Připojí se do terraaustralisové sítě přes SOCKS5 proxy vyhrazenou pro skryté služby v Tor síti.</translation>
     </message>
     <message>
@@ -1243,7 +1243,7 @@
         <translation>Formulář</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Australiacash network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the TerraAustralis network after a connection is established, but this process has not completed yet.</source>
         <translation>Zobrazené informace nemusí být aktuální. Tvá peněženka se automaticky sesynchronizuje s terraaustralisovou sítí, jakmile se s ní spojí. Zatím ale ještě není synchronizace dokončena.</translation>
     </message>
     <message>
@@ -1334,7 +1334,7 @@
         <translation>Neplatná platební adresa %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Australiacash address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid TerraAustralis address or malformed URI parameters.</source>
         <translation>Nepodařilo se analyzovat URI! Důvodem může být neplatná terraaustralisová adresa nebo poškozené parametry URI.</translation>
     </message>
     <message>
@@ -1436,7 +1436,7 @@
         <translation>Částka</translation>
     </message>
     <message>
-        <source>Enter a Australiacash address (e.g. %1)</source>
+        <source>Enter a TerraAustralis address (e.g. %1)</source>
         <translation>Zadej terraaustralisovou adresu (např. %1)</translation>
     </message>
     <message>
@@ -1852,7 +1852,7 @@
         <translation>&amp;Zpráva:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Australiacash network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the TerraAustralis network.</source>
         <translation>Volitelná zpráva, která se připojí k platebnímu požadavku a která se zobrazí, když se požadavek otevře. Poznámka: tahle zpráva se neposílá s platbou po terraaustralisové síti.</translation>
     </message>
     <message>
@@ -2245,7 +2245,7 @@
         <translation><numerusform>Potvrzování by podle odhadu mělo začít během %n bloku.</numerusform><numerusform>Potvrzování by podle odhadu mělo začít během %n bloků.</numerusform><numerusform>Potvrzování by podle odhadu mělo začít během %n bloků.</numerusform><numerusform>Potvrzování by podle odhadu mělo začít během %n bloků.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Australiacash address</source>
+        <source>Warning: Invalid TerraAustralis address</source>
         <translation>Upozornění: Neplatná terraaustralisová adresa</translation>
     </message>
     <message>
@@ -2288,8 +2288,8 @@
         <translation>Tohle je normální platba.</translation>
     </message>
     <message>
-        <source>The Australiacash address to send the payment to</source>
-        <translation>Australiacashová adresa příjemce</translation>
+        <source>The TerraAustralis address to send the payment to</source>
+        <translation>TerraAustralisová adresa příjemce</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2332,7 +2332,7 @@
         <translation>Zadej označení této adresy; obojí se ti pak uloží do adresáře</translation>
     </message>
     <message>
-        <source>A message that was attached to the terraaustralis: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Australiacash network.</source>
+        <source>A message that was attached to the terraaustralis: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the TerraAustralis network.</source>
         <translation>Zpráva, která byla připojena k terraaustralis: URI a která se ti pro přehled uloží k transakci. Poznámka: Tahle zpráva se neposílá s platbou po terraaustralisové síti.</translation>
     </message>
     <message>
@@ -2381,8 +2381,8 @@
         <translation>Podepsáním zprávy/smlouvy svými adresami můžeš prokázat, že jsi na ně schopen přijmout terraaustralisy. Buď opatrný a nepodepisuj nic vágního nebo náhodného; například při phishingových útocích můžeš být lákán, abys něco takového podepsal. Podepisuj pouze naprosto úplná a detailní prohlášení, se kterými souhlasíš.</translation>
     </message>
     <message>
-        <source>The Australiacash address to sign the message with</source>
-        <translation>Australiacashová adresa, kterou se zpráva podepíše</translation>
+        <source>The TerraAustralis address to sign the message with</source>
+        <translation>TerraAustralisová adresa, kterou se zpráva podepíše</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2413,7 +2413,7 @@
         <translation>Zkopíruj tento podpis do schránky</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Australiacash address</source>
+        <source>Sign the message to prove you own this TerraAustralis address</source>
         <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem této terraaustralisové adresy</translation>
     </message>
     <message>
@@ -2437,11 +2437,11 @@
         <translation>K ověření podpisu zprávy zadej adresu příjemce, zprávu (ověř si, že správně kopíruješ zalomení řádků, mezery, tabulátory apod.) a podpis. Dávej pozor na to, abys nezkopíroval do podpisu víc, než co je v samotné podepsané zprávě, abys nebyl napálen man-in-the-middle útokem. Poznamenejme však, že takto lze pouze prokázat, že podepisující je schopný na dané adrese přijmout platbu, ale není možnéprokázat, že odeslal jakoukoli transakci!</translation>
     </message>
     <message>
-        <source>The Australiacash address the message was signed with</source>
-        <translation>Australiacashová adresa, kterou je zpráva podepsána</translation>
+        <source>The TerraAustralis address the message was signed with</source>
+        <translation>TerraAustralisová adresa, kterou je zpráva podepsána</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Australiacash address</source>
+        <source>Verify the message to ensure it was signed with the specified TerraAustralis address</source>
         <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou terraaustralisovou adresou</translation>
     </message>
     <message>
@@ -3130,8 +3130,8 @@
         <translation>Nemohu spustit HTTP server. Detaily viz v debug.log.</translation>
     </message>
     <message>
-        <source>Australiacash Core</source>
-        <translation>Australiacash Core</translation>
+        <source>TerraAustralis Core</source>
+        <translation>TerraAustralis Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

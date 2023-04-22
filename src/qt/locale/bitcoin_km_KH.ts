@@ -90,8 +90,8 @@
 <context>
     <name>TerraAustralisGUI</name>
     <message>
-        <source>Send coins to a Australiacash address</source>
-        <translation>ផ្ញើកាក់ទៅកាន់ អាសយដ្ឋាន Australiacash មួយ</translation>
+        <source>Send coins to a TerraAustralis address</source>
+        <translation>ផ្ញើកាក់ទៅកាន់ អាសយដ្ឋាន TerraAustralis មួយ</translation>
     </message>
     <message>
         <source>Wallet</source>

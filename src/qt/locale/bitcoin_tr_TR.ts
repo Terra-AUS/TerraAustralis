@@ -62,12 +62,12 @@
         <translation>Alınan Adresler</translation>
     </message>
     <message>
-        <source>These are your Australiacash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Bunlar ödeme göndermek için gereken Australiacash adreslerinizdir. Para göndermeden önce her zaman miktarı ve alıcı adresi kontrol edin.</translation>
+        <source>These are your TerraAustralis addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Bunlar ödeme göndermek için gereken TerraAustralis adreslerinizdir. Para göndermeden önce her zaman miktarı ve alıcı adresi kontrol edin.</translation>
     </message>
     <message>
-        <source>These are your Australiacash addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Bunlar ödeme almak için kullanılacak Australiacash adreslerinizdir. Her işlem için yeni bir ödeme alma adresi kullanılması tavsiye edilir.</translation>
+        <source>These are your TerraAustralis addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Bunlar ödeme almak için kullanılacak TerraAustralis adreslerinizdir. Her işlem için yeni bir ödeme alma adresi kullanılması tavsiye edilir.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -286,8 +286,8 @@
         <translation>Bloklar disk üzerinde yeniden indeksleniyor...</translation>
     </message>
     <message>
-        <source>Send coins to a Australiacash address</source>
-        <translation>Australiacash adresine madeni para gönderin</translation>
+        <source>Send coins to a TerraAustralis address</source>
+        <translation>TerraAustralis adresine madeni para gönderin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -302,8 +302,8 @@
         <translation>Onay mesajı...</translation>
     </message>
     <message>
-        <source>Australiacash</source>
-        <translation>Australiacash</translation>
+        <source>TerraAustralis</source>
+        <translation>TerraAustralis</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -461,8 +461,8 @@
         <translation>Gönderim adresini düzenleyin</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Australiacash address.</source>
-        <translation>Girilen adres "%1" Australiacash adresiyle eşleşmiyor.</translation>
+        <source>The entered address "%1" is not a valid TerraAustralis address.</source>
+        <translation>Girilen adres "%1" TerraAustralis adresiyle eşleşmiyor.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -518,8 +518,8 @@
         <translation>Hoş geldiniz</translation>
     </message>
     <message>
-        <source>Australiacash</source>
-        <translation>Australiacash
+        <source>TerraAustralis</source>
+        <translation>TerraAustralis
 </translation>
     </message>
     <message>
@@ -651,7 +651,7 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Australiacash network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the TerraAustralis network after a connection is established, but this process has not completed yet.</source>
         <translation>Gösterilen bilgi geçerli olmayabilir. Bağlantı tekrar sağlandıktan sonra cüzdanınız otomatik olarak senkronize olacaktır. Henüz senkronize olma işlemi tamamlanmadı.</translation>
     </message>
     <message>
@@ -732,8 +732,8 @@
 <context>
     <name>QObject</name>
     <message>
-        <source>Enter a Australiacash address (e.g. %1)</source>
-        <translation>Australiacash adresinizi girin (örneğin %1)</translation>
+        <source>Enter a TerraAustralis address (e.g. %1)</source>
+        <translation>TerraAustralis adresinizi girin (örneğin %1)</translation>
     </message>
     <message>
         <source>N/A</source>
@@ -1109,8 +1109,8 @@
         <translation>Coin gönderimini onaylayın</translation>
     </message>
     <message>
-        <source>Warning: Invalid Australiacash address</source>
-        <translation>Uyarı: Hatalı Australiacash adresi</translation>
+        <source>Warning: Invalid TerraAustralis address</source>
+        <translation>Uyarı: Hatalı TerraAustralis adresi</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1410,8 +1410,8 @@
         <translation>JSON-RPC komutları ile komut satırını onaylayın</translation>
     </message>
     <message>
-        <source>Australiacash Core</source>
-        <translation>Australiacash Çekirdeği</translation>
+        <source>TerraAustralis Core</source>
+        <translation>TerraAustralis Çekirdeği</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>

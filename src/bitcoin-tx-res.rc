@@ -14,8 +14,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Australiacash"
-            VALUE "FileDescription",    "terraaustralis-tx (CLI Australiacash transaction editor utility)"
+            VALUE "CompanyName",        "TerraAustralis"
+            VALUE "FileDescription",    "terraaustralis-tx (CLI TerraAustralis transaction editor utility)"
             VALUE "FileVersion",        PACKAGE_VERSION
             VALUE "InternalName",       "terraaustralis-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR

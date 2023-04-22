@@ -62,12 +62,12 @@
         <translation>Adresa de primire</translation>
     </message>
     <message>
-        <source>These are your Australiacash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Acestea sunt adresele tale Australiacash pentru efectuarea platilor. Intotdeauna verifica atent suma de plata si adresa beneficiarului inainte de a trimite monede.</translation>
+        <source>These are your TerraAustralis addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Acestea sunt adresele tale TerraAustralis pentru efectuarea platilor. Intotdeauna verifica atent suma de plata si adresa beneficiarului inainte de a trimite monede.</translation>
     </message>
     <message>
-        <source>These are your Australiacash addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Acestea sunt adresele tale Australiacash pentru receptionarea platilor. Este recomandat sa folosesti mereu o adresa noua pentru primirea platilor.</translation>
+        <source>These are your TerraAustralis addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Acestea sunt adresele tale TerraAustralis pentru receptionarea platilor. Este recomandat sa folosesti mereu o adresa noua pentru primirea platilor.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -342,8 +342,8 @@
         <translation>Se reindexează blocurile pe disc...</translation>
     </message>
     <message>
-        <source>Send coins to a Australiacash address</source>
-        <translation>Trimite monede către o adresă Australiacash</translation>
+        <source>Send coins to a TerraAustralis address</source>
+        <translation>Trimite monede către o adresă TerraAustralis</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -366,8 +366,8 @@
         <translation>&amp;Verifică mesaj...</translation>
     </message>
     <message>
-        <source>Australiacash</source>
-        <translation>Australiacash</translation>
+        <source>TerraAustralis</source>
+        <translation>TerraAustralis</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -394,12 +394,12 @@
         <translation>Criptează cheile private ale portofelului dvs.</translation>
     </message>
     <message>
-        <source>Sign messages with your Australiacash addresses to prove you own them</source>
-        <translation>Semnaţi mesaje cu adresa dvs. Australiacash pentru a dovedi că vă aparţin</translation>
+        <source>Sign messages with your TerraAustralis addresses to prove you own them</source>
+        <translation>Semnaţi mesaje cu adresa dvs. TerraAustralis pentru a dovedi că vă aparţin</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Australiacash addresses</source>
-        <translation>Verificaţi mesaje pentru a vă asigura că au fost semnate cu adresa Australiacash specificată</translation>
+        <source>Verify messages to ensure they were signed with specified TerraAustralis addresses</source>
+        <translation>Verificaţi mesaje pentru a vă asigura că au fost semnate cu adresa TerraAustralis specificată</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -438,8 +438,8 @@
         <translation>Opţiuni linie de &amp;comandă</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Australiacash network</source>
-        <translation><numerusform>%n conexiune activă către reţeaua Australiacash</numerusform><numerusform>%n conexiuni active către reţeaua Australiacash</numerusform><numerusform>%n de conexiuni active către reţeaua Australiacash</numerusform></translation>
+        <source>%n active connection(s) to TerraAustralis network</source>
+        <translation><numerusform>%n conexiune activă către reţeaua TerraAustralis</numerusform><numerusform>%n conexiuni active către reţeaua TerraAustralis</numerusform><numerusform>%n de conexiuni active către reţeaua TerraAustralis</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -482,8 +482,8 @@
         <translation>Actualizat</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Australiacash command-line options</source>
-        <translation>Arată mesajul de ajutor %1 pentru a obţine o listă cu opţiunile posibile de linii de comandă Australiacash</translation>
+        <source>Show the %1 help message to get a list with possible TerraAustralis command-line options</source>
+        <translation>Arată mesajul de ajutor %1 pentru a obţine o listă cu opţiunile posibile de linii de comandă TerraAustralis</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -552,8 +552,8 @@
         <translation>Portofelul este &lt;b&gt;criptat&lt;/b&gt; iar în momentul de faţă este &lt;b&gt;blocat&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Australiacash can no longer continue safely and will quit.</source>
-        <translation>A survenit o eroare fatală. Australiacash nu mai poate continua în siguranţă şi se va opri.</translation>
+        <source>A fatal error occurred. TerraAustralis can no longer continue safely and will quit.</source>
+        <translation>A survenit o eroare fatală. TerraAustralis nu mai poate continua în siguranţă şi se va opri.</translation>
     </message>
 </context>
 <context>
@@ -742,8 +742,8 @@
         <translation>Editează adresa de trimitere</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Australiacash address.</source>
-        <translation>Adresa introdusă "%1" nu este o adresă Australiacash validă.</translation>
+        <source>The entered address "%1" is not a valid TerraAustralis address.</source>
+        <translation>Adresa introdusă "%1" nu este o adresă TerraAustralis validă.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -871,8 +871,8 @@
         <translation>Foloseşte un dosar de date personalizat:</translation>
     </message>
     <message>
-        <source>Australiacash</source>
-        <translation>Australiacash</translation>
+        <source>TerraAustralis</source>
+        <translation>TerraAustralis</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -883,8 +883,8 @@
         <translation>Aproximativ %1 GB de date vor fi stocate in acest director.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Australiacash block chain.</source>
-        <translation>%1 va descarca si stoca o copie a blockchainului Australiacash</translation>
+        <source>%1 will download and store a copy of the TerraAustralis block chain.</source>
+        <translation>%1 va descarca si stoca o copie a blockchainului TerraAustralis</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -915,7 +915,7 @@
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the terraaustralis network, as detailed below.</source>
-        <translation>Tranzactiile recente pot sa nu fie inca vizibile, de aceea balanta portofelului poate fi incorecta. Aceasta informatie va fi corecta de indata ce portofelul va fi complet sincronizat cu reteaua Australiacash, asa cum este detaliat mai jos.</translation>
+        <translation>Tranzactiile recente pot sa nu fie inca vizibile, de aceea balanta portofelului poate fi incorecta. Aceasta informatie va fi corecta de indata ce portofelul va fi complet sincronizat cu reteaua TerraAustralis, asa cum este detaliat mai jos.</translation>
     </message>
     <message>
         <source>Attempting to spend terraaustraliss that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
@@ -1088,8 +1088,8 @@
         <translation>Cheltuire rest neconfirmat</translation>
     </message>
     <message>
-        <source>Automatically open the Australiacash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Deschide automat în router portul aferent clientului Australiacash. Funcţionează doar dacă routerul duportă UPnP şi e activat.</translation>
+        <source>Automatically open the TerraAustralis client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Deschide automat în router portul aferent clientului TerraAustralis. Funcţionează doar dacă routerul duportă UPnP şi e activat.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1104,8 +1104,8 @@
         <translation>Permite conexiuni de intrar&amp;e</translation>
     </message>
     <message>
-        <source>Connect to the Australiacash network through a SOCKS5 proxy.</source>
-        <translation>Conectare la reţeaua Australiacash printr-un proxy SOCKS.</translation>
+        <source>Connect to the TerraAustralis network through a SOCKS5 proxy.</source>
+        <translation>Conectare la reţeaua TerraAustralis printr-un proxy SOCKS.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1140,8 +1140,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Australiacash network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Conectare la reteaua Australiacash printr-un proxy SOCKS5 separat pentru serviciile TOR ascunse.</translation>
+        <source>Connect to the TerraAustralis network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Conectare la reteaua TerraAustralis printr-un proxy SOCKS5 separat pentru serviciile TOR ascunse.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1247,8 +1247,8 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Australiacash network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informaţiile afişate pot fi neactualizate. Portofelul dvs. se sincronizează automat cu reţeaua Australiacash după ce o conexiune este stabilită, dar acest proces nu a fost finalizat încă.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the TerraAustralis network after a connection is established, but this process has not completed yet.</source>
+        <translation>Informaţiile afişate pot fi neactualizate. Portofelul dvs. se sincronizează automat cu reţeaua TerraAustralis după ce o conexiune este stabilită, dar acest proces nu a fost finalizat încă.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1323,7 +1323,7 @@
     </message>
     <message>
         <source>Cannot start terraaustralis: click-to-pay handler</source>
-        <translation>Australiacash nu poate porni: click-to-pay handler</translation>
+        <translation>TerraAustralis nu poate porni: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1338,8 +1338,8 @@
         <translation>Adresă pentru plată invalidă %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Australiacash address or malformed URI parameters.</source>
-        <translation>URI nu poate fi analizat! Acest lucru poate fi cauzat de o adresă Australiacash invalidă sau parametri URI deformaţi.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid TerraAustralis address or malformed URI parameters.</source>
+        <translation>URI nu poate fi analizat! Acest lucru poate fi cauzat de o adresă TerraAustralis invalidă sau parametri URI deformaţi.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1440,8 +1440,8 @@
         <translation>Cantitate</translation>
     </message>
     <message>
-        <source>Enter a Australiacash address (e.g. %1)</source>
-        <translation>Introduceţi o adresă Australiacash (de exemplu %1)</translation>
+        <source>Enter a TerraAustralis address (e.g. %1)</source>
+        <translation>Introduceţi o adresă TerraAustralis (de exemplu %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1864,8 +1864,8 @@
         <translation>&amp;Mesaj:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Australiacash network.</source>
-        <translation>Un mesaj opţional de ataşat la cererea de plată, care va fi afişat cînd cererea este deschisă. Notă: Acest mesaj nu va fi trimis cu plata către reţeaua Australiacash.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the TerraAustralis network.</source>
+        <translation>Un mesaj opţional de ataşat la cererea de plată, care va fi afişat cînd cererea este deschisă. Notă: Acest mesaj nu va fi trimis cu plata către reţeaua TerraAustralis.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2273,7 +2273,7 @@
         <translation><numerusform>Se estimeaza inceperea confirmarii in %n bloc.</numerusform><numerusform>Se estimeaza inceperea confirmarii in %n blocuri.</numerusform><numerusform>Se estimeaza inceperea confirmarii in %n blocuri.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Australiacash address</source>
+        <source>Warning: Invalid TerraAustralis address</source>
         <translation>Atenţie: Adresa terraaustralis nevalidă!</translation>
     </message>
     <message>
@@ -2316,7 +2316,7 @@
         <translation>Aceasta este o tranzacţie normală.</translation>
     </message>
     <message>
-        <source>The Australiacash address to send the payment to</source>
+        <source>The TerraAustralis address to send the payment to</source>
         <translation>Adresa terraaustralis către care se face plata</translation>
     </message>
     <message>
@@ -2364,7 +2364,7 @@
         <translation>Introduceţi eticheta pentru ca această adresa să fie introdusă în lista de adrese folosite</translation>
     </message>
     <message>
-        <source>A message that was attached to the terraaustralis: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Australiacash network.</source>
+        <source>A message that was attached to the terraaustralis: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the TerraAustralis network.</source>
         <translation>un mesaj a fost ataşat la terraaustralis: URI care va fi stocat cu tranzacţia pentru referinţa dvs. Notă: Acest mesaj nu va fi trimis către reţeaua terraaustralis.</translation>
     </message>
     <message>
@@ -2413,7 +2413,7 @@
         <translation>Puteţi semna mesaje/contracte cu adresele dvs. pentru a demostra ca puteti primi terraaustralisi trimisi la ele. Aveţi grijă să nu semnaţi nimic vag sau aleator, deoarece atacurile de tip phishing vă pot păcăli să le transferaţi identitatea. Semnaţi numai declaraţiile detaliate cu care sînteti de acord.</translation>
     </message>
     <message>
-        <source>The Australiacash address to sign the message with</source>
+        <source>The TerraAustralis address to sign the message with</source>
         <translation>Adresa cu care semnaţi mesajul</translation>
     </message>
     <message>
@@ -2445,8 +2445,8 @@
         <translation>Copiază semnatura curentă în clipboard-ul sistemului</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Australiacash address</source>
-        <translation>Semnează mesajul pentru a dovedi ca deţineţi acestă adresă Australiacash</translation>
+        <source>Sign the message to prove you own this TerraAustralis address</source>
+        <translation>Semnează mesajul pentru a dovedi ca deţineţi acestă adresă TerraAustralis</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2469,12 +2469,12 @@
         <translation>Introduceţi adresa de semnatură, mesajul (asiguraţi-vă că aţi copiat spaţiile, taburile etc. exact) şi semnatura dedesubt pentru a verifica mesajul. Aveţi grijă să nu citiţi mai mult în semnatură decît mesajul în sine, pentru a evita să fiţi păcăliţi de un atac de tip man-in-the-middle. De notat ca aceasta dovedeste doar ca semnatarul primeste odata cu adresa, nu dovedesta insa trimiterea vreunei tranzactii.</translation>
     </message>
     <message>
-        <source>The Australiacash address the message was signed with</source>
-        <translation>Introduceţi o adresă Australiacash</translation>
+        <source>The TerraAustralis address the message was signed with</source>
+        <translation>Introduceţi o adresă TerraAustralis</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Australiacash address</source>
-        <translation>Verificaţi mesajul pentru a vă asigura că a fost semnat cu adresa Australiacash specificată</translation>
+        <source>Verify the message to ensure it was signed with the specified TerraAustralis address</source>
+        <translation>Verificaţi mesajul pentru a vă asigura că a fost semnat cu adresa TerraAustralis specificată</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3162,8 +3162,8 @@
         <translation>Imposibil de pornit serverul HTTP. Pentru detalii vezi logul de depanare.</translation>
     </message>
     <message>
-        <source>Australiacash Core</source>
-        <translation>Nucleul Australiacash</translation>
+        <source>TerraAustralis Core</source>
+        <translation>Nucleul TerraAustralis</translation>
     </message>
     <message>
         <source>The %s developers</source>

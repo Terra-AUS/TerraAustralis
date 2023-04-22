@@ -80,12 +80,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your Australiacash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your TerraAustralis addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>These are your Australiacash addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your TerraAustralis addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -435,8 +435,8 @@
     </message>
     <message>
         <location line="-511"/>
-        <source>Send coins to a Australiacash address</source>
-        <translation>Send coins to a Australiacash address</translation>
+        <source>Send coins to a TerraAustralis address</source>
+        <translation>Send coins to a TerraAustralis address</translation>
     </message>
     <message>
         <location line="+67"/>
@@ -465,8 +465,8 @@
     </message>
     <message>
         <location line="+517"/>
-        <source>Australiacash</source>
-        <translation>Australiacash</translation>
+        <source>TerraAustralis</source>
+        <translation>TerraAustralis</translation>
     </message>
     <message>
         <location line="-743"/>
@@ -500,13 +500,13 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your Australiacash addresses to prove you own them</source>
-        <translation>Sign messages with your Australiacash addresses to prove you own them</translation>
+        <source>Sign messages with your TerraAustralis addresses to prove you own them</source>
+        <translation>Sign messages with your TerraAustralis addresses to prove you own them</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Australiacash addresses</source>
-        <translation>Verify messages to ensure they were signed with specified Australiacash addresses</translation>
+        <source>Verify messages to ensure they were signed with specified TerraAustralis addresses</source>
+        <translation>Verify messages to ensure they were signed with specified TerraAustralis addresses</translation>
     </message>
     <message>
         <location line="+58"/>
@@ -555,10 +555,10 @@
     </message>
     <message numerus="yes">
         <location line="+357"/>
-        <source>%n active connection(s) to Australiacash network</source>
+        <source>%n active connection(s) to TerraAustralis network</source>
         <translation>
-            <numerusform>%n active connection to Australiacash network</numerusform>
-            <numerusform>%n active connections to Australiacash network</numerusform>
+            <numerusform>%n active connection to TerraAustralis network</numerusform>
+            <numerusform>%n active connections to TerraAustralis network</numerusform>
         </translation>
     </message>
     <message>
@@ -616,7 +616,7 @@
     </message>
     <message>
         <location line="-441"/>
-        <source>Show the %1 help message to get a list with possible Australiacash command-line options</source>
+        <source>Show the %1 help message to get a list with possible TerraAustralis command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -696,7 +696,7 @@
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+531"/>
-        <source>A fatal error occurred. Australiacash can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. TerraAustralis can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -939,7 +939,7 @@
     </message>
     <message>
         <location line="+72"/>
-        <source>The entered address &quot;%1&quot; is not a valid Australiacash address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid TerraAustralis address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1099,8 +1099,8 @@
     </message>
     <message>
         <location filename="../intro.cpp" line="+20"/>
-        <source>Australiacash</source>
-        <translation type="unfinished">Australiacash</translation>
+        <source>TerraAustralis</source>
+        <translation type="unfinished">TerraAustralis</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -1114,7 +1114,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>%1 will download and store a copy of the Australiacash block chain.</source>
+        <source>%1 will download and store a copy of the TerraAustralis block chain.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1381,8 +1381,8 @@
     </message>
     <message>
         <location line="+30"/>
-        <source>Automatically open the Australiacash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the Australiacash client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the TerraAustralis client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the TerraAustralis client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1401,7 +1401,7 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the Australiacash network through a SOCKS5 proxy.</source>
+        <source>Connect to the TerraAustralis network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1449,7 +1449,7 @@
     </message>
     <message>
         <location line="+25"/>
-        <source>Connect to the Australiacash network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the TerraAustralis network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1584,8 +1584,8 @@
     <message>
         <location line="+62"/>
         <location line="+386"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Australiacash network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Australiacash network after a connection is established, but this process has not completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the TerraAustralis network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the TerraAustralis network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-139"/>
@@ -1704,7 +1704,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>URI cannot be parsed! This can be caused by an invalid Australiacash address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid TerraAustralis address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1836,7 +1836,7 @@
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+130"/>
-        <source>Enter a Australiacash address (e.g. %1)</source>
+        <source>Enter a TerraAustralis address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2422,7 +2422,7 @@
     <message>
         <location line="-3"/>
         <location line="+46"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Australiacash network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the TerraAustralis network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2951,7 +2951,7 @@
     </message>
     <message>
         <location line="+101"/>
-        <source>Warning: Invalid Australiacash address</source>
+        <source>Warning: Invalid TerraAustralis address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3006,7 +3006,7 @@
     </message>
     <message>
         <location line="+39"/>
-        <source>The Australiacash address to send the payment to</source>
+        <source>The TerraAustralis address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3068,7 +3068,7 @@
     </message>
     <message>
         <location line="+54"/>
-        <source>A message that was attached to the terraaustralis: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Australiacash network.</source>
+        <source>A message that was attached to the terraaustralis: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the TerraAustralis network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3130,7 +3130,7 @@
     </message>
     <message>
         <location line="+18"/>
-        <source>The Australiacash address to sign the message with</source>
+        <source>The TerraAustralis address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3172,8 +3172,8 @@
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Australiacash address</source>
-        <translation>Sign the message to prove you own this Australiacash address</translation>
+        <source>Sign the message to prove you own this TerraAustralis address</source>
+        <translation>Sign the message to prove you own this TerraAustralis address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3203,13 +3203,13 @@
     </message>
     <message>
         <location line="+21"/>
-        <source>The Australiacash address the message was signed with</source>
+        <source>The TerraAustralis address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+37"/>
-        <source>Verify the message to ensure it was signed with the specified Australiacash address</source>
-        <translation>Verify the message to ensure it was signed with the specified Australiacash address</translation>
+        <source>Verify the message to ensure it was signed with the specified TerraAustralis address</source>
+        <translation>Verify the message to ensure it was signed with the specified TerraAustralis address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4101,8 +4101,8 @@
     </message>
     <message>
         <location line="-395"/>
-        <source>Australiacash Core</source>
-        <translation type="unfinished">Australiacash Core</translation>
+        <source>TerraAustralis Core</source>
+        <translation type="unfinished">TerraAustralis Core</translation>
     </message>
     <message>
         <location line="+1"/>
